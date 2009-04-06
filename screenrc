@@ -1,0 +1,14 @@
+shell bash
+vbell off
+altscreen on
+
+startup_message off  
+#caption always "%{= kw}%?%-Lw%?%{+b kw}%n*%t%f %?(%u)%?%{= kw}%?%+Lw%?"
+hardstatus alwayslastline 
+hardstatus string '%{= kg}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{=b kR}(%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}]%{=b C}[ %d %M %c ]%{W}'
+#hardstatus alwayslastline "%{+b k0}[ %H ] %{kk} Load: %l %-=%{kd} %c  %d.%m.%Y"
+termcapinfo xterm 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+termcapinfo rxvt* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+
+# hardstatus string "%h"
+# caption always "%{= kw} %-w%{= wk}%n*%t%{-}%+w%{= kw} %=%d %M %0c %{g}%H%{-}"
