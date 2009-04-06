@@ -186,3 +186,5 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType java set omnifunc=javacomplete#Complete
 
 " set t_Co=256
+"
+set guifont=Terminus\ 8
