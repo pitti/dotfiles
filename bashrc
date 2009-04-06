@@ -39,10 +39,15 @@ export LSCOLORS="dxhxxxxxCxxxxxxb"
 
 HOST=`uname`
 
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
 
 if [ -f ~/.rcfiles/bash_aliases ]; then
     . ~/.rcfiles/bash_aliases
