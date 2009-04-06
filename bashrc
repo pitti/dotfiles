@@ -16,8 +16,8 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-COLOR1="\[\e[30;1m\]"
-COLOR2="\[\e[32;1m\]"
+COLOR1="\[\e[33;1m\]" # brown 
+COLOR2="\[\e[32;1m\]" # green
 COLOR3="\[\e[34m\]"
 ENDCOLOR="\[\e[0m\]"
 DEFCOLOR=$ENDCOLOR
