@@ -56,3 +56,6 @@ fi
 if [ -d ~/.local/bin ]; then
   export PATH=$HOME/.local/bin:$PATH
 fi
+
+# Fix Java applications for awesome wm
+export AWT_TOOLKIT=MToolkit
