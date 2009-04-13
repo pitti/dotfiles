@@ -8,8 +8,8 @@ URxvt*inheritPixmap: true
 URxvt*tintColor: #272521
 !URxvt.tintColor: #c0c0c0
 
-URxvt.boldFont: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
-URxvt.font: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
+! URxvt.boldFont: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
+! URxvt.font: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
 !URxvt.font: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
 !URxvt.boldFont: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
 URxvt*scrollBar: false
@@ -64,3 +64,13 @@ URxvt*color12:     #5054F8
 URxvt*color13:     #F854F8
 URxvt*color14:     #50FCF8
 URxvt*color15:     #F8FCF8
+
+
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+
+
+URxvt.font:	  xft:Terminus:pixelsize=10
