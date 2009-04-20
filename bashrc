@@ -57,5 +57,10 @@ if [ -d ~/.local/bin ]; then
   export PATH=$HOME/.local/bin:$PATH
 fi
 
+if [ -d /opt/kde/bin ]; then
+  export PATH=/opt/kde/bin:$PATH
+fi
+
+
 # Fix Java applications for awesome wm
 export AWT_TOOLKIT=MToolkit
