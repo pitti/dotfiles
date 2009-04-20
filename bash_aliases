@@ -12,3 +12,7 @@ alias l='ls -lh'
 alias irssi='if pgrep -U 10623 irssi; then screen -x irssi;else screen -S irssi irssi;fi'
 alias 'mkdate'='mkdir `date +%d-%m-%y`'
 alias spac="sudo pacman"
+
+alias '..'='cd ..'
+alias '...'='cd ../..'
+alias '....'='cd ../../..'
