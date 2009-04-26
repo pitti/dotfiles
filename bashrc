@@ -61,6 +61,14 @@ if [ -d /opt/kde/bin ]; then
   export PATH=/opt/kde/bin:$PATH
 fi
 
+if [ -d /opt/geda/bin ]; then
+  export PATH=$PATH:/opt/geda/bin
+fi
+
+if [ -d /opt/java/bin ]; then
+  export PATH=$PATH:/opt/java/bin
+fi
+
 
 # Fix Java applications for awesome wm
 export AWT_TOOLKIT=MToolkit
