@@ -16,3 +16,8 @@ alias spac="sudo pacman"
 alias '..'='cd ..'
 alias '...'='cd ../..'
 alias '....'='cd ../../..'
+
+alias -- +='pushd .'
+alias -- -='popd'
+
+
