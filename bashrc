@@ -83,6 +83,7 @@ if [ -d /opt/java/bin ]; then
 fi
 
 
+export PATH=/usr/local/bin:$PATH
 # Fix Java applications for awesome wm
 export AWT_TOOLKIT=MToolkit
 
