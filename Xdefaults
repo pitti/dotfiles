@@ -49,10 +49,10 @@ URxvt*metaSendsEscape: true
 
 
 URxvt*color0:      #000000
-URxvt*color1:      #A80000
-URxvt*color2:      #00A800
+URxvt*color1:      #A82020
+URxvt*color2:      #10A810
 URxvt*color3:      #A85400
-URxvt*color4:      #0000A8
+URxvt*color4:      #3030A8
 URxvt*color5:      #A800A8
 URxvt*color6:      #00A8A8
 URxvt*color7:      #A8A8A8
@@ -74,3 +74,4 @@ Xft.hintstyle:  hintslight
 
 
 URxvt.font:	  xft:Terminus:pixelsize=10
+Xcursor.theme: Vanilla-DMZ

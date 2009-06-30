@@ -61,6 +61,19 @@ if [ -d /opt/kde/bin ]; then
   export PATH=/opt/kde/bin:$PATH
 fi
 
+if [ -d /usr/local/bin ]; then
+  export PATH=$PATH:/usr/local/bin
+fi
+
+if [ -d /opt/gtkwave/bin ]; then
+  export PATH=$PATH:/opt/gtkwave/bin
+fi
+
+
+if [ -d /opt/ghdl/bin ]; then
+  export PATH=$PATH:/opt/ghdl/bin
+fi
+
 if [ -d /opt/geda/bin ]; then
   export PATH=$PATH:/opt/geda/bin
 fi
@@ -97,3 +110,23 @@ extract () {
 		echo "'$1' is not a valid file"
 	fi
 }
+
+export TD="$HOME/temp/`date +'%Y-%m-%d'`"
+
+td(){
+
+	td=$TD
+
+	if [ ! -z "$1" ]; then
+
+		td="$HOME/temp/`date -d "$1 days" +'%Y-%m-%d'`";
+
+	fi
+
+	mkdir -p $td; cd $td
+
+	unset td
+
+}
+
+export JAVA_HOME=/opt/java
