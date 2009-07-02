@@ -239,6 +239,8 @@ set guifont=Terminus\ 8
 
 set tags=tags;/
 
+set tags+=/usr/src/linux/tags
+
 let g:Tex_SmartQuoteOpen = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
 
