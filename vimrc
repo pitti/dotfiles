@@ -244,3 +244,46 @@ set tags+=/usr/src/linux/tags
 let g:Tex_SmartQuoteOpen = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
 
+" :;tf is for operations on "this function"
+:cmap ;tf ?^{??(?,/^}/
+
+" insert closing brace when typing {
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
+
+
+" insert #ifndef __HEADER_H, #define ...  when opening a new header file
+function! s:insert_gates()
+	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+	execute "normal! i#ifndef " . gatename
+	execute "normal! o#define " . gatename . " "
+	execute "normal! Go#endif /* " . gatename . " */"
+	normal! kk
+endfunction
+autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
+
+map <F7> :call Auto_Highlight_Toggle()<CR>
+map <F6> :silent !make<CR>
+
+function! Auto_Highlight_Cword()
+	exe "let @/='\\<".expand("<cword>")."\\>'"
+endfunction
+
+function! Auto_Highlight_Toggle()
+	if exists("#CursorHold#*")
+		au! CursorHold *
+		let @/=''
+	else
+		set hlsearch
+		set updatetime=500
+		au! CursorHold * nested call Auto_Highlight_Cword()
+	endif
+endfunction
+
+" highlight lines with >80 chars.
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.*/
+
+
