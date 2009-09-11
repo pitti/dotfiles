@@ -1,6 +1,5 @@
-"my vimrc settings listed alphabetically. Alot of it is shamlessly ripped from
-"varius pvv sources :P
-
+" TODO: cleanup
+" vimrc. most things ripped from other vimrcs.
 set ai
 set backspace=2 " backspace  everything
 set cindent
@@ -188,18 +187,6 @@ set history=50
 " Hervorhebungen der Suche mit Strg-L enfernen
 map <silent> <c-l> :silent nohl<cr>
 
-" }}}
-
-" Abkürzungen {{{
-
-ab mfg Mit freundlichen Grüßen,<CR>Philipp Ittershagen
-
-ab vgl Viele Grüße,<CR>Philipp
-
-ab gl Gruß,<CR>Philipp
-
-" Zeitstempel - Mit 02 Feb 2005
-iab  mdyl  <c-r>=strftime("%a %d %b %Y")
 " }}}
 
 " Funktionen {{{
