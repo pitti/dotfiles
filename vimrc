@@ -86,138 +86,138 @@ set shellslash
 
 " Settings {{{
 
-    " Default Rechtschreibprüfung
-    " set spell
-	set nocp
+" Default Rechtschreibprüfung
+" set spell
+set nocp
 
-    " Deutsche Rechtschreibprüfung
-    " de* Spell Files Download: http://ftp.vim.org/vim/runtime/spell/
-    set spelllang=de
+" Deutsche Rechtschreibprüfung
+" de* Spell Files Download: http://ftp.vim.org/vim/runtime/spell/
+set spelllang=de
 
-    " set spellfile=/home/lothar/.vim/de.add
+" set spellfile=/home/lothar/.vim/de.add
 
-    " Rechtschreibprüfung ein- ausschalten mit F2
-    map <F2> :set spell!<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
+" Rechtschreibprüfung ein- ausschalten mit F2
+map <F2> :set spell!<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
-    " Nur Top 10 (Rechtschreibprüfung) anzeigen
-    set sps=best,10
+" Nur Top 10 (Rechtschreibprüfung) anzeigen
+set sps=best,10
 
-    " Highlight cursorline ein- ausschalten mit F3
-    map <F3> :set cursorline!<CR><Bar>:echo "Highlight active cursor line: " . strpart("OffOn", 3 * &cursorline, 3)<CR>
+" Highlight cursorline ein- ausschalten mit F3
+map <F3> :set cursorline!<CR><Bar>:echo "Highlight active cursor line: " . strpart("OffOn", 3 * &cursorline, 3)<CR>
 
-    " Kein blinkender Cursor
-    set gcr=a:blinkon0
+" Kein blinkender Cursor
+set gcr=a:blinkon0
 
-    set shellslash
+set shellslash
 
-    " Kein Vi-kompatibler Modus
-    set nocompatible
+" Kein Vi-kompatibler Modus
+set nocompatible
 
-    " Alle Suchtreffer farblich hervorheben
-    set hlsearch
+" Alle Suchtreffer farblich hervorheben
+set hlsearch
 
-    " Während der Eingabe zum entsprechenden Text springen
-    set incsearch
+" Während der Eingabe zum entsprechenden Text springen
+set incsearch
 
-    " Groß- und Kleinschreibung bei der Suche ignorieren
-    set ignorecase
+" Groß- und Kleinschreibung bei der Suche ignorieren
+set ignorecase
 
-    " ignorecase abschalten, wenn Muster Großbuchstaben enthält
-    set smartcase
+" ignorecase abschalten, wenn Muster Großbuchstaben enthält
+set smartcase
 
-    " Syntax-Highlighting
-    syntax on
+" Syntax-Highlighting
+syntax on
 
-    " Zeilennummerierung
-    set number
+" Zeilennummerierung
+set number
 
-    " Faltungsmethode = Markierungen - Standardmäßig werden {{{ zum Anfang und }}}
-    " zum Ende einer Faltung verwendet
-    set foldmethod=marker
+" Faltungsmethode = Markierungen - Standardmäßig werden {{{ zum Anfang und }}}
+" zum Ende einer Faltung verwendet
+set foldmethod=marker
 
-    " Automatisches Einrücken
-    set smartindent
+" Automatisches Einrücken
+set smartindent
 
-    " Einrücktiefe
-    set shiftwidth=4
+" Einrücktiefe
+set shiftwidth=4
 
-    set tabstop=4
+set tabstop=4
 
-    " Treppeneffekt beim Copy & Paste verhindern
-    set pastetoggle=<F8>
+" Treppeneffekt beim Copy & Paste verhindern
+set pastetoggle=<F8>
 
-    " Backup-File anlegen
-    " set backup
+" Backup-File anlegen
+" set backup
 
-    " Pfad zum Backup-Verzeichnis
-    " set backupdir=~/vim
+" Pfad zum Backup-Verzeichnis
+" set backupdir=~/vim
 
-    " Normales Verhalten der Backspace-Taste
-    set backspace=2
+" Normales Verhalten der Backspace-Taste
+set backspace=2
 
-    " Zeigt den aktuellen Modus an
-    set showmode
+" Zeigt den aktuellen Modus an
+set showmode
 
-    " Zeigt die aktuelle Cursorposition
-    set ruler
+" Zeigt die aktuelle Cursorposition
+set ruler
 
-    " Ein Leerzeichen nach .,?,! beim Zusammenfügen von zwei Zeilen
-    set nojoinspaces
+" Ein Leerzeichen nach .,?,! beim Zusammenfügen von zwei Zeilen
+set nojoinspaces
 
-    " Statusline - 2 Zeilen hoch
-    set laststatus=2
+" Statusline - 2 Zeilen hoch
+set laststatus=2
 
-    " Modeline nur in 1. Zeile zulässig
-    set modelines=1
+" Modeline nur in 1. Zeile zulässig
+set modelines=1
 
-    " Name der aktuellen Datei in Fenster-Titel-Leiste
-    set title
+" Name der aktuellen Datei in Fenster-Titel-Leiste
+set title
 
-    " Liste von Verzeichnissen die durchsucht werden
-    set runtimepath=~/.vim,$VIMRUNTIME
+" Liste von Verzeichnissen die durchsucht werden
+set runtimepath=~/.vim,$VIMRUNTIME
 
-    set viminfo='20,\"50
+set viminfo='20,\"50
 
-    set history=50
+set history=50
 
 
 " }}}
 
 " Mappings {{{
 
-    " Hervorhebungen der Suche mit Strg-L enfernen
-    map <silent> <c-l> :silent nohl<cr>
+" Hervorhebungen der Suche mit Strg-L enfernen
+map <silent> <c-l> :silent nohl<cr>
 
 " }}}
 
 " Abkürzungen {{{
 
-    ab mfg Mit freundlichen Grüßen,<CR>Philipp Ittershagen
+ab mfg Mit freundlichen Grüßen,<CR>Philipp Ittershagen
 
-    ab vgl Viele Grüße,<CR>Philipp
+ab vgl Viele Grüße,<CR>Philipp
 
-    ab gl Gruß,<CR>Philipp
+ab gl Gruß,<CR>Philipp
 
-    " Zeitstempel - Mit 02 Feb 2005
-    iab  mdyl  <c-r>=strftime("%a %d %b %Y")
+" Zeitstempel - Mit 02 Feb 2005
+iab  mdyl  <c-r>=strftime("%a %d %b %Y")
 " }}}
 
 " Funktionen {{{
 
-    " Erzeugt tags-File. Aufruf: :call Ht()
-    fun! Ht()
-        execute "helptags " . expand("%:p:h")
-    endfun
+" Erzeugt tags-File. Aufruf: :call Ht()
+fun! Ht()
+	execute "helptags " . expand("%:p:h")
+endfun
 
 " }}}
 
 " Syntax {{{
 
-    " Folds
-    hi Folded ctermbg=black ctermfg=cyan
+" Folds
+hi Folded ctermbg=black ctermfg=cyan
 
-    " Statusline
-    hi StatusLine cterm=bold,reverse
+" Statusline
+hi StatusLine cterm=bold,reverse
 
 " }}}
 
