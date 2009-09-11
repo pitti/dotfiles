@@ -6,8 +6,8 @@
 # don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 
-export HISTFILE="~/.bash_history"
-export HISTSIZE=1000
+export HISTFILE=$HOME/.bash_history
+export HISTSIZE=100000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -131,3 +131,10 @@ td(){
 }
 
 export JAVA_HOME=/opt/java
+
+
+# permanent hist
+
+export HISTTIMEFORMAT="%s "
+
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
