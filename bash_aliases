@@ -1,5 +1,6 @@
-alias svim="sudo vim"
+alias svim="sudo gvim"
 alias vimapt="sudo vim /etc/apt/sources.list"
+
 alias sapt="sudo aptitude"
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' 
 
