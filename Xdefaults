@@ -3,9 +3,9 @@ URxvt*secondaryScroll: true
 !URxvt*geometry: 112x42
 URxvt*background: #000000
 URxvt*foreground: #ffffff
-URxvt*inheritPixmap: true
+!URxvt*inheritPixmap: true
 !URxvt*reverseVideo: false
-URxvt*tintColor: #272521
+!URxvt*tintColor: #272521
 !URxvt.tintColor: #c0c0c0
 
 ! URxvt.boldFont: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15

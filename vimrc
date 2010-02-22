@@ -35,10 +35,6 @@ set timeoutlen=500
 set wildmenu
 set wildmode=list:longest,full
 
-syntax on
-filetype plugin on
-filetype plugin indent on
-
 let html_use_css=1
 let use_xhtml=1
 let spell_auto_type = "tex,mail"
@@ -85,15 +81,9 @@ set shellslash
 
 " Settings {{{
 
-" Default Rechtschreibprüfung
-" set spell
-set nocp
-
 " Deutsche Rechtschreibprüfung
 " de* Spell Files Download: http://ftp.vim.org/vim/runtime/spell/
 set spelllang=de
-
-" set spellfile=/home/lothar/.vim/de.add
 
 " Rechtschreibprüfung ein- ausschalten mit F2
 map <F2> :set spell!<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
@@ -108,9 +98,6 @@ map <F3> :set cursorline!<CR><Bar>:echo "Highlight active cursor line: " . strpa
 set gcr=a:blinkon0
 
 set shellslash
-
-" Kein Vi-kompatibler Modus
-set nocompatible
 
 " Alle Suchtreffer farblich hervorheben
 set hlsearch
@@ -144,12 +131,6 @@ set tabstop=4
 
 " Treppeneffekt beim Copy & Paste verhindern
 set pastetoggle=<F8>
-
-" Backup-File anlegen
-" set backup
-
-" Pfad zum Backup-Verzeichnis
-" set backupdir=~/vim
 
 " Normales Verhalten der Backspace-Taste
 set backspace=2
@@ -209,24 +190,11 @@ hi StatusLine cterm=bold,reverse
 " }}}
 
 
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType java set omnifunc=javacomplete#Complete
-map <F8> :NERDTreeToggle<c-m>
+" set tags=tags;/
+set tags +=~/.vim/tags/cpp
+" set tags +=~/.vim/tags/linux
+" set tags +=/usr/src/linux/tags
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" set t_Co=256
-"
-set guifont=Terminus\ 8
-
-set tags=tags;/
-
-set tags+=/usr/src/linux/tags
 
 let g:Tex_SmartQuoteOpen = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
@@ -273,4 +241,22 @@ endfunction
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.*/
 
+filetype plugin on
+filetype plugin indent on
+
+set nocp
+
+
+" OmniCppComplete
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_MayCompleteDot = 1
+let OmniCpp_MayCompleteArrow = 1
+let OmniCpp_MayCompleteScope = 1
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+
+" automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
