@@ -1,24 +1,25 @@
 " vimrc. most things ripped from other vimrcs.
 
+set encoding=utf8
 set backspace=2 " backspace  everything
 set grepprg=grep\ -nH\ $*
 set guioptions=agitm
 set hidden
-set history=50		" keep 50 lines of command line history
+set history=50 " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase "case-insensitvice search unless upper-case letters
 set laststatus=2
 set lazyredraw
 set linebreak
-set incsearch		" do incremental searching
+set incsearch " do incremental searching
 set modeline
 set nocompatible
 set noexpandtab
-set ruler		" show the cursor position all the time
+set ruler " show the cursor position all the time
 set scrolloff=2
 set scrolljump=5
 set shortmess=aI "avoid anoyting hit ENTER stuff at prompt
-set showcmd		" display incomplete commands
+set showcmd " display incomplete commands
 set showmode
 set showmatch
 set softtabstop=2
@@ -28,6 +29,11 @@ set wildmenu
 set wildmode=list:longest,full
 set shellslash
 set modelines=1
+set list
+set listchars=eol:↓,tab:→\ ,extends:>,precedes:<
+highlight SpecialKey ctermfg=243 guibg=black
+highlight NonText ctermfg=243 guifg=darkgray
+let mapleader = ","
 syntax on
 set number
 
@@ -106,6 +112,9 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 " Use <c-tab> <shift-c-tab> to switch between tabs
 nnoremap <silent> <C-TAB> :tabn<CR>
 nnoremap <silent> <C-S-TAB> :tabp<CR>
+
+" removes whitespaces at the end of lines
+nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Issue make
 map <silent> <F6> :w<CR>:make -j2<CR>
@@ -191,9 +200,27 @@ function! Auto_Highlight_Toggle()
 	endif
 endfunction
 
-" highlight lines with >80 chars.
-highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
-match OverLength /\%81v.*/
+" Enable FSwitch plugin for fast switching between .h and .c files
+au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
+
+" Map the FSwitch plugin functions
+nmap <silent> <Leader>of :FSHere<cr>
+nmap <silent> <Leader>ol :FSRight<cr>
+nmap <silent> <Leader>oL :FSSplitRight<cr>
+nmap <silent> <Leader>oh :FSLeft<cr>
+
+autocmd BufWritePre *.{c,cc,cpp,h,hpp} :call <SID>StripTrailingWhitespaces()
+
+function! <SID>StripTrailingWhitespaces()
+	" save last search and cursor position
+	let _s=@/
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	" restore search and cursor position
+	let @/=_s
+	call cursor(l, c)
+endfunction
 
 " OmniCppComplete
 let OmniCpp_NamespaceSearch = 1
@@ -207,3 +234,7 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+
+" highlight lines with >80 chars.
+highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
+match OverLength /\%81v.*/
