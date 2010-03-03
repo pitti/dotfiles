@@ -1,24 +1,25 @@
 " vimrc. most things ripped from other vimrcs.
 
+set encoding=utf8
 set backspace=2 " backspace  everything
 set grepprg=grep\ -nH\ $*
 set guioptions=agitm
 set hidden
-set history=50		" keep 50 lines of command line history
+set history=50 " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase "case-insensitvice search unless upper-case letters
 set laststatus=2
 set lazyredraw
 set linebreak
-set incsearch		" do incremental searching
+set incsearch " do incremental searching
 set modeline
 set nocompatible
 set noexpandtab
-set ruler		" show the cursor position all the time
+set ruler " show the cursor position all the time
 set scrolloff=2
 set scrolljump=5
 set shortmess=aI "avoid anoyting hit ENTER stuff at prompt
-set showcmd		" display incomplete commands
+set showcmd " display incomplete commands
 set showmode
 set showmatch
 set softtabstop=2
@@ -28,6 +29,10 @@ set wildmenu
 set wildmode=list:longest,full
 set shellslash
 set modelines=1
+set list
+set listchars=eol:↓,tab:→\ ,extends:>,precedes:<
+highlight SpecialKey ctermfg=243 guibg=black
+highlight NonText ctermfg=243 guifg=darkgray
 let mapleader = ","
 syntax on
 set number
