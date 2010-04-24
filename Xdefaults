@@ -74,5 +74,5 @@ Xft.hintstyle:  hintslight
 
 
 URxvt.font:	  xft:Terminus:pixelsize=10
-Xcursor.theme: Vanilla-DMZ
+!Xcursor.theme: Vanilla-DMZ
 vncviewer.useBGR233: true
