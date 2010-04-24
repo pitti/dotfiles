@@ -209,7 +209,7 @@ nmap <silent> <Leader>ol :FSRight<cr>
 nmap <silent> <Leader>oL :FSSplitRight<cr>
 nmap <silent> <Leader>oh :FSLeft<cr>
 
-autocmd BufWritePre *.{c,cc,cpp,h,hpp} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{java,c,cc,cpp,h,hpp} :call <SID>StripTrailingWhitespaces()
 
 function! <SID>StripTrailingWhitespaces()
 	" save last search and cursor position

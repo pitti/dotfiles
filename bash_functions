@@ -41,3 +41,12 @@ td(){
 	mkdir -p $td; cd $td
 	unset td
 }
+
+gr() {
+	if [ -z "$*" ]; then
+		echo "Usage: gr <expr> to search for <expr> in files recursively"
+	else
+		grep -C 2 --color -RTn $* .
+	fi
+}
+

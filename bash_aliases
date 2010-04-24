@@ -20,3 +20,6 @@ alias '....'='cd ../../..'
 alias -- +='pushd .'
 alias -- -='popd'
 
+alias g='gvim --remote-silent'
+
+alias sjunrar='unrar x -Pserienjunkies.org'
