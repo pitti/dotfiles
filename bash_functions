@@ -41,3 +41,8 @@ td(){
 	mkdir -p $td; cd $td
 	unset td
 }
+
+# grep recursively from $PWD using 'gr'
+gr () {
+	grep --color -R $* .
+}
