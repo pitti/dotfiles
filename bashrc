@@ -48,20 +48,20 @@ HOST=`uname`
 
 # load system wide bash completion if installed
 if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+	. /etc/bash_completion
 fi
 
 # Load Alias definitions.
 if [ -f $gitdir/bash_aliases ]; then
-    . $gitdir/bash_aliases
+	. $gitdir/bash_aliases
 fi
 
 if [ -d ~/.local/bin ]; then
-  export PATH=$HOME/.local/bin:$PATH
+	export PATH=$HOME/.local/bin:$PATH
 fi
 
 if [ -d /usr/local/bin ]; then
-  export PATH=$PATH:/usr/local/bin
+	export PATH=$PATH:/usr/local/bin
 fi
 
 # add non default installation paths to PATH
@@ -78,6 +78,12 @@ export JAVA_HOME=/opt/java
 
 # Load bash functions
 if [ -f $gitdir/bash_functions ]; then
-    . $gitdir/bash_functions
+	. $gitdir/bash_functions
 fi
 
+# Load bash functions
+if [ -f $HOME/.bash_env ]; then
+	. $HOME/.bash_env
+fi
+
+export EDITOR="vim"
