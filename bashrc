@@ -86,6 +86,10 @@ if [ -f $HOME/.bash_env ]; then
 	. $HOME/.bash_env
 fi
 
+# Tell me that it's sudo asking for the pw
+SUDO_PROMPT="[sudo] password:"
+
+
 export EDITOR="vim"
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
