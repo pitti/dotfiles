@@ -218,13 +218,14 @@ endfunction
 " Enable FSwitch plugin for fast switching between .h and .c files
 au! BufEnter *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
 
+
 " Map the FSwitch plugin functions
 nmap <silent> <Leader>of :FSHere<cr>
 nmap <silent> <Leader>ol :FSRight<cr>
 nmap <silent> <Leader>oL :FSSplitRight<cr>
 nmap <silent> <Leader>oh :FSLeft<cr>
 
-autocmd BufWritePre *.{c,cc,cpp,h,hpp} :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.{tex,java,c,cc,cpp,h,hpp} :call <SID>StripTrailingWhitespaces()
 
 function! <SID>StripTrailingWhitespaces()
 	" save last search and cursor position
@@ -250,11 +251,30 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-" highlight lines with >80 chars.
+
+" source kernel specific things when editing kernel-specific files ;) 
+autocmd BufRead,BufNewFile /home/klmann/ml410/ba-code/driver/* so /home/klmann/ml410/linux-2.6-xlnx/vimrc-kernel
+
+
+" highlight lines with >120 chars.
 highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
 match OverLength /\%120v.*/
 
 
+" Toggle OverLength Highlight with F4
+nnoremap <F4> :call <SID>ToggleLongLineMatch()<CR>
 
-" source kernel specific things when editing kernel-specific files ;) 
-autocmd BufRead,BufNewFile /home/klmann/ml410/ba-code/driver/* so /home/klmann/ml410/linux-2.6-xlnx/vimrc-kernel
+function! <SID>ToggleLongLineMatch()
+	if exists('w:long_line_match')
+		call matchdelete(w:long_line_match)
+		unlet w:long_line_match
+	elseif &textwidth > 0
+		let w:long_line_match = matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
+	else
+		let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1)
+	endif
+endfunction
+
+
+" Recognize HySAT files als HySAT filetype
+autocmd BufNewFile,BufRead *.hys set filetype=hysat

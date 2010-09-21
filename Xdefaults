@@ -82,5 +82,4 @@ URxvt*font: xft:Droid Sans Mono-9
 urxvt*font:             xft:Inconsolata:size=8:antialias=true:hinting=true
 urxvt*letterSpace:	 -2
 
-Xcursor.theme: Vanilla-DMZ
 vncviewer.useBGR233: true

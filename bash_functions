@@ -20,6 +20,7 @@ extract () {
 			*.Z)         uncompress $1  ;;
 			*.7z)        7z x $1    ;;
 			*.rar)       unrar x $1    ;;
+			*.xz)        xz -d $1    ;;
 			*)           echo "'$1' cannot be extracted via >extract<" ;;
 		esac
 	else
@@ -43,6 +44,10 @@ td(){
 }
 
 # grep recursively from $PWD using 'gr'
-gr () {
-	grep --color -R $* .
+gr() {
+	if [ -z "$*" ]; then
+		echo "Usage: gr <expr> to search for <expr> in files recursively"
+	else
+		grep -C 2 --color -RTn $* .
+	fi
 }
