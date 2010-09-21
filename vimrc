@@ -30,9 +30,9 @@ set wildmode=list:longest,full
 set shellslash
 set modelines=1
 set list
-set listchars=eol:↓,tab:→\ ,extends:>,precedes:<
+set listchars=tab:→\ ,extends:>,precedes:<
 highlight SpecialKey ctermfg=243 guibg=black
-highlight NonText ctermfg=243 guifg=darkgray
+" highlight NonText ctermfg=243 guifg=darkgray
 let mapleader = ","
 syntax on
 set number
@@ -43,17 +43,17 @@ set gcr=a:blinkon0
 " Fold method.
 " marker: use {{{ and }}} to indicate a fold
 " syntax: fold functions etc
-set foldmethod=syntax
+" set foldmethod=syntax
 
 " Indent automatically
 set smartindent
 " set cindent
 
 " Indent depth
-set shiftwidth=4
+set shiftwidth=2
 
 " How many spaces does a tabstop cover?
-set tabstop=4
+set tabstop=2
 
 " Use F8 to toggle between normal and paste mode (to avoid automatic indent
 " while pasting)
@@ -65,7 +65,7 @@ set nojoinspaces
 " Show file name in window title.
 set title
 
-set runtimepath=~/.vim,$VIMRUNTIME
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$/VIM/vimfiles/after,~/.vimr/after
 
 set viminfo='20,\"50
 
@@ -103,6 +103,12 @@ nmap n nzz
 vnoremap < <gv
 vnoremap > >gv
 
+" Delete Buffer from Session with Ctrl-C
+nnoremap <silent> <C-c> :bd<CR>
+"
+" Close Buffer with Ctrl-X
+nnoremap <silent> <C-x> :q<CR>
+
 " Use registers more intelligent
 vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
@@ -114,7 +120,7 @@ nnoremap <silent> <C-TAB> :tabn<CR>
 nnoremap <silent> <C-S-TAB> :tabp<CR>
 
 " removes whitespaces at the end of lines
-nnoremap <silent> <F5> :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Issue make
 map <silent> <F6> :w<CR>:make -j2<CR>
@@ -145,7 +151,7 @@ map <silent> <c-l> :silent nohl<cr>
 
 
 " Fold highlight color
-hi Folded ctermbg=black ctermfg=cyan
+" hi Folded ctermbg=black ctermfg=cyan
 
 " Statusline color
 hi StatusLine cterm=bold,reverse
@@ -157,6 +163,7 @@ set tags=tags;/
 set tags +=~/.vim/tags/cpp
 set tags +=~/.vim/tags/linux
 set tags +=/usr/src/linux/tags
+set tags +=/home/klmann/ml410/linux-2.6-xlnx/tags
 
 
 " Use german quotes in TeX sources
@@ -174,6 +181,12 @@ inoremap {<CR>  {<CR>}<Esc>O
 inoremap {{     {
 inoremap {}     {}
 
+" the same, with ()
+
+inoremap (      ()<Left>
+inoremap ((     (
+inoremap ()     ()
+
 
 " insert #ifndef FILE_H_INCLUDED_, #define ...  when opening a new header file
 function! s:insert_gates()
@@ -188,6 +201,8 @@ autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
 function! Auto_Highlight_Cword()
 	exe "let @/='\\<".expand("<cword>")."\\>'"
 endfunction
+
+
 
 function! Auto_Highlight_Toggle()
 	if exists("#CursorHold#*")
@@ -237,4 +252,9 @@ set completeopt=menuone,menu,longest,preview
 
 " highlight lines with >80 chars.
 highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
-match OverLength /\%81v.*/
+match OverLength /\%120v.*/
+
+
+
+" source kernel specific things when editing kernel-specific files ;) 
+autocmd BufRead,BufNewFile /home/klmann/ml410/ba-code/driver/* so /home/klmann/ml410/linux-2.6-xlnx/vimrc-kernel
