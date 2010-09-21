@@ -8,10 +8,12 @@ URxvt*foreground: #ffffff
 !URxvt*tintColor: #272521
 !URxvt.tintColor: #c0c0c0
 
-! URxvt.boldFont: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
-! URxvt.font: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
-!URxvt.font: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
-!URxvt.boldFont: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
+/*
+URxvt.boldFont: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
+URxvt.font: -xos4-terminus-*-*-*-*-12-*-*-*-*-*-iso8859-15
+URxvt.font: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
+URxvt.boldFont: -lfp-smooth-medium-*-*-*-*-90-*-*-*-*-iso8859-1
+*/
 URxvt*scrollBar: false
 URxvt*scrollWithBuffer: true
 URxvt*scrollBar_floating: true
@@ -79,7 +81,10 @@ URxvt*font: xft:Droid Sans Mono-9
 */
 
 
-urxvt*font:             xft:Inconsolata:size=8:antialias=true:hinting=true
-urxvt*letterSpace:	 -2
+urxvt*font:             xft:Inconsolata:antialias=true:hinting=true:size=10
+urxvt*boldFont:         xft:Inconsolata:antialias=true:hinting=true:bold:size=10
+urxvt*italicFont:       xft:Inconsolata:antialias=true:hinting=true:autohint=true:italic:size=10
+urxvt*boldItalicFont:   xft:Inconsolata:antialias=true:hinting=true:autohint=true:bold:italic:size=10
+!urxvt*letterSpace: -1
 
 vncviewer.useBGR233: true
