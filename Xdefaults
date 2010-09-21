@@ -72,7 +72,15 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
+/*
+!URxvt.font:	  xft:DroidSansMono:pixelsize=10
+URxvt*font: xft:Droid Sans Mono-9
+!URxvt.font: xft:Bitstream Vera Sans Mono-12
+*/
 
-URxvt.font:	  xft:Terminus:pixelsize=10
+
+urxvt*font:             xft:Inconsolata:size=8:antialias=true:hinting=true
+urxvt*letterSpace:	 -2
+
 Xcursor.theme: Vanilla-DMZ
 vncviewer.useBGR233: true
