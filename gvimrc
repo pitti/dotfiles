@@ -1,8 +1,8 @@
 colorscheme ir_black
-set guifont=Terminus\ 8
+set guifont=Inconsolata\ 8
 
-" highlight lines with >80 chars.
+" highlight lines with >120 chars.
 highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
-match OverLength /\%81v.*/
+match OverLength /\%120v.*/
 highlight SpecialKey ctermfg=243 guibg=black
-highlight NonText ctermfg=243 guifg=darkgray
+" highlight NonText ctermfg=243 guifg=darkgray
