@@ -22,3 +22,5 @@ alias -- -='popd'
 
 alias sjunrar='unrar x -Pserienjunkies.org'
 alias 'g'='gvim --remote-silent'
+
+alias man='man -P less'
