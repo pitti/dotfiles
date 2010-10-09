@@ -65,7 +65,7 @@ set nojoinspaces
 " Show file name in window title.
 set title
 
-set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$/VIM/vimfiles/after,~/.vimr/after
+set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vimr/after
 
 set viminfo='20,\"50
 
