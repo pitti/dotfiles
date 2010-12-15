@@ -17,7 +17,7 @@ URxvt*scrollWithBuffer: true
 URxvt*scrollBar_floating: true
 URxvt*scrollBar_right: false
 URxvt*scrollColor: #000000
-URxvt*saveLines: 100000
+URxvt*saveLines: 1000
 !URxvt*termName: URxvt
 URxvt*cursorColor: #ffffff
 URxvt*colorBD: #ffffff
