@@ -25,7 +25,8 @@ shopt -s checkwinsize
 
 COLOR1="\[\e[33;1m\]" # yellow
 COLOR2="\[\e[32;1m\]" # green
-COLOR3="\[\e[37m\]" # blue
+COLOR3="\[\e[37m\]" # grey
+COLOR4="\[\e[1;31m\]" # red
 ENDCOLOR="\[\e[0m\]"
 DEFCOLOR=$ENDCOLOR
 # PS1="\[$COLOR1\!\[$COLOR2[\[\033[1;34m\]\A\[\033[0m\]\
@@ -35,8 +36,10 @@ DEFCOLOR=$ENDCOLOR
 # handle git branches in prompt
 GITPS1='$(__maybe_git_ps1 "(%s) " )'
 
+UC=$COLOR3
+[ $UID -eq "0" ] && UC=$COLOR4 # red for root
 
-PS1="${COLOR3}\u:\H $COLOR1\w$DEFCOLOR $COLOR2${GITPS1}$ENDCOLOR\$ "
+PS1="${UC}\u${COLOR3}:\H $COLOR1\w$DEFCOLOR $COLOR2${GITPS1}$ENDCOLOR\$ "
 
 case "$TERM" in
 	xterm*|rxvt*)
