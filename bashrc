@@ -23,16 +23,16 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-COLOR1="\[\e[33;1m\]" # brown 
+COLOR1="\[\e[33;1m\]" # yellow
 COLOR2="\[\e[32;1m\]" # green
-COLOR3="\[\e[34m\]"
+COLOR3="\[\e[37m\]" # blue
 ENDCOLOR="\[\e[0m\]"
 DEFCOLOR=$ENDCOLOR
 # PS1="\[$COLOR1\!\[$COLOR2[\[\033[1;34m\]\A\[\033[0m\]\
 # \[\033[1;32m\] \u@\h \[\033[0m\]\
 # \[\033[1;33m\]\W\[\033[0m\]]\$ "
 
-PS1="${COLOR1}\u:\H $COLOR2\w$DEFCOLOR \$ $ENDCOLOR"
+PS1="${COLOR3}\u:\H $COLOR1\w$DEFCOLOR \$ $ENDCOLOR"
 
 case "$TERM" in
 	xterm*|rxvt*)
