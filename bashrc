@@ -32,7 +32,11 @@ DEFCOLOR=$ENDCOLOR
 # \[\033[1;32m\] \u@\h \[\033[0m\]\
 # \[\033[1;33m\]\W\[\033[0m\]]\$ "
 
-PS1="${COLOR3}\u:\H $COLOR1\w$DEFCOLOR \$ $ENDCOLOR"
+# handle git branches in prompt
+GITPS1='$(__maybe_git_ps1 "(%s) " )'
+
+
+PS1="${COLOR3}\u:\H $COLOR1\w$DEFCOLOR $COLOR2${GITPS1}$ENDCOLOR\$ "
 
 case "$TERM" in
 	xterm*|rxvt*)
