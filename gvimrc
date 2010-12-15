@@ -1,4 +1,4 @@
-colorscheme ir_black
+colorscheme wombat
 set guifont=Inconsolata-g\ 10
 
 " highlight lines with >120 chars.
