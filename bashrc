@@ -23,24 +23,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-COLOR1="\[\e[33;1m\]" # yellow
-COLOR2="\[\e[32;1m\]" # green
-COLOR3="\[\e[37m\]" # grey
-COLOR4="\[\e[1;31m\]" # red
-ENDCOLOR="\[\e[0m\]"
-DEFCOLOR=$ENDCOLOR
-# PS1="\[$COLOR1\!\[$COLOR2[\[\033[1;34m\]\A\[\033[0m\]\
-# \[\033[1;32m\] \u@\h \[\033[0m\]\
-# \[\033[1;33m\]\W\[\033[0m\]]\$ "
-
-# handle git branches in prompt
-GITPS1='$(__maybe_git_ps1 "(%s) " )'
-
-UC=$COLOR3
-[ $UID -eq "0" ] && UC=$COLOR4 # red for root
-
-PS1="${UC}\u${COLOR3}:\H $COLOR1\w$DEFCOLOR $COLOR2${GITPS1}$ENDCOLOR\$ "
-
 case "$TERM" in
 	xterm*|rxvt*)
 	PROMPT_COMMAND='echo -ne "\033]0;${PWD} - ${USER}@${HOSTNAME}\007"'
@@ -48,6 +30,9 @@ case "$TERM" in
 	*)
 	;;
 esac
+
+# load prompt from file
+source $gitdir/prompt.sh
 
 export LSCOLORS="dxhxxxxxCxxxxxxb"
 
