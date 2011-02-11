@@ -72,10 +72,22 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vimr/aft
 
 set viminfo='20,\"50
 
+
+" Blink matching bracket time (10th/s)
+set mat=5
+
+" fast TTY
+set ttyfast
+
+
+" auto read changes 
+set autoread
+
+
+
 " plugin to handle vim plugins in separate directories.
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
-
 
 filetype plugin on
 filetype plugin indent on
@@ -122,10 +134,17 @@ vnoremap p <Esc>:let current_reg = @"<CR>gvs<C-R>=current_reg<CR><Esc>
 
 " Open taglist with F8
 nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Use <c-tab> <shift-c-tab> to switch between tabs
 nnoremap <silent> <C-TAB> :tabn<CR>
 nnoremap <silent> <C-S-TAB> :tabp<CR>
+
+" Use <c-t> to open new tab
+nnoremap <silent> <C-t> :tabnew .<CR>
+
+" Use <c-w> to close tab
+nnoremap <silent> <C-w> :tabclose<CR>
 
 " removes whitespaces at the end of lines
 nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
@@ -170,6 +189,8 @@ set tags=tags;/
 " special tags place(s)
 " set tags +=~/.vim/tags/cpp
 " set tags +=~/.vim/tags/linux
+set tags +=~/.vim/tags/qt4-gui
+set tags +=~/.vim/tags/qt
 set tags +=/usr/src/linux/tags
 set tags +=/home/klmann/ml410/linux-2.6-xlnx/tags
 
@@ -246,7 +267,16 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfunction
 
+" SuperTab
+
+let g:SuperTabDefaultCompletionType = "context"
+
+
+
+
 " OmniCppComplete
+"
+autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 " auto close options when exiting insert mode
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
