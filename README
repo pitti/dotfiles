@@ -1,4 +1,4 @@
-After checking out, uise the following commands to checkout the submodules: 
+After checking out, use the following commands to checkout the submodules: 
 
  * git submodule init
  * git submodule update
