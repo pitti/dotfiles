@@ -180,6 +180,11 @@ map <silent> <c-l> :silent nohl<cr>
 " Fold highlight color
 " hi Folded ctermbg=black ctermfg=cyan
 
+" Use 256 colors.
+set t_Co=256
+
+colorscheme zenburn
+
 " Statusline color
 hi StatusLine cterm=bold,reverse
 
