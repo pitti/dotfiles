@@ -49,7 +49,7 @@ if [ -f $gitdir/bash_aliases ]; then
 fi
 
 if [ -d ~/.local/bin ]; then
-	export PATH=$HOME/.local/bin:$PATH
+	export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 fi
 
 if [ -d /usr/local/bin ]; then
