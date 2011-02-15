@@ -1,2 +1,4 @@
 /spell/
 /doc/tags
+bundle/*/doc/tags
+tags/
