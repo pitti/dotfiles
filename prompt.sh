@@ -30,7 +30,6 @@ bash_prompt_command() {
         NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
         NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
     fi
-    echo -ne "\033]0;${NEW_PWD} - ${USER}@${HOSTNAME}\007"
 }
 
 bash_prompt() {
@@ -98,6 +97,14 @@ __maybe_git_ps1()
   esac
 }
 
-PROMPT_COMMAND=bash_prompt_command
+case "$TERM" in
+	xterm*|rxvt*)
+		PROMPT_COMMAND='echo -ne "\033]0;${PWD} - ${USER}@${HOSTNAME}\007"; bash_prompt_command'
+	;;
+	*)
+		PROMPT_COMMAND=bash_prompt_command
+	;;
+esac
+
 bash_prompt
 unset bash_prompt
