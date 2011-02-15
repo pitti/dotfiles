@@ -9,7 +9,7 @@ set history=50 " keep 50 lines of command line history
 set hlsearch
 set ignorecase smartcase "case-insensitvice search unless upper-case letters
 set laststatus=2
-set lazyredraw
+" set lazyredraw
 set linebreak
 set incsearch " do incremental searching
 set modeline
