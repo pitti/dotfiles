@@ -1,18 +1,24 @@
 [submodule "bundle/visincr"]
 	path = bundle/visincr
 	url = https://github.com/vim-scripts/VisIncr.git
+	ignore = untracked
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+	ignore = untracked
 [submodule "bundle/neocomplcache"]
 	path = bundle/neocomplcache
 	url = https://github.com/Shougo/neocomplcache.git
+	ignore = untracked
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+	ignore = untracked
 [submodule "bundle/proj-vim"]
 	path = bundle/proj-vim
 	url = https://github.com/tmallen/proj-vim.git
+	ignore = untracked
 [submodule "bundle/git-vim"]
 	path = bundle/git-vim
 	url = https://github.com/motemen/git-vim.git
+	ignore = untracked
