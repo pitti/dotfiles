@@ -180,7 +180,7 @@ map <silent> <c-l> :silent nohl<cr>
 " Use 256 colors.
 set t_Co=256
 
-colorscheme zenburn
+colorscheme lucius
 
 " Statusline color
 hi StatusLine cterm=bold,reverse

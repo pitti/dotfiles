@@ -1,4 +1,4 @@
-colorscheme zenburn
+" colorscheme zenburn
 set guifont=Inconsolata-g\ 10
 
 " highlight lines with >120 chars.
