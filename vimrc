@@ -312,6 +312,9 @@ function! <SID>ToggleLongLineMatch()
 	endif
 endfunction
 
+" Use :w!! when editing a file and forgot sudo.
+cmap w!! w !sudo tee % >/dev/null
+
 
 " Recognize HySAT files als HySAT filetype
 autocmd BufNewFile,BufRead *.hys set filetype=hysat
