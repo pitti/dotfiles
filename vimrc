@@ -204,20 +204,6 @@ let g:Tex_SmartQuoteClose = "\"'"
 " :;tf is for operations only between { and }
 :cmap ;tf ?^{??(?,/^}/
 
-" insert closing brace when typing {
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-
-" avoid nasty double-braces by defining extra rules for them
-inoremap {{     {
-inoremap {}     {}
-
-" the same, with ()
-
-inoremap (      ()<Left>
-inoremap ((     (
-inoremap ()     ()
-
 
 " insert #ifndef FILE_H_INCLUDED_, #define ...  when opening a new header file
 function! s:insert_gates()
