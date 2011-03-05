@@ -28,13 +28,13 @@ set wildmenu
 set wildmode=list:longest,full
 set shellslash
 set modelines=1
-set list
-set listchars=tab:→\ ,extends:>,precedes:<
-highlight SpecialKey ctermfg=243 guibg=black
-" highlight NonText ctermfg=243 guifg=darkgray
 let mapleader = ","
 syntax on
 set number
+
+" Enable the representation of special chars
+set listchars=tab:▸\ ,eol:¬,trail:☠
+set list
 
 " Everything that gets in the "" register also comes to the OS clipboard (the
 " "selection & middle click" clipboard)
