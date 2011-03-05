@@ -22,7 +22,6 @@ set shortmess=aI "avoid anoyting hit ENTER stuff at prompt
 set showcmd " display incomplete commands
 set showmode
 set showmatch
-set softtabstop=2
 set statusline=%<[%n]\ %F\ %m%r%y%=%-14.(%l,%c%V%)\ %P
 set timeoutlen=500
 set wildmenu
@@ -52,11 +51,12 @@ set nofen
 set smartindent
 " set cindent
 
-" Indent depth
+" Indent depth (number of spaces for indenting)
 set shiftwidth=2
 
-" How many spaces does a tabstop cover?
+" How many spaces does a tab cover?
 set tabstop=2
+set softtabstop=2
 
 " Use F8 to toggle between normal and paste mode (to avoid automatic indent
 " while pasting)
