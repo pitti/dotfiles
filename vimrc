@@ -36,6 +36,10 @@ let mapleader = ","
 syntax on
 set number
 
+" Everything that gets in the "" register also comes to the OS clipboard (the
+" "selection & middle click" clipboard)
+set clipboard=unnamed
+
 " No blinking cursor
 set gcr=a:blinkon0
 
