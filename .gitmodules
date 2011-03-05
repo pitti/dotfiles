@@ -22,3 +22,6 @@
 	path = bundle/git-vim
 	url = https://github.com/motemen/git-vim.git
 	ignore = untracked
+[submodule "bundle/delimitMate"]
+	path = bundle/delimitMate
+	url = https://github.com/Raimondi/delimitMate
