@@ -79,10 +79,10 @@ URxvt*color15:     #F8FCF8
 ! */
 ! 
 ! 
-urxvt*font:             xft:Inconsolata-g:size=10
-urxvt*boldFont:         xft:Inconsolata-g:bold:size=10
-urxvt*italicFont:       xft:Inconsolata-g:italic:size=10
-urxvt*boldItalicFont:   xft:Inconsolata-g:bold:italic:size=10
+urxvt*font:             xft:Cousine:size=10
+urxvt*boldFont:         xft:Cousine:bold:size=10
+urxvt*italicFont:       xft:Cousine:italic:size=10
+urxvt*boldItalicFont:   xft:Cousine:bold:italic:size=10
 urxvt*letterSpace: -1
 
 vncviewer.useBGR233: true
