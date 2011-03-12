@@ -84,7 +84,7 @@ set mat=5
 set ttyfast
 
 
-" auto read changes 
+" auto read changes
 set autoread
 
 
@@ -112,6 +112,7 @@ let Tlist_Close_On_Select = 1
 let Tlist_Compact_Format = 1
 let Tlist_Display_Tag_Scope = 1
 let Tlist_Inc_Winwidth = 1
+let Tlist_Use_Right_Window = 1
 
 " Vim-LaTeX related stuff
 let g:tex_flavor='latex'
@@ -259,37 +260,7 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfunction
 
-" SuperTab
-
-let g:SuperTabDefaultCompletionType = "context"
-
-
-
-
-" OmniCppComplete
-"
-autocmd BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
-
-" auto close options when exiting insert mode
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
-
-let OmniCpp_MayCompleteDot = 1 " autocomplete with .
-let OmniCpp_MayCompleteArrow = 1 " autocomplete with ->
-let OmniCpp_MayCompleteScope = 1 " autocomplete with ::
-let OmniCpp_SelectFirstItem = 1 " select first item (but don't insert)
-let OmniCpp_NamespaceSearch = 2 " search namespaces in this and included files
-let OmniCpp_ShowPrototypeInAbbr = 0 " show function prototype (i.e. parameters) in popup window
-let OmniCpp_GlobalScopeSearch = 1
-let OmniCpp_ShowAccess = 1
-let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-
-" automatically open and close the popup menu / preview window
-au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
-
-
-" source kernel specific things when editing kernel-specific files ;) 
+" source kernel specific things when editing kernel-specific files ;)
 autocmd BufRead,BufNewFile /home/klmann/ml410/ba-code/driver/* so /home/klmann/ml410/linux-2.6-xlnx/vimrc-kernel
 
 
@@ -340,3 +311,24 @@ let vala_no_tab_space_error = 1
 
 " Minimum lines used for comment syncing (default 50)
 "let vala_minlines = 120
+
+
+" neocomplcache settings
+
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_enable_auto_select = 0
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
+" Accept snippets with Ctrl-k
+imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+
+" Pressing <CR> accepts the hightlighted completion
+inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+
+
+inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplcache#close_popup()
+inoremap <expr><C-e>  neocomplcache#cancel_popup()
