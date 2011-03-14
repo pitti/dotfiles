@@ -315,6 +315,9 @@ let vala_no_tab_space_error = 1
 
 " neocomplcache settings
 
+let g:neocomplcache_snippets_dir = '~/.vim/snippets/'
+
+
 let g:neocomplcache_enable_at_startup = 1
 let g:neocomplcache_enable_smart_case = 1
 let g:neocomplcache_enable_auto_select = 0
