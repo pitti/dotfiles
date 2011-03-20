@@ -11,7 +11,7 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/klmann/.config/awesome/themes/zenburn/theme.lua")
+beautiful.init("/home/klmann/.config/awesome/zenburn.lua")
 -- You can use your own command to set your wallpaper
 
 -- This is used later as the default terminal and editor to run.
@@ -29,29 +29,48 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 layouts =
 {
-    awful.layout.suit.floating,
-    awful.layout.suit.tile,
-    awful.layout.suit.tile.left,
-    awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
-    awful.layout.suit.fair,
-    awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
-    awful.layout.suit.spiral.dwindle,
-    awful.layout.suit.max,
-    awful.layout.suit.max.fullscreen,
-    awful.layout.suit.magnifier
+    awful.layout.suit.tile,            -- 1
+    awful.layout.suit.floating,        -- 2
+    awful.layout.suit.tile.left,       -- 3
+    awful.layout.suit.tile.bottom,     -- 4
+    awful.layout.suit.tile.top,        -- 5
+    awful.layout.suit.fair,            -- 6
+    awful.layout.suit.fair.horizontal, -- 7
+    awful.layout.suit.spiral,          -- 8
+    awful.layout.suit.spiral.dwindle,  -- 9
+    awful.layout.suit.max,             -- 10
+    awful.layout.suit.max.fullscreen,  -- 11
+    awful.layout.suit.magnifier        -- 12
 }
 -- }}}
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
+
+screentags =  {
+	{
+		names = {"web", "mail", "code", "term", "games", "video", "misc", "vm", "music"}, -- Screen 1 tags
+		layouts = { 1, 1, 6, 6, 2, 2, 2, 2, 1} -- layouts screen 1
+	},
+	{
+		names = {"im", "skype", "term", "misc"}, -- Screen 2 tags
+		layouts = { 2, 2, 6, 6}
+	}
+}
+
+
+
 for s = 1, screen.count() do
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+	for l = 1, #screentags[s].layouts do
+		screentags[s].layouts[l] = layouts[screentags[s].layouts[l]]
+	end
+	-- Each screen has its own tag table.
+	tags[s] = awful.tag(screentags[s].names, s, screentags[s].layouts)
 end
+
 -- }}}
+
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
@@ -72,35 +91,133 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 
-local spacer         = widget({ type = "textbox", name = "spacer" })
-local separator      = widget({ type = "textbox", name = "separator" })
-spacer.text    = " "
-separator.text = " <span foreground='red'>•</span> "
+-- local spacer         = widget({ type = "textbox", name = "spacer" })
+-- local separator      = widget({ type = "textbox", name = "separator" })
+-- spacer.text    = " "
+-- separator.text = " <span foreground='red'>•</span> "
 
+-- {{{ Reusable separator
+separator = widget({ type = "imagebox" })
+separator.image = image(beautiful.widget_sep)
+-- }}}
+
+-- {{{ CPU usage and temperature
+cpuicon = widget({ type = "imagebox" })
+cpuicon.image = image(beautiful.widget_cpu)
+
+-- Initialize widgets
+cpugraph  = awful.widget.graph()
+tzswidget = widget({ type = "textbox" })
+
+-- Graph properties
+cpugraph:set_width(40):set_height(14)
+cpugraph:set_background_color(beautiful.fg_off_widget)
+cpugraph:set_gradient_angle(0):set_gradient_colors({
+   beautiful.fg_end_widget, beautiful.fg_center_widget, beautiful.fg_widget
+}) 
+
+-- Register widgets
+vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
+vicious.register(tzswidget, vicious.widgets.thermal, " $1C", 19, { "coretemp.0", "core" } );
+
+-- {{{ Memory usage
+memicon = widget({ type = "imagebox" })
+memicon.image = image(beautiful.widget_mem)
+
+-- Initialize widget
+membar = awful.widget.progressbar()
+
+-- Pogressbar properties
+membar:set_vertical(true):set_ticks(true)
+membar:set_height(12):set_width(8):set_ticks_size(2)
+membar:set_background_color(beautiful.fg_off_widget)
+membar:set_gradient_colors({ beautiful.fg_widget,
+   beautiful.fg_center_widget, beautiful.fg_end_widget
+}) 
+
+-- Register widget
+vicious.register(membar, vicious.widgets.mem, "$1", 13)
+
+
+
+-- {{{ Network usage
+dnicon = widget({ type = "imagebox" })
+upicon = widget({ type = "imagebox" })
+dnicon.image = image(beautiful.widget_net)
+upicon.image = image(beautiful.widget_netup)
+
+-- Initialize widget
+netwidget = widget({ type = "textbox" })
+
+-- Register widget
+vicious.register(netwidget, vicious.widgets.net, '<span color="'
+  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 3)
+
+
+-- {{{ File system usage
+fsicon = widget({ type = "imagebox" })
+fsicon.image = image(beautiful.widget_fs)
+-- Initialize widgets
+fs = {
+  r = awful.widget.progressbar(),
+  h = awful.widget.progressbar(), s = awful.widget.progressbar()
+}
+-- Progressbar properties
+for _, w in pairs(fs) do
+  w:set_vertical(true):set_ticks(true)
+  w:set_height(14):set_width(5):set_ticks_size(2)
+  w:set_border_color(beautiful.border_widget)
+  w:set_background_color(beautiful.fg_off_widget)
+  w:set_gradient_colors({ beautiful.fg_widget,
+     beautiful.fg_center_widget, beautiful.fg_end_widget
+  }) -- Register buttons
+  w.widget:buttons(awful.util.table.join(
+    awful.button({ }, 1, function () exec("rox", false) end)
+  ))
+end -- Enable caching
+vicious.cache(vicious.widgets.fs)
+-- Register widgets
+vicious.register(fs.r, vicious.widgets.fs, "${/ used_p}",     599)
+vicious.register(fs.h, vicious.widgets.fs, "${/home used_p}", 599)
+vicious.register(fs.s, vicious.widgets.fs, "${/stuff used_p}", 599)
+-- }}}
+--
+-- }}}
+--
 -- {{{ CPU load
 -- Initialize widget
-cpuwidget = widget({ type = "textbox" })
---
--- Register widget
-vicious.register(cpuwidget, vicious.widgets.cpu, "cpu: $1%")
--- }}}
--- Memory
--- Initialize widget
-memwidget = widget({ type = "textbox" })
--- Register widget
-vicious.register(memwidget, vicious.widgets.mem, "mem: $1% ($2MB/$3MB)", 13)
-
-
-netwidget = widget({ type = "textbox" })
- -- Register widget
-vicious.register(netwidget, vicious.widgets.net,
- 'net dn: ${eth0 down_kb} kb/s, up: ${eth0 up_kb} kb/s', 3)
-
+-- cpuwidget = widget({ type = "textbox" })
+-- --
+-- -- Register widget
+-- vicious.register(cpuwidget, vicious.widgets.cpu, 
+--     function (widget, args)
+--       return string.format("cpu: %03d", args[1]) .. "%"
+--     end)
+-- -- }}}
+-- -- Memory
+-- -- Initialize widget
+-- memwidget = widget({ type = "textbox" })
+-- -- Register widget
+-- vicious.register(memwidget, vicious.widgets.mem, "mem: $1% ($2MB/$3MB)", 13)
+-- 
+-- 
+-- netwidget = widget({ type = "textbox" })
+--  -- Register widget
+-- vicious.register(netwidget, vicious.widgets.net,
+--  'net: <span color="#9aacc3">${eth0 down_kb} kb/s</span> | <span color="#bb77a4">${eth0 up_kb} kb/s</span>', 3)
+-- 
+-- 
+-- 
+mpdwidget = widget({ type = "textbox" })
+vicious.register(mpdwidget, vicious.widgets.mpd, 
+'<span color="#9aacc3">${Artist} -</span><span color="#bb77a4"> ${Title}</span> [<span color="#92ac68">${Album}</span>] ', 1)
 
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
+-- 
 -- Create a systray
 mysystray = widget({ type = "systray" })
 
@@ -164,28 +281,44 @@ for s = 1, screen.count() do
 
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
-    -- Add widgets to the wibox - order matters
-    mywibox[s].widgets = {
-        {
-            mylauncher,
-            mytaglist[s],
-            mypromptbox[s],
-            layout = awful.widget.layout.horizontal.leftright
-        },
-        mylayoutbox[s],
-        mytextclock,
-        s == 2 and mysystray or nil,
-        s == 1 and separator or nil,
-        s == 1 and memwidget or nil,
-        s == 1 and separator or nil,
-        s == 1 and cpuwidget or nil,
-        s == 1 and separator or nil,
-        s == 1 and netwidget or nil,
-        mytasklist[s],
-        layout = awful.widget.layout.horizontal.rightleft
-    }
+    -- Add widgets to the wibox below
+		if s == 1 then
+			mywibox[s].widgets = {
+				{
+					mytaglist[s], separator,
+					mypromptbox[s],
+					layout = awful.widget.layout.horizontal.leftright
+				},
+				mylayoutbox[s],
+				separator, mytextclock,
+				separator, membar.widget, memicon,
+				separator, tzswidget, cpugraph.widget, cpuicon,
+				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+				separator, upicon, netwidget, dnicon,
+				separator, mytasklist[s],
+				layout = awful.widget.layout.horizontal.rightleft
+			}
+		end
+
+		if s == 2 then
+			mywibox[s].widgets = {
+				{
+					mytaglist[s], separator,
+					mypromptbox[s],
+					layout = awful.widget.layout.horizontal.leftright
+				},
+				mylayoutbox[s],
+				separator, mytextclock,
+				mysystray,
+				separator,
+				mpdwidget,
+				separator,
+				mytasklist[s],
+				layout = awful.widget.layout.horizontal.rightleft
+			}
+		end
+
 end
--- }}}
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
@@ -368,3 +501,17 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+--
+--
+do
+  local cmds = 
+  { 
+    "gnome-settings-daemon",
+    "gnome-power-manager",
+    "dbus-launch gnome-do"
+  }
+
+  for _,i in pairs(cmds) do
+    awful.util.spawn(i)
+  end
+end
