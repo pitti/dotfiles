@@ -8,10 +8,6 @@ export HISTCONTROL=ignoredups
 export HISTFILE=$HOME/.bash_history
 export HISTSIZE=100000
 
-# permanent hist
-export HISTTIMEFORMAT="%s "
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
-
 # The directory of the rcfiles from the repository (in order to locate the
 # aliases file and import it)
 gitdir=$HOME/.rcfiles
@@ -23,16 +19,13 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-case "$TERM" in
-	xterm*|rxvt*)
-	PROMPT_COMMAND='echo -ne "\033]0;${PWD} - ${USER}@${HOSTNAME}\007"'
-	;;
-	*)
-	;;
-esac
-
 # load prompt from file
 source $gitdir/prompt.sh
+
+# permanent hist
+export HISTTIMEFORMAT="%s "
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
+
 
 export LSCOLORS="dxhxxxxxCxxxxxxb"
 
@@ -50,6 +43,10 @@ fi
 
 if [ -d ~/.local/bin ]; then
 	export PATH=$HOME/bin:$HOME/.local/bin:$PATH
+fi
+
+if [ -d ~/bin ]; then
+	export PATH=$PATH:~/bin
 fi
 
 if [ -d /usr/local/bin ]; then

@@ -30,6 +30,15 @@ bash_prompt_command() {
         NEW_PWD=${NEW_PWD:$pwdoffset:$pwdmaxlen}
         NEW_PWD=${trunc_symbol}/${NEW_PWD#*/}
     fi
+
+		# only update titlebar when we're running in a terminal
+		case "$TERM" in
+			xterm*|rxvt*)
+				echo -ne "\033]0;${NEW_PWD} - ${USER}@${HOSTNAME}\007"
+				;;
+			*)
+				;;
+		esac
 }
 
 bash_prompt() {
