@@ -50,15 +50,10 @@ tags = {}
 
 screentags =  {
 	{
-		names = {"web", "mail", "code", "term", "games", "video", "misc", "vm", "music"}, -- Screen 1 tags
-		layouts = { 1, 1, 1, 1, 2, 2, 2, 2, 1} -- layouts screen 1
-	},
-	{
-		names = {"im", "skype", "term", "misc"}, -- Screen 2 tags
-		layouts = { 2, 2, 1, 2}
+		names = {"web", "mail", "code", "term", "misc", "chat"}, -- Screen 1 tags
+		layouts = { 1, 1, 6, 6, 2, 2} -- layouts screen 1
 	}
 }
-
 
 
 for s = 1, screen.count() do
@@ -151,8 +146,8 @@ netwidget = widget({ type = "textbox" })
 
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 3)
+  .. beautiful.fg_netdn_widget ..'">${wlan0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${wlan0 up_kb}</span>', 3)
 
 
 -- {{{ File system usage
@@ -161,7 +156,7 @@ fsicon.image = image(beautiful.widget_fs)
 -- Initialize widgets
 fs = {
   r = awful.widget.progressbar(),
-  h = awful.widget.progressbar(), s = awful.widget.progressbar()
+  h = awful.widget.progressbar()
 }
 -- Progressbar properties
 for _, w in pairs(fs) do
@@ -180,7 +175,6 @@ vicious.cache(vicious.widgets.fs)
 -- Register widgets
 vicious.register(fs.r, vicious.widgets.fs, "${/ used_p}",     599)
 vicious.register(fs.h, vicious.widgets.fs, "${/home used_p}", 599)
-vicious.register(fs.s, vicious.widgets.fs, "${/stuff used_p}", 599)
 -- }}}
 --
 -- }}}
@@ -282,42 +276,23 @@ for s = 1, screen.count() do
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox below
-		if s == 1 then
-			mywibox[s].widgets = {
-				{
-					mytaglist[s], separator,
-					mypromptbox[s],
-					layout = awful.widget.layout.horizontal.leftright
-				},
-				mylayoutbox[s],
-				separator, mytextclock,
-				separator, membar.widget, memicon,
-				separator, tzswidget, cpugraph.widget, cpuicon,
-				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-				separator, upicon, netwidget, dnicon,
-				separator, mytasklist[s],
-				layout = awful.widget.layout.horizontal.rightleft
-			}
-		end
 
-		if s == 2 then
-			mywibox[s].widgets = {
-				{
-					mytaglist[s], separator,
-					mypromptbox[s],
-					layout = awful.widget.layout.horizontal.leftright
-				},
-				mylayoutbox[s],
-				separator, mytextclock,
-				mysystray,
-				separator,
-				mpdwidget,
-				separator,
-				mytasklist[s],
-				layout = awful.widget.layout.horizontal.rightleft
-			}
-		end
-
+    mywibox[s].widgets = {
+      {
+        mytaglist[s], separator,
+        mypromptbox[s],
+        layout = awful.widget.layout.horizontal.leftright
+      },
+      mylayoutbox[s],
+      separator, mytextclock,
+      separator, mysystray,
+      separator, membar.widget, memicon,
+      separator, tzswidget, cpugraph.widget, cpuicon,
+      separator, fs.h.widget, fs.r.widget, fsicon,
+      separator, upicon, netwidget, dnicon,
+      separator, mytasklist[s],
+      layout = awful.widget.layout.horizontal.rightleft
+    }
 end
 
 -- {{{ Mouse bindings
