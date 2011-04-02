@@ -21,3 +21,6 @@
 [submodule "bundle/delimitMate"]
 	path = bundle/delimitMate
 	url = https://github.com/Raimondi/delimitMate
+[submodule "bundle/solarized-colorscheme"]
+	path = bundle/solarized-colorscheme
+	url = https://github.com/altercation/vim-colors-solarized.git
