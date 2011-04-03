@@ -213,6 +213,8 @@ mpdwidget = widget({ type = "textbox" })
 vicious.register(mpdwidget, vicious.widgets.mpd, 
 '<span color="#9aacc3">${Artist} -</span><span color="#bb77a4"> ${Title}</span> [<span color="#92ac68">${Album}</span>] ', 1)
 
+
+
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
@@ -295,6 +297,7 @@ for s = 1, screen.count() do
 				separator, tzswidget, cpugraph.widget, cpuicon,
 				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
 				separator, upicon, netwidget, dnicon,
+				-- separator, volwidget,
 				separator, mytasklist[s],
 				layout = awful.widget.layout.horizontal.rightleft
 			}
@@ -383,7 +386,11 @@ globalkeys = awful.util.table.join(
                   mypromptbox[mouse.screen].widget,
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
-              end)
+              end),
+    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("amixer -q set Master toggle")end),
+    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q set Master 1000+") end),
+    awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q set Master 1000-") end)
+
 )
 
 clientkeys = awful.util.table.join(
