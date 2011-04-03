@@ -82,7 +82,7 @@ bash_prompt() {
 
     # without colors: PS1="[\u@\h:\${NEW_PWD}]\\$ "
     # extra backslash in front of \$ to make bash colorize the prompt
-    PS1="${EMK}[${UC}\u${EMK}@${UC}\h${EMK}:${C}\${NEW_PWD}${Y}${GITPS1}${EMK}]${UC}\\$ ${NONE}"
+    PS1="${B}[${UC}\u${B}@${UC}\h${B}:${C}\${NEW_PWD}${Y}${GITPS1}${B}]${UC}\\$ ${NONE}"
     PS2="${W}-${EMK}-${NONE} "
 }
 

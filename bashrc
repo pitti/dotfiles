@@ -22,12 +22,13 @@ shopt -s checkwinsize
 # load prompt from file
 source $gitdir/prompt.sh
 
-# permanent hist
-export HISTTIMEFORMAT="%s "
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND ; }"'echo $$ $USER \ "$(history 1)" >> ~/.bash_permanent_history'
-
-
-export LSCOLORS="dxhxxxxxCxxxxxxb"
+if [ "$TERM" != "dumb" ] && [ -x /bin/dircolors ]; then
+	eval "`dircolors -b`"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgrep='fgrep --color=auto'
+	alias egrep='egrep --color=auto'
+fi
 
 HOST=`uname`
 

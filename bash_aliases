@@ -3,8 +3,6 @@ alias svim="sudo gvim"
 
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' 
 
-alias ls='ls --color'
-
 alias ll='ls -hla'
 alias la='ls -A'
 alias l='ls -lh'
