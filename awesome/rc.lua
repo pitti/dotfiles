@@ -51,11 +51,11 @@ tags = {}
 screentags =  {
 	{
 		names = {"web", "mail", "code", "term", "games", "video", "misc", "vm", "music"}, -- Screen 1 tags
-		layouts = { 1, 1, 6, 6, 2, 2, 2, 2, 1} -- layouts screen 1
+		layouts = { 1, 1, 1, 1, 2, 2, 2, 2, 1} -- layouts screen 1
 	},
 	{
 		names = {"im", "skype", "term", "misc"}, -- Screen 2 tags
-		layouts = { 2, 2, 6, 6}
+		layouts = { 2, 2, 1, 2}
 	}
 }
 
@@ -506,9 +506,7 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 do
   local cmds = 
   { 
-    "gnome-settings-daemon",
-    "gnome-power-manager",
-    "dbus-launch gnome-do"
+    "kupfer"
   }
 
   for _,i in pairs(cmds) do
