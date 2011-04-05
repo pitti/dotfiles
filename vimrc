@@ -185,7 +185,8 @@ map <silent> <c-l> :silent nohl<cr>
 " Use 256 colors.
 set t_Co=256
 
-colorscheme lucius
+set background=dark
+colorscheme solarized
 
 " Statusline color
 hi StatusLine cterm=bold,reverse
