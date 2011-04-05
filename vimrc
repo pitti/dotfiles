@@ -120,7 +120,7 @@ let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule_pdf='evince'
 
 " Switch to the path when editing a file
-autocmd BufEnter * lcd %:p:h
+" autocmd BufEnter * lcd %:p:h
 
 " Center screen on search result
 nmap n nzz
