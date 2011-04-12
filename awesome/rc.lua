@@ -387,9 +387,9 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
-    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("amixer -q set Master toggle")end),
-    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q set Master 1000+") end),
-    awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q set Master 1000-") end)
+    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
+    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
+    awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)
 
 )
 
@@ -510,13 +510,13 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 --
 --
-do
-  local cmds = 
-  { 
-    "kupfer"
-  }
-
-  for _,i in pairs(cmds) do
-    awful.util.spawn(i)
-  end
-end
+-- do
+--   local cmds = 
+--   { 
+--     "kupfer"
+--   }
+-- 
+--   for _,i in pairs(cmds) do
+--     awful.util.spawn(i)
+--   end
+-- end
