@@ -42,8 +42,11 @@
 	svnpull = "!git svn fetch; git merge git-svn"
 	lc = "!git reflog show | grep '}: commit' | nl | sort -nr | nl | sort -nr | \
 	cut --fields=1,3 | sed s/commit://g | sed -e 's/HEAD*@{[0-9]*}://g'"
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	ff = merge --ff-only
 
 [push]
+	default = tracking
 	default = current
 
 [branch]
