@@ -63,6 +63,7 @@ done
 
 # Fix Java applications for awesome wm
 export AWT_TOOLKIT=MToolkit
+export _JAVA_OPTIONS="-Dswing.aatext=true -Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel"
 
 export JAVA_HOME=/opt/java
 
