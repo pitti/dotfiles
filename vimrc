@@ -182,12 +182,6 @@ map <silent> <c-l> :silent nohl<cr>
 " Fold highlight color
 " hi Folded ctermbg=black ctermfg=cyan
 
-" Use 256 colors.
-set t_Co=256
-
-set background=dark
-colorscheme solarized
-
 " Statusline color
 hi StatusLine cterm=bold,reverse
 
@@ -336,3 +330,10 @@ inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-y>  neocomplcache#close_popup()
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
+
+
+" Use 256 colors.
+set t_Co=256
+
+set background=dark
+colorscheme lucius
