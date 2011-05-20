@@ -1,4 +1,5 @@
 " vimrc. most things ripped from other vimrcs.
+filetype off
 
 set encoding=utf8
 set backspace=2 " backspace  everything
@@ -89,11 +90,23 @@ set autoread
 
 
 
-" plugin to handle vim plugins in separate directories.
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" vundle plugin to handle vim plugins as modules.
 
-filetype plugin on
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'Shougo/neocomplcache.git'
+Bundle 'tpope/vim-fugitive'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'Raimondi/delimitMate'
+Bundle 'FSwitch'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'tmallen/proj-vim.git'
+Bundle 'vim-scripts/VisIncr.git'
+Bundle 'taglist.vim'
+
 filetype plugin indent on
 
 " Spellcheck settings
