@@ -77,8 +77,10 @@ bash_prompt() {
     local UC=$W                 # user's color
     [ $UID -eq "0" ] && UC=$R   # root's color
 
+    local GITPS1=''
+
     # handle git branches
-    local GITPS1='$(__maybe_git_ps1 ":%s" )'
+    type -t __git_ps1 && local GITPS1='$(__maybe_git_ps1 ":%s" )'
 
     # without colors: PS1="[\u@\h:\${NEW_PWD}]\\$ "
     # extra backslash in front of \$ to make bash colorize the prompt
@@ -107,12 +109,12 @@ __maybe_git_ps1()
 }
 
 case "$TERM" in
-	xterm*|rxvt*)
-		PROMPT_COMMAND='echo -ne "\033]0;${PWD} - ${USER}@${HOSTNAME}\007"; bash_prompt_command'
-	;;
-	*)
-		PROMPT_COMMAND=bash_prompt_command
-	;;
+  xterm*|rxvt*)
+  PROMPT_COMMAND='echo -ne "\033]0;${PWD} - ${USER}@${HOSTNAME}\007"; bash_prompt_command'
+  ;;
+  *)
+  PROMPT_COMMAND=bash_prompt_command
+  ;;
 esac
 
 bash_prompt
