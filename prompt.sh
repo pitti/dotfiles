@@ -80,7 +80,7 @@ bash_prompt() {
     local GITPS1=''
 
     # handle git branches
-    type -t __git_ps1 && local GITPS1='$(__maybe_git_ps1 ":%s" )'
+    type -t __git_ps1 2>&1 > /dev/null && local GITPS1='$(__maybe_git_ps1 ":%s" )'
 
     # without colors: PS1="[\u@\h:\${NEW_PWD}]\\$ "
     # extra backslash in front of \$ to make bash colorize the prompt
