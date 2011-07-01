@@ -11,7 +11,9 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/klmann/.config/awesome/zenburn.lua")
+beautiful.init("/home/klmann/.config/awesome/mycol.lua")
+
+
 -- You can use your own command to set your wallpaper
 
 -- This is used later as the default terminal and editor to run.
