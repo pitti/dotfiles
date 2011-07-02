@@ -31,7 +31,12 @@ set shellslash
 set modelines=1
 let mapleader = ","
 syntax on
-set number
+" show relative line number instead of absilute number
+set relativenumber
+
+" Map <tab> to match parenthesis.
+nnoremap <tab> %
+vnoremap <tab> %et relativenumber
 
 " Enable the representation of special chars
 set listchars=tab:▸\ ,eol:¬,trail:☠
@@ -176,6 +181,7 @@ map <F11> :cn<CR>
 
 " Easy formatting of text
 map Q gq
+nnoremap <Leader>q gqip
 
 " <C-F12> for ctags file
 map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
