@@ -349,4 +349,4 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 set t_Co=256
 
 set background=dark
-colorscheme lucius
+colorscheme molokai2
