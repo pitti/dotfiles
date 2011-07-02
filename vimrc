@@ -104,8 +104,11 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'FSwitch'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'tmallen/proj-vim.git'
+Bundle 'kogakure/vim-sparkup'
 Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'Align'
 
 filetype plugin indent on
 
