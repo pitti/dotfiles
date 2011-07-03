@@ -31,8 +31,10 @@ set shellslash
 set modelines=1
 let mapleader = ","
 syntax on
+
+set number
 " show relative line number instead of absilute number
-set relativenumber
+" set relativenumber
 
 " Map <tab> to match parenthesis.
 nnoremap <tab> %
