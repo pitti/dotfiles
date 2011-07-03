@@ -38,7 +38,7 @@ set number
 
 " Map <tab> to match parenthesis.
 nnoremap <tab> %
-vnoremap <tab> %et relativenumber
+vnoremap <tab> %
 
 " Enable the representation of special chars
 set listchars=tab:▸\ ,eol:¬,trail:☠
