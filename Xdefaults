@@ -18,10 +18,10 @@ Xft.hinting: 1
 Xft.antialias: 1
 Xft.rgba: rgb
 
-urxvt*font:             xft:Bitstream Vera Sans Mono:size=9
-urxvt*boldFont:         xft:Bitstream Vera Sans Mono:bold:size=9
-urxvt*italicFont:       xft:Bitstream Vera Sans Mono:italic:size=9
-urxvt*boldItalicFont:   xft:Bitstream Vera Sans Mono:bold:italic:size=9
+urxvt*font:             xft:DejaVu Sans Mono:size=9
+urxvt*boldFont:         xft:DejaVu Sans Mono:bold:size=9
+urxvt*italicFont:       xft:DejaVu Sans Mono:italic:size=9
+urxvt*boldItalicFont:   xft:DejaVu Sans Mono:bold:italic:size=9
 urxvt*letterSpace: -1
 
 ! Colors urxvt
