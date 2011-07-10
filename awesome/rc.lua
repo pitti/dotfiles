@@ -11,7 +11,9 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/klmann/.config/awesome/zenburn.lua")
+beautiful.init("/home/klmann/.config/awesome/mycol.lua")
+
+
 -- You can use your own command to set your wallpaper
 
 -- This is used later as the default terminal and editor to run.
@@ -361,6 +363,13 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
+
+    awful.key( { }, "XF86AudioPrev",        function () awful.util.spawn("banshee --previous", false)end),
+    awful.key( { }, "XF86AudioNext", function () awful.util.spawn("banshee --next", false) end),
+    awful.key( { }, "XF86AudioPlay", function () awful.util.spawn("banshee --toggle-playing", false) end),
+
+    awful.key( { }, "XF86PowerOff", function () awful.util.spawn("sudo pm-suspend", false) end),
+
     awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
     awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
     awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)

@@ -1,6 +1,6 @@
 [user]
 	name = Philipp Ittershagen
-	email = philipp.ittershagen@uni-oldenburg.de
+	email = Philipp.Ittershagen@Informatik.Uni-Oldenburg.DE
 
 
 [core]
@@ -44,6 +44,9 @@
 	cut --fields=1,3 | sed s/commit://g | sed -e 's/HEAD*@{[0-9]*}://g'"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	ff = merge --ff-only
+	ff = merge --ff-only
+	pullfrom = "!f() { reponame=$(basename $(git rev-parse --show-toplevel)); \
+		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
 
 [push]
 	default = tracking
@@ -58,8 +61,8 @@
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
 
-[url "git+ssh://gardasee.informatik.uni-oldenburg.de/user/proj/misc/pgfekfa/gitroot"]
+[url "git+ssh://bodensee.informatik.uni-oldenburg.de/user/proj/misc/pgfekfa/gitroot"]
 	insteadOf = pg:
 
-[url "git+ssh://gardasee.informatik.uni-oldenburg.de/user/stud/s06/klmann/git-repos"]
+[url "git+ssh://bodensee.informatik.uni-oldenburg.de/user/stud/s06/klmann/git-repos"]
 	insteadOf = arbi:
