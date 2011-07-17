@@ -142,6 +142,10 @@ let Tlist_Use_Right_Window = 1
 let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule_pdf='evince'
+let g:tex_indent_items=1
+
+" Command-T settings
+let g:CommandTMatchWindowReverse = 1
 
 " Switch to the path when editing a file
 " autocmd BufEnter * lcd %:p:h
