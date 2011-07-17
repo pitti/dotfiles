@@ -116,6 +116,7 @@ Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
+Bundle 'sjbach/lusty'
 
 filetype plugin indent on
 
