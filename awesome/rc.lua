@@ -52,12 +52,12 @@ tags = {}
 
 screentags =  {
 	{
-		names = {"web", "mail", "code", "term", "games", "video", "misc", "vm", "music"}, -- Screen 1 tags
-		layouts = { 1, 1, 1, 1, 2, 2, 2, 2, 1} -- layouts screen 1
+		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
+		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
 	},
 	{
-		names = {"im", "skype", "term", "misc"}, -- Screen 2 tags
-		layouts = { 2, 2, 1, 2}
+		names = {"im", "skype", "term", "misc", "5", "6", "7", "8", "9"}, -- Screen 2 tags
+		layouts = { 2, 2, 1, 2, 1, 1, 1, 1, 1}
 	}
 }
 
@@ -211,10 +211,6 @@ vicious.register(fs.s, vicious.widgets.fs, "${/stuff used_p}", 599)
 -- 
 -- 
 -- 
-mpdwidget = widget({ type = "textbox" })
-vicious.register(mpdwidget, vicious.widgets.mpd, 
-'<span color="#9aacc3">${Artist} -</span><span color="#bb77a4"> ${Title}</span> [<span color="#92ac68">${Album}</span>] ', 1)
-
 
 
 -- {{{ Wibox
@@ -315,8 +311,6 @@ for s = 1, screen.count() do
 				mylayoutbox[s],
 				separator, mytextclock,
 				mysystray,
-				separator,
-				mpdwidget,
 				separator,
 				mytasklist[s],
 				layout = awful.widget.layout.horizontal.rightleft
