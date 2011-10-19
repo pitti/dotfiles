@@ -131,7 +131,7 @@ cpugraph:set_gradient_angle(0):set_gradient_colors({
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1C", 19, { "coretemp.0", "core" } );
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core" } );
 
 -- {{{ Memory usage
 memicon = widget({ type = "imagebox" })
