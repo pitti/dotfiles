@@ -493,7 +493,9 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- {{{ Rules
+-- {{{ Rules,
+--
+--
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -511,7 +513,10 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
-		{ rule = { class = "Pidgin" }, properties = { tag = tags[2][1]}},
+    { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][1]}},
+    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][1]}},
+    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][screen.count()]}},
+    { rule = { class = "Chromium" },    properties = { tag = tags[1][1]}},
 
     --   properties = { tag = tags[1][2] } },
 }
