@@ -50,6 +50,7 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {}
 
+if screen.count() > 1 then
 screentags =  {
 	{
 		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
@@ -61,6 +62,16 @@ screentags =  {
 	}
 }
 
+else
+
+screentags =  {
+	{
+		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
+		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
+	}
+}
+
+end
 
 
 for s = 1, screen.count() do
@@ -153,8 +164,8 @@ netwidget = widget({ type = "textbox" })
 
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 3)
+  .. beautiful.fg_netdn_widget ..'">${lan0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${lan0 up_kb}</span>', 3)
 
 
 -- {{{ File system usage
@@ -282,40 +293,62 @@ for s = 1, screen.count() do
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox below
-		if s == 1 then
-			mywibox[s].widgets = {
-				{
-					mytaglist[s], separator,
-					mypromptbox[s],
-					layout = awful.widget.layout.horizontal.leftright
-				},
-				mylayoutbox[s],
-				separator, mytextclock,
-				separator, membar.widget, memicon,
-				separator, tzswidget, cpugraph.widget, cpuicon,
-				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-				separator, upicon, netwidget, dnicon,
-				-- separator, volwidget,
-				separator, mytasklist[s],
-				layout = awful.widget.layout.horizontal.rightleft
-			}
-		end
+    if screen.count() > 1 then
+      if s == 1 then
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          separator, membar.widget, memicon,
+          separator, tzswidget, cpugraph.widget, cpuicon,
+          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+          separator, upicon, netwidget, dnicon,
+          -- separator, volwidget,
+          separator, mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+      end
 
-		if s == 2 then
-			mywibox[s].widgets = {
-				{
-					mytaglist[s], separator,
-					mypromptbox[s],
-					layout = awful.widget.layout.horizontal.leftright
-				},
-				mylayoutbox[s],
-				separator, mytextclock,
-				mysystray,
-				separator,
-				mytasklist[s],
-				layout = awful.widget.layout.horizontal.rightleft
-			}
-		end
+      if s == 2 then
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          mysystray,
+          separator,
+          mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+      end
+      -- non-dualhead config
+    else
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          mysystray,
+          separator, membar.widget, memicon,
+          separator, tzswidget, cpugraph.widget, cpuicon,
+          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+          separator, upicon, netwidget, dnicon,
+          -- separator, volwidget,
+          separator, mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+
+    end
 
 end
 
