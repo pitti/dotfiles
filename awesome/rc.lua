@@ -50,6 +50,9 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {}
 
+mailtag = 2
+webtag = 1
+
 if screen.count() > 1 then
 screentags =  {
 	{
@@ -62,14 +65,20 @@ screentags =  {
 	}
 }
 
+imtag = 1
+skypetag = 2
+
 else
 
 screentags =  {
 	{
-		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
-		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
+		names = {"web", "mail", "3", "4", "5", "6", "im", "fs", "music"}, -- Screen 1 tags
+		layouts = { 1, 1, 1, 1, 1, 1, 2, 2, 1} -- layouts screen 1
 	}
 }
+
+imtag = 7
+skypetag = 7
 
 end
 
@@ -513,10 +522,10 @@ awful.rules.rules = {
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
-    { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][1]}},
-    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][1]}},
-    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][screen.count()]}},
-    { rule = { class = "Chromium" },    properties = { tag = tags[1][1]}},
+    { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
+    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][skypetag]}},
+    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
+    { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
 
     --   properties = { tag = tags[1][2] } },
 }
