@@ -33,6 +33,7 @@
 
 [alias]
 	ci = commit
+	pa = push --all
 	s = status -sb
 	prune-all = !git remote | xargs -n 1 git remote prune
 	gl = log --oneline --decorate --stat --graph
