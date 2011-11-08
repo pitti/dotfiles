@@ -291,11 +291,6 @@ for s = 1, screen.count() do
 				},
 				mylayoutbox[s],
 				separator, mytextclock,
-				separator, membar.widget, memicon,
-				separator, tzswidget, cpugraph.widget, cpuicon,
-				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-				separator, upicon, netwidget, dnicon,
-				-- separator, volwidget,
 				separator, mytasklist[s],
 				layout = awful.widget.layout.horizontal.rightleft
 			}
@@ -311,6 +306,11 @@ for s = 1, screen.count() do
 				mylayoutbox[s],
 				separator, mytextclock,
 				mysystray,
+				separator, membar.widget, memicon,
+				separator, tzswidget, cpugraph.widget, cpuicon,
+				separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+				separator, upicon, netwidget, dnicon,
+				-- separator, volwidget,
 				separator,
 				mytasklist[s],
 				layout = awful.widget.layout.horizontal.rightleft
