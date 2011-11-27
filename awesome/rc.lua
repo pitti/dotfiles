@@ -50,6 +50,10 @@ layouts =
 -- Define a tag table which hold all screen tags.
 tags = {}
 
+mailtag = 2
+webtag = 1
+
+if screen.count() > 1 then
 screentags =  {
 	{
 		names = {"web", "mail", "code", "term", "misc", "chat"}, -- Screen 1 tags
@@ -57,6 +61,22 @@ screentags =  {
 	}
 }
 
+imtag = 1
+skypetag = 2
+
+else
+
+screentags =  {
+	{
+		names = {"web", "mail", "3", "4", "5", "6", "im", "fs", "music"}, -- Screen 1 tags
+		layouts = { 1, 1, 1, 1, 1, 1, 2, 2, 1} -- layouts screen 1
+	}
+}
+
+imtag = 7
+skypetag = 7
+
+end
 
 for s = 1, screen.count() do
 	for l = 1, #screentags[s].layouts do
@@ -115,7 +135,7 @@ cpugraph:set_gradient_angle(0):set_gradient_colors({
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1C", 19, { "coretemp.0", "core" } );
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core" } );
 
 -- {{{ Memory usage
 memicon = widget({ type = "imagebox" })
@@ -205,10 +225,6 @@ vicious.register(fs.h, vicious.widgets.fs, "${/home used_p}", 599)
 -- 
 -- 
 -- 
-mpdwidget = widget({ type = "textbox" })
-vicious.register(mpdwidget, vicious.widgets.mpd, 
-'<span color="#9aacc3">${Artist} -</span><span color="#bb77a4"> ${Title}</span> [<span color="#92ac68">${Album}</span>] ', 1)
-
 
 
 -- {{{ Wibox
@@ -280,7 +296,6 @@ for s = 1, screen.count() do
     -- Create the wibox
     mywibox[s] = awful.wibox({ position = "top", screen = s })
     -- Add widgets to the wibox below
-
     mywibox[s].widgets = {
       {
         mytaglist[s], separator,
@@ -440,7 +455,9 @@ clientbuttons = awful.util.table.join(
 root.keys(globalkeys)
 -- }}}
 
--- {{{ Rules
+-- {{{ Rules,
+--
+--
 awful.rules.rules = {
     -- All clients will match this rule.
     { rule = { },
@@ -457,6 +474,12 @@ awful.rules.rules = {
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
+    --   properties = { tag = tags[1][2] } },
+    { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
+    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][skypetag]}},
+    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
+    { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
+
     --   properties = { tag = tags[1][2] } },
 }
 -- }}}
