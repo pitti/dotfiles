@@ -312,10 +312,6 @@ for s = 1, screen.count() do
           },
           mylayoutbox[s],
           separator, mytextclock,
-          separator, membar.widget, memicon,
-          separator, tzswidget, cpugraph.widget, cpuicon,
-          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-          separator, upicon, netwidget, dnicon,
           -- separator, volwidget,
           separator, mytasklist[s],
           layout = awful.widget.layout.horizontal.rightleft
@@ -332,6 +328,10 @@ for s = 1, screen.count() do
           mylayoutbox[s],
           separator, mytextclock,
           mysystray,
+          separator, membar.widget, memicon,
+          separator, tzswidget, cpugraph.widget, cpuicon,
+          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+          separator, upicon, netwidget, dnicon,
           separator,
           mytasklist[s],
           layout = awful.widget.layout.horizontal.rightleft
@@ -346,8 +346,8 @@ for s = 1, screen.count() do
             layout = awful.widget.layout.horizontal.leftright
           },
           mylayoutbox[s],
-          separator, mytextclock,
           mysystray,
+          separator, mytextclock,
           separator, membar.widget, memicon,
           separator, tzswidget, cpugraph.widget, cpuicon,
           separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
@@ -523,7 +523,7 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
-    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][skypetag]}},
+    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
 
