@@ -47,7 +47,7 @@
 		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
 
 [push]
-	default = current
+	default = tracking
 
 [branch]
 	autosetupmerge = true
