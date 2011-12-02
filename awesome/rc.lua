@@ -173,8 +173,8 @@ netwidget = widget({ type = "textbox" })
 
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${lan0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${lan0 up_kb}</span>', 3)
+  .. beautiful.fg_netdn_widget ..'">${eth0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${eth0 up_kb}</span>', 3)
 
 
 -- {{{ File system usage
