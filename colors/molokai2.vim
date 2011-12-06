@@ -65,7 +65,7 @@ hi Ignore          guifg=#808080 guibg=bg
 
 hi Keyword         guifg=#F92672               gui=bold
 hi Label           guifg=#E6DB74               gui=none
-hi Macro           guifg=#C4BE89               gui=italic
+hi Macro           guifg=#C4BE89
 hi SpecialKey      guifg=#66D9EF               gui=italic
 
 hi MatchParen      guifg=#E4E400 guibg=#232728 gui=bold
