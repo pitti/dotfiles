@@ -14,20 +14,20 @@ theme.wallpaper_cmd = { "awsetbg /home/klmann/Wallpaper/current" }
 
 
 -- {{{ Styles
-theme.font      = "Terminus 7"
+theme.font      = "ProggyCleanTT"
 
 -- {{{ Colors
 theme.fg_normal = "#DDDDDD"
 theme.fg_focus  = "#DAA520" -- brown / yellow
 theme.fg_urgent = "#AE4747" -- red
-theme.bg_normal = "#121212" -- dark
-theme.bg_focus  = "#353535" -- grey
+theme.bg_normal = "#000000" -- dark
+theme.bg_focus  = "#121212" -- grey
 theme.bg_urgent = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
 theme.border_width  = 1
-theme.border_focus  = "#6F99B4" -- blue
+theme.border_focus  = "#AFA9A4" -- grey
 theme.border_normal = theme.bg_focus
 theme.border_marked = theme.fg_focus
 -- }}}
