@@ -1,104 +1,20 @@
-URxvt*secondaryScroll: true
-URxvt*scrollBar: false
-URxvt*scrollWithBuffer: true
-URxvt*scrollBar_floating: true
-URxvt*scrollBar_right: false
-URxvt*scrollColor: #000000
-URxvt*saveLines: 1000
-URxvt*eightBitInput: true
+URxvt*scrollBar: off
+
+URxvt*saveLines: 10000
 URxvt*metaSendsEscape: true
-urxvt*termName:		rxvt-256color
+urxvt*termName: rxvt-256color
+URxvt*iconFile: /usr/share/icons/Faenza/apps/scalable/terminal.svg
 
+! Clickable URLs
+URxvt.perl-ext-common:  default,matcher
+URxvt.urlLauncher:      /usr/bin/chromium
+URxvt.matcher.button:   1
 
-
-Xft.autohint: 0
-Xft.lcdfilter:  lcddefault
-Xft.hintstyle:  hintfull
-Xft.hinting: 1
-Xft.antialias: 1
-Xft.rgba: rgb
-
-urxvt*font:             xft:Droid Sans Mono Slashed:size=9
-urxvt*boldFont:         xft:Droid Sans Mono Slashed:bold:size=9
-urxvt*italicFont:       xft:Droid Sans Mono Slashed:italic:size=9
-urxvt*boldItalicFont:   xft:Droid Sans Mono Slashed:bold:italic:size=9
-! urxvt*letterSpace: -1
-
-! Colors urxvt
-! urxvt*foreground: #f2f2f2
-! urxvt*background: #101010
-
-! Normal
-! color0    black
-! color1    red
-! color2    green
-! color3    yellow
-! color4    blue
-! color5    purple
-! color6    cyan
-! color7    white
-
-! urxvt*color0:    #6c6c6c
-! urxvt*color1:    #e9897c
-! urxvt*color2:    #b6e77d
-! urxvt*color3:    #ecebbe
-! urxvt*color4:    #a9cdeb
-! urxvt*color5:    #ea96eb
-! urxvt*color6:    #c9caec
-! urxvt*color7:    #f2f2f2
-! 
-! ! Light
-! ! color8    black
-! ! color9    red
-! ! color10    green
-! ! color11    yellow
-! ! color12    blue
-! ! color13    purple
-! ! color14    cyan
-! ! color15    white
-! 
-! urxvt*color8:    #747474
-! urxvt*color9:    #f99286
-! urxvt*color10:    #c3f786
-! urxvt*color11:    #fcfbcc
-! urxvt*color12:    #b6defb
-! urxvt*color13:    #fba1fb
-! urxvt*color14:    #d7d9fc
-! urxvt*color15:    #e2e2e2
-
-
-! urxvt*foreground:     #DDDDDD
-! urxvt*background:     #121212
-! !black
-! urxvt*color0:         #353535
-! urxvt*color8:         #666666
-! !red
-! urxvt*color1:         #AE4747
-! urxvt*color9:         #EE6363
-! !green
-! urxvt*color2:         #556B2F
-! urxvt*color10:        #9ACD32
-! !brown/yellow
-! urxvt*color3:         #DAA520
-! urxvt*color11:        #FFC125
-! !blue
-! urxvt*color4:         #6F99B4
-! urxvt*color12:        #7C96B0
-! !magenta
-! urxvt*color5:         #8B7B8B
-! urxvt*color13:        #D8BFD8
-! !cyan
-! urxvt*color6:         #A7A15E
-! urxvt*color14:        #F0E68C
-! !white
-! urxvt*color7:         #DDDDDD
-! urxvt*color15:        #FFFFFF
-
-vncviewer.useBGR233: true
+urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
 
 !!colors ripped from rezza: http://metawire.org/~rezza/index.php
 urxvt*foreground:     rgb:dd/dd/dd
-urxvt*background:     rgb:22/22/22
+urxvt*background:     rgb:1b/1e/1f
 !black
 urxvt*color0:         rgb:19/19/19
 urxvt*color8:         rgb:25/25/25
