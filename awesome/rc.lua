@@ -300,7 +300,7 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = "12", screen = s })
     -- Add widgets to the wibox below
     if screen.count() > 1 then
       if s == 1 then
