@@ -30,6 +30,7 @@ set wildmode=list:longest,full
 set shellslash
 set modelines=1
 let mapleader = ","
+set textwidth=78
 syntax on
 
 set number
@@ -41,7 +42,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Enable the representation of special chars
-set listchars=tab:▸\ ,eol:¬,trail:☠
+set listchars=tab:»\ ,eol:¬,trail:·
 set list
 
 " Everything that gets in the "" register also comes to the OS clipboard (the
@@ -116,7 +117,8 @@ Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
-Bundle 'sjbach/lusty'
+Bundle 'Rip-Rip/clang_complete'
+" Bundle 'sjbach/lusty'
 
 filetype plugin indent on
 
