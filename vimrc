@@ -25,8 +25,6 @@ set showmode
 set showmatch
 set statusline=%<[%n]\ %F\ %m%r%y%=%-14.(%l,%c%V%)\ %P
 set timeoutlen=500
-set wildmenu
-set wildmode=list:longest,full
 set shellslash
 set modelines=1
 let mapleader = ","
@@ -177,6 +175,13 @@ nmap n nzz
 
 vnoremap < <gv
 vnoremap > >gv
+
+" Easy buffer navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+noremap <leader>v <C-w>v
 
 " Delete Buffer from Session with Ctrl-C
 nnoremap <silent> <C-c> :bd<CR>
