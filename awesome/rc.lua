@@ -16,7 +16,9 @@ beautiful.init("/home/klmann/.config/awesome/mycol.lua")
 
 -- You can use your own command to set your wallpaper
 
+
 -- This is used later as the default terminal and editor to run.
+wibox_height = 13
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -132,7 +134,7 @@ cpugraph  = awful.widget.graph()
 tzswidget = widget({ type = "textbox" })
 
 -- Graph properties
-cpugraph:set_width(40):set_height(14)
+cpugraph:set_width(40):set_height(wibox_height)
 cpugraph:set_background_color(beautiful.fg_off_widget)
 cpugraph:set_gradient_angle(0):set_gradient_colors({
    beautiful.fg_end_widget, beautiful.fg_center_widget, beautiful.fg_widget
@@ -151,7 +153,7 @@ membar = awful.widget.progressbar()
 
 -- Pogressbar properties
 membar:set_vertical(true):set_ticks(true)
-membar:set_height(12):set_width(8):set_ticks_size(2)
+membar:set_height(wibox_height):set_width(8):set_ticks_size(2)
 membar:set_background_color(beautiful.fg_off_widget)
 membar:set_gradient_colors({ beautiful.fg_widget,
    beautiful.fg_center_widget, beautiful.fg_end_widget
@@ -188,7 +190,7 @@ fs = {
 -- Progressbar properties
 for _, w in pairs(fs) do
   w:set_vertical(true):set_ticks(true)
-  w:set_height(14):set_width(5):set_ticks_size(2)
+  w:set_height(wibox_height):set_width(5):set_ticks_size(2)
   w:set_border_color(beautiful.border_widget)
   w:set_background_color(beautiful.fg_off_widget)
   w:set_gradient_colors({ beautiful.fg_widget,
@@ -300,7 +302,7 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", height = "12", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = wibox_height, screen = s })
     -- Add widgets to the wibox below
     if screen.count() > 1 then
       if s == 1 then
