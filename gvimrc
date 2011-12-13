@@ -1,5 +1,5 @@
 " set guifont=Droid\ Sans\ Mono\ Slashed\ 9
-set guifont=ProggyCleanTT\ 13
+set guifont=ProggyCleanTT\ 12
 
 " highlight lines with >120 chars.
 " highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
