@@ -19,7 +19,7 @@ theme.font      = "ProggyCleanTT"
 -- {{{ Colors
 theme.fg_normal = "#DDDDDD"
 theme.fg_focus  = "#DAA520" -- brown / yellow
-theme.fg_urgent = "#AE4747" -- red
+theme.fg_urgent = "#E12672" -- red
 theme.bg_normal = "#000000" -- dark
 theme.bg_focus  = "#121212" -- grey
 theme.bg_urgent = theme.bg_normal
@@ -43,7 +43,7 @@ theme.fg_widget        = theme.fg_focus -- "#AECF96"
 theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#FF5656"
 theme.fg_off_widget    = "#494B4F"
-theme.fg_netup_widget  = "#7F9F7F"
+theme.fg_netup_widget  = "#83E22E"
 theme.fg_netdn_widget  = theme.fg_urgent
 theme.bg_widget        = theme.bg_normal
 theme.border_widget    = theme.bg_normal
