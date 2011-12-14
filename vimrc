@@ -297,9 +297,6 @@ function! <SID>StripTrailingWhitespaces()
 	call cursor(l, c)
 endfunction
 
-" source kernel specific things when editing kernel-specific files ;)
-autocmd BufRead,BufNewFile /home/klmann/ml410/ba-code/driver/* so /home/klmann/ml410/linux-2.6-xlnx/vimrc-kernel
-
 
 " highlight lines with >120 chars.
 highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
@@ -366,7 +363,7 @@ imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 
 " Pressing <CR> accepts the hightlighted completion
-inoremap <expr><CR>  neocomplcache#smart_close_popup() . "\<CR>"
+" inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
 
 
 inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
