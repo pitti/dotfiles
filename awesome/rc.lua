@@ -16,7 +16,9 @@ beautiful.init("/home/klmann/.config/awesome/mycol.lua")
 
 -- You can use your own command to set your wallpaper
 
+
 -- This is used later as the default terminal and editor to run.
+wibox_height = 13
 terminal = "urxvt"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -127,7 +129,7 @@ cpugraph  = awful.widget.graph()
 tzswidget = widget({ type = "textbox" })
 
 -- Graph properties
-cpugraph:set_width(40):set_height(14)
+cpugraph:set_width(40):set_height(wibox_height)
 cpugraph:set_background_color(beautiful.fg_off_widget)
 cpugraph:set_gradient_angle(0):set_gradient_colors({
    beautiful.fg_end_widget, beautiful.fg_center_widget, beautiful.fg_widget
@@ -146,7 +148,7 @@ membar = awful.widget.progressbar()
 
 -- Pogressbar properties
 membar:set_vertical(true):set_ticks(true)
-membar:set_height(12):set_width(8):set_ticks_size(2)
+membar:set_height(wibox_height):set_width(8):set_ticks_size(2)
 membar:set_background_color(beautiful.fg_off_widget)
 membar:set_gradient_colors({ beautiful.fg_widget,
    beautiful.fg_center_widget, beautiful.fg_end_widget
@@ -183,7 +185,7 @@ fs = {
 -- Progressbar properties
 for _, w in pairs(fs) do
   w:set_vertical(true):set_ticks(true)
-  w:set_height(14):set_width(5):set_ticks_size(2)
+  w:set_height(wibox_height):set_width(5):set_ticks_size(2)
   w:set_border_color(beautiful.border_widget)
   w:set_background_color(beautiful.fg_off_widget)
   w:set_gradient_colors({ beautiful.fg_widget,
@@ -294,24 +296,65 @@ for s = 1, screen.count() do
                                           end, mytasklist.buttons)
 
     -- Create the wibox
-    mywibox[s] = awful.wibox({ position = "top", screen = s })
+    mywibox[s] = awful.wibox({ position = "top", height = wibox_height, screen = s })
     -- Add widgets to the wibox below
-    mywibox[s].widgets = {
-      {
-        mytaglist[s], separator,
-        mypromptbox[s],
-        layout = awful.widget.layout.horizontal.leftright
-      },
-      mylayoutbox[s],
-      separator, mytextclock,
-      separator, mysystray,
-      separator, membar.widget, memicon,
-      separator, tzswidget, cpugraph.widget, cpuicon,
-      separator, fs.h.widget, fs.r.widget, fsicon,
-      separator, upicon, netwidget, dnicon,
-      separator, mytasklist[s],
-      layout = awful.widget.layout.horizontal.rightleft
-    }
+    if screen.count() > 1 then
+      if s == 1 then
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          separator, membar.widget, memicon,
+          separator, tzswidget, cpugraph.widget, cpuicon,
+          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+          separator, upicon, netwidget, dnicon,
+          -- separator, volwidget,
+          separator, mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+      end
+
+      if s == 2 then
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          mysystray,
+          separator,
+          mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+      end
+      -- non-dualhead config
+    else
+        mywibox[s].widgets = {
+          {
+            mytaglist[s], separator,
+            mypromptbox[s],
+            layout = awful.widget.layout.horizontal.leftright
+          },
+          mylayoutbox[s],
+          separator, mytextclock,
+          mysystray,
+          separator, membar.widget, memicon,
+          separator, tzswidget, cpugraph.widget, cpuicon,
+          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
+          separator, upicon, netwidget, dnicon,
+          -- separator, volwidget,
+          separator, mytasklist[s],
+          layout = awful.widget.layout.horizontal.rightleft
+        }
+
+    end
+
 end
 
 -- {{{ Mouse bindings
@@ -476,7 +519,7 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
-    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][skypetag]}},
+    { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
 

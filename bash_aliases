@@ -25,3 +25,6 @@ alias 'g'='gvim --remote-silent'
 alias man='man -P less'
 
 alias texerr='pdflatex -interaction nonstopmode *.tex | grep -i error'
+
+
+alias sysc-env='export SYSTEMC=$HOME/.local'

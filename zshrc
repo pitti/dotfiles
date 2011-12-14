@@ -28,6 +28,11 @@ source $ZSH/oh-my-zsh.sh
 source ~/.rcfiles/bash_aliases
 source ~/.rcfiles/bash_functions
 
+
+# Rehash on every completed command.
+zstyle ":completion:*:commands" rehash 1
+
+
 # key bindings
 autoload zkbd
 zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
