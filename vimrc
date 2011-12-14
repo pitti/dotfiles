@@ -25,11 +25,10 @@ set showmode
 set showmatch
 set statusline=%<[%n]\ %F\ %m%r%y%=%-14.(%l,%c%V%)\ %P
 set timeoutlen=500
-set wildmenu
-set wildmode=list:longest,full
 set shellslash
 set modelines=1
 let mapleader = ","
+set textwidth=78
 syntax on
 
 set number
@@ -41,12 +40,32 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Enable the representation of special chars
-set listchars=tab:▸\ ,eol:¬,trail:☠
+set listchars=tab:»\ ,eol:¬,trail:·
 set list
 
 " Everything that gets in the "" register also comes to the OS clipboard (the
 " "selection & middle click" clipboard)
 set clipboard=unnamed
+
+set wildmenu
+set wildmode=list:longest
+
+" Ignore some files
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.aux,*.out,*.toc                " LaTeX intermediate files
+
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.spl                            " compiled spelling word lists
+set wildignore+=*.sw?                            " Vim swap files
+set wildignore+=*.DS_Store                       " OSX bullshit
+
+
+" Save when losing focus
+au FocusLost * :wa
+
+" Resize splits when the window is resized
+au VimResized * exe "normal! \<c-w>="
 
 " No blinking cursor
 set gcr=a:blinkon0
@@ -116,7 +135,8 @@ Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
-Bundle 'sjbach/lusty'
+Bundle 'Rip-Rip/clang_complete'
+" Bundle 'sjbach/lusty'
 
 filetype plugin indent on
 
@@ -155,6 +175,13 @@ nmap n nzz
 
 vnoremap < <gv
 vnoremap > >gv
+
+" Easy buffer navigation
+noremap <C-h>  <C-w>h
+noremap <C-j>  <C-w>j
+noremap <C-k>  <C-w>k
+noremap <C-l>  <C-w>l
+noremap <leader>v <C-w>v
 
 " Delete Buffer from Session with Ctrl-C
 nnoremap <silent> <C-c> :bd<CR>
