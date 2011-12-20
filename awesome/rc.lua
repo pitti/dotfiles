@@ -19,7 +19,7 @@ beautiful.init("/home/klmann/.config/awesome/mycol.lua")
 
 -- This is used later as the default terminal and editor to run.
 wibox_height = 13
-terminal = "urxvt"
+terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -62,8 +62,8 @@ screentags =  {
 		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
 	},
 	{
-		names = {"im", "skype", "term", "misc", "5", "6", "7", "8", "9"}, -- Screen 2 tags
-		layouts = { 2, 2, 1, 2, 1, 1, 1, 1, 1}
+		names = {"im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
+		layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
 	}
 }
 
