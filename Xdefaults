@@ -1,3 +1,4 @@
+Xft.dpi: 96
 URxvt*scrollBar: off
 
 URxvt*saveLines: 10000

@@ -25,18 +25,12 @@ plugins=(git compleat)
 
 source $ZSH/oh-my-zsh.sh
 
-gitdir=$PWD/.rcfiles
+gitdir=$PWD/.dotfiles
 
 
 source $gitdir/bash_aliases
 [ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
 source $gitdir/bash_functions
-
-
-# Rehash on every completed command.
-zstyle ":completion:*:commands" rehash 1
-
-
 
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
@@ -62,7 +56,6 @@ source $zkbdfile
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 # Customize to your needs...
-export PATH=/home/klmann/bin:/home/klmann/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/share/java/apache-ant/bin:/opt/java/bin:/opt/java/db/bin:/opt/java/jre/bin:/usr/bin/vendor_perl:/usr/lib/perl5/vendor_perl/bin:/usr/bin/core_perl:/usr/local/bin:/opt/java/bin
 
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -72,3 +65,5 @@ export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
 export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
+
+export PATH=/home/klmann/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
