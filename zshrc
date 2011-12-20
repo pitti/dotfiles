@@ -25,8 +25,12 @@ plugins=(git compleat)
 
 source $ZSH/oh-my-zsh.sh
 
-source ~/.rcfiles/bash_aliases
-source ~/.rcfiles/bash_functions
+gitdir=$PWD/.rcfiles
+
+
+source $gitdir/bash_aliases
+[ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
+source $gitdir/bash_functions
 
 
 # Rehash on every completed command.
