@@ -64,5 +64,5 @@
 [url "git+ssh://bodensee.informatik.uni-oldenburg.de/user/stud/s06/klmann/git-repos"]
 	insteadOf = arbi:
 [gui]
-	fontdiff = -family ProggyCleanTT -size 12 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family Terminus -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	spellingdictionary = none

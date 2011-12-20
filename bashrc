@@ -42,6 +42,9 @@ if [ -f $gitdir/bash_aliases ]; then
 	. $gitdir/bash_aliases
 fi
 
+# Private alias file for confidential stuff
+[ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
+
 if [ -d ~/.local/bin ]; then
 	export PATH=$HOME/bin:$HOME/.local/bin:$PATH
 fi
