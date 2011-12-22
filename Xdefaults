@@ -1,3 +1,4 @@
+Xft.dpi: 96
 URxvt*scrollBar: off
 
 URxvt*saveLines: 10000
@@ -10,7 +11,8 @@ URxvt.perl-ext-common:  default,matcher
 URxvt.urlLauncher:      /usr/bin/chromium
 URxvt.matcher.button:   1
 
-urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
+! urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
+urxvt*font: xft:Terminus-10:dpi=81
 
 !!colors ripped from rezza: http://metawire.org/~rezza/index.php
 urxvt*foreground:     rgb:dd/dd/dd
