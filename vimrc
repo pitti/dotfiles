@@ -123,7 +123,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'Shougo/neocomplcache.git'
+" Bundle 'Shougo/neocomplcache.git'
 Bundle 'tpope/vim-fugitive'
 Bundle 'git://git.wincent.com/command-t.git'
 Bundle 'Raimondi/delimitMate'
@@ -376,26 +376,28 @@ let vala_no_tab_space_error = 1
 
 " neocomplcache settings
 
-let g:neocomplcache_snippets_dir = '~/.vim/snippets/'
+" let g:neocomplcache_snippets_dir = '~/.vim/snippets/'
+" 
+" 
+" let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_enable_smart_case = 1
+" let g:neocomplcache_enable_auto_select = 0
+" let g:neocomplcache_enable_camel_case_completion = 1
+" let g:neocomplcache_enable_underbar_completion = 1
+" 
+" " Accept snippets with Ctrl-k
+" imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+" smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+" 
+" " Pressing <CR> accepts the hightlighted completion
+" " inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
+" 
+" 
+" inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
+" inoremap <expr><C-y>  neocomplcache#close_popup()
+" inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
-
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_enable_smart_case = 1
-let g:neocomplcache_enable_auto_select = 0
-let g:neocomplcache_enable_camel_case_completion = 1
-let g:neocomplcache_enable_underbar_completion = 1
-
-" Accept snippets with Ctrl-k
-imap <C-k>     <Plug>(neocomplcache_snippets_expand)
-smap <C-k>     <Plug>(neocomplcache_snippets_expand)
-
-" Pressing <CR> accepts the hightlighted completion
-" inoremap <expr><CR>  neocomplcache#smart_close_popup()."\<CR>"
-
-
-inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplcache#close_popup()
-inoremap <expr><C-e>  neocomplcache#cancel_popup()
+let g:clang_complete_copen = 1
 
 
 " Use 256 colors.
