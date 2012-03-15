@@ -40,6 +40,12 @@ set number
 nnoremap <tab> %
 vnoremap <tab> %
 
+map <F1> <Nop>
+command! Q q
+
+" Disable K looking stuff up
+map K <Nop>
+
 " Enable the representation of special chars
 set listchars=tab:»\ ,eol:¬,trail:·
 set list
