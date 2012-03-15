@@ -49,7 +49,7 @@ set list
 set clipboard=unnamed
 
 set wildmenu
-set wildmode=list:longest
+set wildmode=list:longest,list:full
 
 " Ignore some files
 set wildignore+=.hg,.git,.svn                    " Version control
