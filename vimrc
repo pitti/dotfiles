@@ -173,6 +173,7 @@ let g:tex_indent_items=1
 
 " Command-T settings
 let g:CommandTMatchWindowReverse = 1
+let g:CommandTMaxHeight=50
 
 " Switch to the path when editing a file
 " autocmd BufEnter * lcd %:p:h
