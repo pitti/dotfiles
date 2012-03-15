@@ -152,6 +152,7 @@ set spelllang=de
 let spell_auto_type = "tex,mail"
 let spell_language_list = "english,german"
 let spell_executable ="aspell"
+set spellfile=~/.vim/spell/de.utf-8.add
 map <F2> :set spell!<CR><Bar>:echo "Spell check: " . strpart("OffOn", 3 * &spell, 3)<CR>
 
 " Show only ten suggestions when spell checking a word
