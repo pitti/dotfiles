@@ -1,0 +1,20 @@
+set from = ""
+set folder=""
+set spoolfile= ""
+
+
+set mbox="+mbox"
+set record="+sent"
+set postponed="+postponed"
+set imap_user = ""
+set imap_pass = ""
+
+set my_allmail = "$mbox"
+
+mailboxes =INBOX
+
+set smtp_url = ""
+set smtp_pass = ""
+
+source ~/.muttrc
+
