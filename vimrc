@@ -29,6 +29,7 @@ set shellslash
 set modelines=1
 let mapleader = ","
 set textwidth=78
+set colorcolumn=+1 " Highlight column after textwidth
 syntax on
 
 set number
