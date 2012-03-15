@@ -201,7 +201,7 @@ nnoremap <silent> <C-TAB> :tabn<CR>
 nnoremap <silent> <C-S-TAB> :tabp<CR>
 
 " Use <c-t> to open new tab
-nnoremap <silent> <C-t> :tabnew .<CR>
+nnoremap <silent> <C-w><C-t> :tabnew .<CR>
 
 " removes whitespaces at the end of lines
 nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
