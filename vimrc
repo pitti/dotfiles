@@ -234,6 +234,8 @@ map <F3> :set cursorline!<CR><Bar>:echo "Highlight active cursor line: " . strpa
 " Unset search highlight with <c-L>
 map <silent> <c-l> :silent nohl<cr>
 
+map <leader>s :FSHere<cr>
+
 
 " Search for selected text, forwards or backwards.
 vnoremap <silent> * :<C-U>
