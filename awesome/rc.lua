@@ -529,6 +529,9 @@ awful.rules.rules = {
     { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
+    -- Fullscreen Flash Video
+    { rule = { class = "Exe"}, properties = {floating = true} },
+
 
     --   properties = { tag = tags[1][2] } },
 }
