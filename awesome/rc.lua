@@ -418,7 +418,25 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",
+              function ()
+                  local theme = beautiful.get()
+                  local bg = nil
+                  local fg = nil
+                  local t = awful.tag.selected(scr)
+                  local scr = t.screen
+
+                  awful.prompt.run(
+                    {
+                      prompt = "new tag name: ",
+                      text = t.name,
+                      selectall = true
+                    },
+                    mypromptbox[mouse.screen].widget,
+                    function (name) if name:len() > 0 then t.name = name; end end,
+                    nil,
+                    awful.util.getdir("cache") .. "/history_tags")
+              end),
 
     awful.key({ modkey }, "x",
               function ()
