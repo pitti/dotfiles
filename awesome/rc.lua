@@ -454,7 +454,8 @@ globalkeys = awful.util.table.join(
 
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
-   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)
+   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
+   awful.key( { modkey }, "space", function () awful.util.spawn("dmenu_run", false) end)
 
 )
 
@@ -546,6 +547,9 @@ awful.rules.rules = {
     { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
+    -- Fullscreen Flash Video
+    { rule = { class = "Exe"}, properties = {floating = true} },
+
 
     --   properties = { tag = tags[1][2] } },
 }
