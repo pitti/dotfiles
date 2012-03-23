@@ -55,14 +55,15 @@ tags = {}
 mailtag = 2
 webtag = 1
 
+-- TODO: Read this from file
 if screen.count() > 1 then
 screentags =  {
 	{
-		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
+		names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"}, -- Screen 1 tags
 		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
 	},
 	{
-		names = {"im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
+		names = {"1:im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
 		layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
 	}
 }
@@ -426,14 +427,20 @@ globalkeys = awful.util.table.join(
                   local t = awful.tag.selected(scr)
                   local scr = t.screen
 
+                  local tagname = t.name
+
+                  if t.name:find(":") then
+                    tagname = t.name:sub(t.name:find(":") + 1)
+                  end
+
                   awful.prompt.run(
                     {
                       prompt = "new tag name: ",
-                      text = t.name,
+                      text = tagname,
                       selectall = true
                     },
                     mypromptbox[mouse.screen].widget,
-                    function (name) if name:len() > 0 then t.name = name; end end,
+                    function (name) if name:len() > 0 then t.name = awful.tag.getidx(t) .. ":" .. name; end end,
                     nil,
                     awful.util.getdir("cache") .. "/history_tags")
               end),
