@@ -15,29 +15,29 @@ URxvt.matcher.button:   1
 urxvt*font: xft:Terminus-10:dpi=81
 
 !!colors ripped from rezza: http://metawire.org/~rezza/index.php
-urxvt*foreground:     rgb:dd/dd/dd
-urxvt*background:     rgb:1b/1e/1f
+urxvt*foreground:     rgb:a0/a0/a0
+urxvt*background:     rgb:1b/1d/1e
 !black
-urxvt*color0:         rgb:19/19/19
-urxvt*color8:         rgb:25/25/25
+urxvt*color0:         rgb:1b/1d/1e
+urxvt*color8:         rgb:50/53/54
 !red
-urxvt*color1:         rgb:80/32/32
-urxvt*color9:         rgb:98/2b/2b
+urxvt*color1:         rgb:f9/26/72
+urxvt*color9:         rgb:ff/59/95
 !green
-urxvt*color2:         rgb:5b/76/2f
-urxvt*color10:        rgb:89/b8/3f
+urxvt*color2:         rgb:82/b4/14
+urxvt*color10:        rgb:b6/e3/54
 !brown/yellow
-urxvt*color3:         rgb:aa/99/43
-urxvt*color11:        rgb:ef/ef/60
+urxvt*color3:         rgb:fd/97/1f
+urxvt*color11:        rgb:fe/ed/6c
 !blue
-urxvt*color4:         rgb:32/4c/80
-urxvt*color12:        rgb:2b/4f/98
+urxvt*color4:         rgb:56/c2/d6
+urxvt*color12:        rgb:8c/ed/ff
 !magenta
-urxvt*color5:         rgb:70/6c/9a
-urxvt*color13:        rgb:82/6a/b1
+urxvt*color5:         rgb:8c/54/fe
+urxvt*color13:        rgb:9e/6f/fe
 !cyan
-urxvt*color6:         rgb:92/b1/9e
-urxvt*color14:        rgb:a1/cd/cd
+urxvt*color6:         rgb:46/54/57
+urxvt*color14:        rgb:89/9c/a1
 !white
-urxvt*color7:         rgb:ff/ff/ff
-urxvt*color15:        rgb:dd/dd/dd
+urxvt*color7:         rgb:cc/cc/c6
+urxvt*color15:        rgb:f8/f8/f2

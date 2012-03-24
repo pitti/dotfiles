@@ -55,14 +55,15 @@ tags = {}
 mailtag = 2
 webtag = 1
 
+-- TODO: Read this from file
 if screen.count() > 1 then
 screentags =  {
 	{
-		names = {"web", "mail", "3", "4", "5", "6", "7", "fs", "music"}, -- Screen 1 tags
+		names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"}, -- Screen 1 tags
 		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
 	},
 	{
-		names = {"im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
+		names = {"1:im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
 		layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
 	}
 }
@@ -416,7 +417,31 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",
+              function ()
+                  local theme = beautiful.get()
+                  local bg = nil
+                  local fg = nil
+                  local t = awful.tag.selected(scr)
+                  local scr = t.screen
+
+                  local tagname = t.name
+
+                  if t.name:find(":") then
+                    tagname = t.name:sub(t.name:find(":") + 1)
+                  end
+
+                  awful.prompt.run(
+                    {
+                      prompt = "new tag name: ",
+                      text = tagname,
+                      selectall = true
+                    },
+                    mypromptbox[mouse.screen].widget,
+                    function (name) if name:len() > 0 then t.name = awful.tag.getidx(t) .. ":" .. name; end end,
+                    nil,
+                    awful.util.getdir("cache") .. "/history_tags")
+              end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -434,7 +459,8 @@ globalkeys = awful.util.table.join(
 
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
-   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)
+   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
+   awful.key( { modkey }, "space", function () awful.util.spawn("dmenu_run", false) end)
 
 )
 
@@ -526,6 +552,9 @@ awful.rules.rules = {
     { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
+    -- Fullscreen Flash Video
+    { rule = { class = "Exe"}, properties = {floating = true} },
+
 
     --   properties = { tag = tags[1][2] } },
 }

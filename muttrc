@@ -1,0 +1,70 @@
+# Deafult muttrc for all accounts.
+
+set realname = "Philipp Ittershagen"
+
+# allow mutt to open new imap connection automatically
+unset imap_passive
+
+# keep imap connection alive by polling intermittently (time in seconds)
+set imap_keepalive = 300
+
+set print_command="/usr/bin/muttprint %s -p pdfprinter"
+
+# how often to check for new mail (time in seconds)
+set mail_check = 120
+
+set move="no"                             # Don't move messages from INBOX to mbox
+set copy="yes"                            # Place a copy to sent messages
+set postpone="yes"                        # Postpone messages withrout asking
+set include="yes"                         # Include the message in replies
+set delete=ask-yes                        # Ask before doing a delete
+
+set nomark_old                            # Don't mark unread new msgs as old.
+set mime_forward                          # Forward message as MIME attachments.
+
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+
+set edit_headers
+set editor='gvim -f +/^$ +/^$ -c"set hls" -c"noh"'
+
+set smart_wrap = yes
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+set imap_check_subscribed
+
+set noconfirmappend                       # Just append, don't hassle me.
+set hidden_host                           # Hide host details.
+
+
+# Header stuff
+ignore "Authentication-Results:"
+ignore "DomainKey-Signature:"
+ignore "DKIM-Signature:"
+hdr_order Date From To Cc
+
+ignore *
+unignore from: date subject to cc
+unignore x-mailing-list: posted-to:
+unignore x-mailer:
+
+
+# For better looks
+set markers=no # don't put '+' at the beginning of wrapped lines
+set pager_index_lines= 5 # how large is the index window?
+
+bind editor <space> noop
+macro index gi "<change-folder>$spoolfile<enter>" "Go to inbox"
+macro index ga "<change-folder>$my_allmail<enter>" "Go to all mail"
+macro index gs "<change-folder>$record<enter>" "Go to Sent Mail"
+macro index gd "<change-folder>$postponed<enter>" "Go to drafts"
+
+
+set signature=~/.signature
+set alias_file=~/.mutt/aliases            # Keep aliases in this file.
+
+source ~/.mutt/aliases                    # Load in my aliases.
+source ~/.mutt/colors                    # Load in my aliases.
+auto_view text/html
+
