@@ -55,6 +55,9 @@ source $zkbdfile
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
+# Use "Alt-." for last word of the previous command
+bindkey "\e." insert-last-word
+
 # Customize to your needs...
 
 
