@@ -39,7 +39,7 @@ zstyle ":completion:*:commands" rehash 1
 # key bindings
 autoload zkbd
 zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
-[[ ! -f $zkbdfile ]] && zkbd
+[[ ! -f $zkbdfile ]] && zkbdfile=~/.zkbd/default
 source $zkbdfile
 
 
