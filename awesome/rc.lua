@@ -459,6 +459,8 @@ globalkeys = awful.util.table.join(
 
    awful.key( { }, "XF86PowerOff", function () awful.util.spawn("sudo pm-suspend", false) end),
 
+   awful.key( { modkey, "Control" }, "p", function () awful.util.spawn_with_shell("~/.local/bin/slock-with-pidgin", false) end),
+
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
    awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
