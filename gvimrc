@@ -1,4 +1,3 @@
-" set guifont=Droid\ Sans\ Mono\ Slashed\ 9
 " set guifont=ProggyCleanTT\ 12
 if has('gui_running')
 	set guifont=Droid\ Sans\ Mono\ Slashed\ 9
