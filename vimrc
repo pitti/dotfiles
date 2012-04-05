@@ -210,7 +210,7 @@ nnoremap <silent> <C-TAB> :tabn<CR>
 nnoremap <silent> <C-S-TAB> :tabp<CR>
 
 " Use <c-t> to open new tab
-nnoremap <silent> <C-t> :tabnew .<CR>
+nnoremap <silent> <C-w><C-t> :tabnew .<CR>
 
 " removes whitespaces at the end of lines
 nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
@@ -242,6 +242,8 @@ map <F3> :set cursorline!<CR><Bar>:echo "Highlight active cursor line: " . strpa
 
 " Unset search highlight with <c-L>
 map <silent> <c-l> :silent nohl<cr>
+
+map <leader>s :FSHere<cr>
 
 
 " Search for selected text, forwards or backwards.
@@ -412,7 +414,13 @@ let g:clang_complete_copen = 1
 " Use 256 colors.
 set t_Co=256
 
+" set background=dark
+" colorscheme molokai2
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+let g:solarized_visibility="low"    "default value is normal
+
 set background=dark
 colorscheme solarized
 
-let g:solarized_visibility="low"

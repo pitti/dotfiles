@@ -1,6 +1,7 @@
 " set guifont=ProggyCleanTT\ 12
-" set guifont=Terminus\ 10
-set guifont=Droid\ Sans\ Mono\ Slashed\ 9
+if has('gui_running')
+	set guifont=Droid\ Sans\ Mono\ Slashed\ 9
+endif
 
 " highlight lines with >120 chars.
 " highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
