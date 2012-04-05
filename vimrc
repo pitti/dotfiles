@@ -414,5 +414,11 @@ let g:clang_complete_copen = 1
 " Use 256 colors.
 set t_Co=256
 
+" set background=dark
+" colorscheme molokai2
+" ------------------------------------------------------------------
+" Solarized Colorscheme Config
+" ------------------------------------------------------------------
+let g:solarized_visibility="low"    "default value is normal
 set background=dark
-colorscheme molokai2
+colorscheme solarized
