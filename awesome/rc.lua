@@ -11,14 +11,14 @@ require("vicious")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/klmann/.config/awesome/mycol.lua")
+beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
 
 
 -- You can use your own command to set your wallpaper
 
 
 -- This is used later as the default terminal and editor to run.
-wibox_height = 13
+wibox_height = 12
 terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -136,10 +136,8 @@ tzswidget = widget({ type = "textbox" })
 
 -- Graph properties
 cpugraph:set_width(40):set_height(wibox_height)
-cpugraph:set_background_color(beautiful.fg_off_widget)
-cpugraph:set_gradient_angle(0):set_gradient_colors({
-   beautiful.fg_end_widget, beautiful.fg_center_widget, beautiful.fg_widget
-}) 
+cpugraph:set_background_color(beautiful.bg_widget)
+cpugraph:set_color(beautiful.fg_widget)
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
