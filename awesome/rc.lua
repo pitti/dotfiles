@@ -141,7 +141,7 @@ cpugraph:set_color(beautiful.fg_widget)
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core" } );
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core", "temp2_input" } );
 
 -- {{{ Memory usage
 memicon = widget({ type = "imagebox" })
