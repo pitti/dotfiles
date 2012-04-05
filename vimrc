@@ -413,4 +413,6 @@ let g:clang_complete_copen = 1
 set t_Co=256
 
 set background=dark
-colorscheme molokai2
+colorscheme solarized
+
+let g:solarized_visibility="low"

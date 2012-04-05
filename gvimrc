@@ -6,3 +6,4 @@ set guifont=Droid\ Sans\ Mono\ Slashed\ 9
 " highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
 " match OverLength /\%120v.*/
 
+colorscheme solarized
