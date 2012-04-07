@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="daveverwer"
+export ZSH_THEME="mh"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -39,7 +39,7 @@ zstyle ":completion:*:commands" rehash 1
 # key bindings
 autoload zkbd
 zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
-[[ ! -f $zkbdfile ]] && zkbd
+[[ ! -f $zkbdfile ]] && zkbdfile=~/.zkbd/default
 source $zkbdfile
 
 
@@ -54,6 +54,9 @@ source $zkbdfile
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+# Use "Alt-." for last word of the previous command
+bindkey "\e." insert-last-word
 
 # Customize to your needs...
 

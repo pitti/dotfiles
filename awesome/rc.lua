@@ -17,14 +17,14 @@ menubar.show_categories = true   -- Change to false if you want only programs to
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/klmann/.config/awesome/mycol.lua")
+beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
 
 
 -- You can use your own command to set your wallpaper
 
 
 -- This is used later as the default terminal and editor to run.
-wibox_height = 13
+wibox_height = 12
 terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
@@ -141,14 +141,12 @@ tzswidget = widget({ type = "textbox" })
 
 -- Graph properties
 cpugraph:set_width(40):set_height(wibox_height)
-cpugraph:set_background_color(beautiful.fg_off_widget)
-cpugraph:set_gradient_angle(0):set_gradient_colors({
-   beautiful.fg_end_widget, beautiful.fg_center_widget, beautiful.fg_widget
-}) 
+cpugraph:set_background_color(beautiful.bg_widget)
+cpugraph:set_color(beautiful.fg_widget)
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core" } );
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core", "temp2_input" } );
 
 -- {{{ Memory usage
 memicon = widget({ type = "imagebox" })
@@ -479,6 +477,8 @@ globalkeys = awful.util.table.join(
 --    awful.key( { }, "XF86AudioPlay", function () awful.util.spawn("banshee --toggle-playing", false) end),
 
    awful.key( { }, "XF86PowerOff", function () awful.util.spawn("sudo pm-suspend", false) end),
+
+   awful.key( { modkey, "Control" }, "p", function () awful.util.spawn_with_shell("~/.local/bin/slock-with-pidgin", false) end),
 
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
