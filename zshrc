@@ -25,7 +25,7 @@ plugins=(git compleat)
 
 source $ZSH/oh-my-zsh.sh
 
-gitdir=$PWD/.dotfiles
+gitdir=$PWD/.rcfiles
 
 
 source $gitdir/bash_aliases
