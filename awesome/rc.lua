@@ -9,6 +9,12 @@ require("naughty")
 
 require("vicious")
 
+require("menubar")
+menubar.cache_entries = true
+menubar.app_folders = { "/usr/share/applications/" }
+menubar.show_categories = true   -- Change to false if you want only programs to appear in the menu
+-- menubar.set_icon_theme("theme name")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init("/home/klmann/.config/awesome/mycol.lua")
@@ -460,7 +466,7 @@ globalkeys = awful.util.table.join(
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
    awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
-   awful.key( { modkey }, "space", function () awful.util.spawn("dmenu_run", false) end)
+   awful.key( { modkey }, "space", function () menubar.show() end)
 
 )
 
