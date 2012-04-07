@@ -1,0 +1,3 @@
+[submodule "awesome/menubar"]
+	path = awesome/menubar
+	url = https://github.com/alexander-yakushev/menubar.git
