@@ -95,16 +95,18 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal } 
-                                  }
+mymainmenu = awful.menu({ 
+                          items = { 
+                            { "awesome", myawesomemenu, beautiful.awesome_icon },
+                            { "open terminal", terminal } 
+                          }
                         })
 
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
 
-local spacer         = widget({ type = "textbox", name = "spacer" })
-local separator      = widget({ type = "textbox", name = "separator" })
+local spacer    = widget({ type = "textbox", name = "spacer" })
+local separator = widget({ type = "textbox", name = "separator" })
 
 spacer.text    = " "
 separator.text = " <span foreground='" .. beautiful.border_normal .. "'>•</span> "
@@ -121,7 +123,8 @@ cpugraph:set_background_color(beautiful.bg_widget)
 cpugraph:set_color(beautiful.fg_widget)
 
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core", "temp2_input" } );
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, 
+                 { "coretemp.0", "core", "temp2_input" } );
 
 -- Memory usage
 memicon = widget({ type = "imagebox" })
@@ -492,8 +495,6 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
-    -- Add a titlebar
-    -- awful.titlebar.add(c, { modkey = modkey })
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
