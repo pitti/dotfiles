@@ -132,7 +132,6 @@ cpuicon.image = image(beautiful.widget_cpu)
 
 -- Initialize widgets
 cpugraph  = awful.widget.graph()
-tzswidget = widget({ type = "textbox" })
 
 -- Graph properties
 cpugraph:set_width(40):set_height(wibox_height)
@@ -141,7 +140,6 @@ cpugraph:set_color(beautiful.fg_widget)
 
 -- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, { "coretemp.0", "core", "temp2_input" } );
 
 -- {{{ Memory usage
 memicon = widget({ type = "imagebox" })
@@ -153,10 +151,8 @@ membar = awful.widget.progressbar()
 -- Pogressbar properties
 membar:set_vertical(true):set_ticks(true)
 membar:set_height(wibox_height):set_width(8):set_ticks_size(2)
-membar:set_background_color(beautiful.fg_off_widget)
-membar:set_gradient_colors({ beautiful.fg_widget,
-   beautiful.fg_center_widget, beautiful.fg_end_widget
-}) 
+membar:set_background_color(beautiful.bg_widget)
+membar:set_color(beautiful.fg_widget)
 
 -- Register widget
 vicious.register(membar, vicious.widgets.mem, "$1", 13)
@@ -190,37 +186,10 @@ netwidget = widget({ type = "textbox" })
 
 -- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
-  .. beautiful.fg_netdn_widget ..'">${wlan0 down_kb}</span> <span color="'
-  .. beautiful.fg_netup_widget ..'">${wlan0 up_kb}</span>', 3)
+  .. beautiful.fg_netdn_widget ..'">${lan0 down_kb}</span> <span color="'
+  .. beautiful.fg_netup_widget ..'">${lan0 up_kb}</span>', 3)
 
 
--- {{{ File system usage
-fsicon = widget({ type = "imagebox" })
-fsicon.image = image(beautiful.widget_fs)
--- Initialize widgets
-fs = {
-  r = awful.widget.progressbar(),
-  h = awful.widget.progressbar()
-}
--- Progressbar properties
-for _, w in pairs(fs) do
-  w:set_vertical(true):set_ticks(true)
-  w:set_height(wibox_height):set_width(5):set_ticks_size(2)
-  w:set_border_color(beautiful.border_widget)
-  w:set_background_color(beautiful.fg_off_widget)
-  w:set_gradient_colors({ beautiful.fg_widget,
-     beautiful.fg_center_widget, beautiful.fg_end_widget
-  }) -- Register buttons
-  w.widget:buttons(awful.util.table.join(
-    awful.button({ }, 1, function () exec("rox", false) end)
-  ))
-end -- Enable caching
-vicious.cache(vicious.widgets.fs)
--- Register widgets
-vicious.register(fs.r, vicious.widgets.fs, "${/ used_p}",     599)
-vicious.register(fs.h, vicious.widgets.fs, "${/home used_p}", 599)
--- }}}
---
 -- }}}
 --
 -- {{{ CPU load
@@ -328,10 +297,6 @@ for s = 1, screen.count() do
           },
           mylayoutbox[s],
           separator, mytextclock,
-          separator, membar.widget, memicon,
-          separator, tzswidget, cpugraph.widget, cpuicon,
-          separator, fs.s.widget, fs.h.widget, fs.r.widget, fsicon,
-          separator, upicon, netwidget, dnicon,
           -- separator, volwidget,
           separator, mytasklist[s],
           layout = awful.widget.layout.horizontal.rightleft
@@ -347,9 +312,11 @@ for s = 1, screen.count() do
           },
           mylayoutbox[s],
           separator, mytextclock,
-          mysystray,
-          separator,
-          mytasklist[s],
+          separator, mysystray, 
+          separator, membar.widget, memicon,
+          separator, cpugraph.widget, cpuicon,
+          separator, upicon, netwidget, dnicon,
+          separator, mytasklist[s],
           layout = awful.widget.layout.horizontal.rightleft
         }
       end
@@ -366,8 +333,7 @@ for s = 1, screen.count() do
           mysystray,
           separator, batwidget.widget, baticon,
           separator, membar.widget, memicon,
-          separator, tzswidget, cpugraph.widget, cpuicon,
-          separator, fs.h.widget, fs.r.widget, fsicon,
+          separator, cpugraph.widget, cpuicon,
           separator, upicon, netwidget, dnicon,
           -- separator, volwidget,
           separator, mytasklist[s],
