@@ -121,15 +121,10 @@ mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
 -- }}}
 
 
--- local spacer         = widget({ type = "textbox", name = "spacer" })
--- local separator      = widget({ type = "textbox", name = "separator" })
--- spacer.text    = " "
--- separator.text = " <span foreground='red'>•</span> "
-
--- {{{ Reusable separator
-separator = widget({ type = "imagebox" })
-separator.image = image(beautiful.widget_sep)
--- }}}
+local spacer         = widget({ type = "textbox", name = "spacer" })
+local separator      = widget({ type = "textbox", name = "separator" })
+spacer.text    = " "
+separator.text = " <span foreground='" .. beautiful.border_normal .. "'>•</span> "
 
 -- {{{ CPU usage and temperature
 cpuicon = widget({ type = "imagebox" })
