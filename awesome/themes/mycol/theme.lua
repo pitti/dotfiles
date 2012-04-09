@@ -14,7 +14,7 @@ theme.wallpaper_cmd = { "awsetbg /home/klmann/Wallpaper/current" }
 
 
 -- {{{ Styles
-theme.font      = "Terminus 8"
+theme.font      = "Profont 8"
 
 -- {{{ Colors
 theme.fg_normal = "#DDDDDD"
