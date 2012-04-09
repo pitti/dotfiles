@@ -11,6 +11,8 @@ require("vicious")
 
 require("menubar")
 
+require("vain")
+
 menubar.cache_entries = true
 menubar.app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 menubar.show_categories = false
@@ -23,6 +25,8 @@ wibox_height = 12
 terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
+
+vain.widgets.terminal = terminal
 
 
 -- Default modkey.
@@ -85,6 +89,14 @@ for s = 1, screen.count() do
 	-- Each screen has its own tag table.
 	tags[s] = awful.tag(screentags[s].names, s, screentags[s].layouts)
 end
+
+awful.layout.set(vain.layout.termfair, tags[1][3])
+awful.tag.setnmaster(2, tags[1][3])
+awful.tag.setncol(1, tags[1][3])
+
+awful.layout.set(vain.layout.browse, tags[1][1])
+awful.tag.setmwfact(0.7, tags[1][1])
+awful.tag.setncol(2, tags[1][1])
 
 
 -- Create a laucher widget and a main menu
