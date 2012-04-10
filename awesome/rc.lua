@@ -12,7 +12,7 @@ require("vicious")
 require("menubar")
 
 menubar.cache_entries = true
-menubar.app_folders = { "/usr/share/applications/" }
+menubar.app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 menubar.show_categories = false
 
 beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
