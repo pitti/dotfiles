@@ -13,7 +13,7 @@ set print_command="/usr/bin/muttprint %s -p pdfprinter"
 # how often to check for new mail (time in seconds)
 set mail_check = 120
 
-set move="no"                             # Don't move messages from INBOX to mbox
+set move="yes"                            # Move messages from INBOX to mbox when read
 set copy="yes"                            # Place a copy to sent messages
 set postpone="yes"                        # Postpone messages withrout asking
 set include="yes"                         # Include the message in replies
