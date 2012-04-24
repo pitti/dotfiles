@@ -60,6 +60,10 @@ macro index ga "<change-folder>$my_allmail<enter>" "Go to all mail"
 macro index gs "<change-folder>$record<enter>" "Go to Sent Mail"
 macro index gd "<change-folder>$postponed<enter>" "Go to drafts"
 
+macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" "Catchup all new messages"
+macro index .c "<change-folder>^<enter>" "Cleanup current folder"
+
+
 
 set signature=~/.signature
 set alias_file=~/.mutt/aliases            # Keep aliases in this file.
