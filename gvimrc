@@ -7,4 +7,4 @@ endif
 " highlight OverLength ctermbg=red ctermfg=white guibg=#4a1111
 " match OverLength /\%120v.*/
 
-colorscheme solarized
+colorscheme jellybeans

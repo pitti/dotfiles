@@ -143,6 +143,7 @@ Bundle 'taglist.vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'Align'
 Bundle 'Rip-Rip/clang_complete'
+Bundle 'nanotech/jellybeans.vim'
 " Bundle 'sjbach/lusty'
 
 filetype plugin indent on
@@ -410,17 +411,15 @@ let vala_no_tab_space_error = 1
 
 let g:clang_complete_copen = 1
 
+let g:Tex_ViewRule_pdf = 'evince_dbus.py'
+let g:Tex_DefaultTargetFormat = 'pdf'
+let g:Tex_CompileRule_pdf = 'pdflatex --synctex=1 -interaction=nonstopmode $*'
+
 
 " Use 256 colors.
 set t_Co=256
 
-" set background=dark
-" colorscheme molokai2
-" ------------------------------------------------------------------
-" Solarized Colorscheme Config
-" ------------------------------------------------------------------
-let g:solarized_visibility="low"    "default value is normal
 
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
