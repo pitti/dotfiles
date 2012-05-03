@@ -1,74 +1,134 @@
 # Deafult muttrc for all accounts.
 
-set realname = "Philipp Ittershagen"
+set realname      = "Philipp Ittershagen"
 
-# allow mutt to open new imap connection automatically
-unset imap_passive
+set print_command = "/usr/bin/muttprint %s -p pdfprinter"
 
-# keep imap connection alive by polling intermittently (time in seconds)
-set imap_keepalive = 300
+set mbox_type     = Maildir                      # mailbox type
+set folder        = ~/Mail                       # mailbox location
+set spoolfile     = "+Uni/INBOX"                 # Uni is default inbox
 
-set print_command="/usr/bin/muttprint %s -p pdfprinter"
 
-# how often to check for new mail (time in seconds)
-set mail_check = 120
+set mail_check = 0 # how often to check for new mail (s)
+set timeout    = 3
 
-set move="yes"                            # Move messages from INBOX to mbox when read
-set copy="yes"                            # Place a copy to sent messages
-set postpone="yes"                        # Postpone messages withrout asking
-set include="yes"                         # Include the message in replies
-set delete=ask-yes                        # Ask before doing a delete
+set move     # Move messages from INBOX to mbox when read
 
-set nomark_old                            # Don't mark unread new msgs as old.
-set mime_forward                          # Forward message as MIME attachments.
+set envelope_from
 
-set header_cache =~/.mutt/cache/headers
-set message_cachedir =~/.mutt/cache/bodies
-set certificate_file =~/.mutt/certificates
+set sig_dashes
+set fast_reply   # go to reply message without prompting for To:
+set sendmail_wait = -1 # dont't wait for mail to be sent
+
+set askcc
+
+
+set forward_format      = "Fwd: %s"            # format for subject when forwarding
+set forward_decode                             # decode when forwarding
+set attribution         = "On %d, %n wrote:"   # set the attribution
+
+set reverse_name
+
+set forward_quote
+
+
+set postpone                 # Postpone messages withrout asking
+set include                  # Include the message in replies
+set delete=ask-yes           # Ask before doing a delete
+
+set nomark_old               # Don't mark unread new msgs as old.
+
+unset mime_forward           # Don't forward message as MIME attachments.
+
+
+set header_cache     = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set signature        = ~/.signature
+set alias_file       = ~/.mutt/aliases
 
 set edit_headers
-set editor='gvim -f +/^$ +/^$ -c"set hls" -c"noh"'
+
+set editor='vim +/^$ +/^$ -c"set hls" -c"noh"'
 
 set smart_wrap = yes
-set sort = 'threads'
-set sort_aux = 'last-date-received'
-set imap_check_subscribed
+
+set sort     = 'threads'
+set sort_aux = 'reverse-last-date-received'
 
 set noconfirmappend                       # Just append, don't hassle me.
+
 set hidden_host                           # Hide host details.
 
 
 # Header stuff
-ignore "Authentication-Results:"
-ignore "DomainKey-Signature:"
-ignore "DKIM-Signature:"
-hdr_order Date From To Cc
 
 ignore *
 unignore from: date subject to cc
 unignore x-mailing-list: posted-to:
 unignore x-mailer:
 
+hdr_order Date From To Cc
+
 
 # For better looks
 set markers=no # don't put '+' at the beginning of wrapped lines
 set pager_index_lines= 5 # how large is the index window?
 
+set pager_stop  # dont go to next message automatically
+
+
+alternative_order text/plain text/enriched text/html            # save html for last
+
 bind editor <space> noop
-macro index gi "<change-folder>$spoolfile<enter>" "Go to inbox"
-macro index ga "<change-folder>$my_allmail<enter>" "Go to all mail"
-macro index gs "<change-folder>$record<enter>" "Go to Sent Mail"
-macro index gd "<change-folder>$postponed<enter>" "Go to drafts"
 
 macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" "Catchup all new messages"
 macro index .c "<change-folder>^<enter>" "Cleanup current folder"
 
 
+set tilde
 
-set signature=~/.signature
-set alias_file=~/.mutt/aliases            # Keep aliases in this file.
+# bindings
+bind pager i           exit
+bind pager /           search
+bind pager <up>        previous-entry
+bind pager <down>      next-entry
+bind pager k           previous-line
+bind pager j           next-line
+bind pager gg          top
+bind pager G           bottom
+bind index gg          first-entry
+bind index G           last-entry
+bind pager K           previous-undeleted
+bind pager J           next-undeleted
+bind index K           previous-unread
+bind index J           next-unread
+bind index,pager R     group-reply
+bind index,pager <space> next-unread
+
+
+macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
+macro index B   "<limit>~b "                "search message bodies"
+macro index I   "<change-folder>!<enter>"   "go to Inbox"
+
+
+macro index Z   "<shell-escape>/usr/bin/offlineimap -q -o<enter>" "sync IMAP"
+
+macro index,pager <F1>   "<change-folder>=Uni/INBOX<enter>"
+macro index,pager <F2>   "<change-folder>=GMail/INBOX<enter>"
+
 
 source ~/.mutt/aliases                    # Load in my aliases.
 source ~/.mutt/colors                    # Load in my aliases.
+
+source ~/.mutt/account-uni                         # source uni as default
+
+mailboxes +GMail/INBOX +Uni/INBOX 
+
+
 auto_view text/html
+
+
+folder-hook GMail/* source ~/.mutt/account-gmail
+folder-hook Uni/*   source ~/.mutt/account-uni
 
