@@ -134,8 +134,6 @@ cpugraph:set_background_color(beautiful.bg_widget)
 cpugraph:set_color(beautiful.fg_widget)
 
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
-vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, 
-                 { "coretemp.0", "core", "temp2_input" } );
 
 -- Memory usage
 memicon = widget({ type = "imagebox" })
@@ -154,16 +152,6 @@ vicious.register(membar, vicious.widgets.mem, "$1", 13)
 -- Battery usage 
 baticon = widget({ type = "imagebox" })
 baticon.image = image(beautiful.widget_bat)
-
-batwidget = awful.widget.progressbar()
-batwidget:set_vertical(true):set_ticks(true)
-batwidget:set_height(wibox_height):set_width(8):set_ticks_size(2)
-batwidget:set_background_color(beautiful.fg_off_widget)
-batwidget:set_gradient_colors({ beautiful.fg_widget,
-   beautiful.fg_center_widget, beautiful.fg_end_widget
-}) 
-
-vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT1")
 
 -- Network usage
 dnicon = widget({ type = "imagebox" })
@@ -289,7 +277,6 @@ for s = 1, screen.count() do
           mylayoutbox[s],
           separator, mytextclock,
           mysystray,
-          separator, batwidget.widget, baticon,
           separator, membar.widget, memicon,
           separator, cpugraph.widget, cpuicon,
           separator, upicon, netwidget, dnicon,
