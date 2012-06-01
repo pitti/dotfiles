@@ -15,142 +15,37 @@ URxvt.matcher.button:   1
 urxvt*font: xft:Terminus-10:dpi=81
 
 !!colors ripped from rezza: http://metawire.org/~rezza/index.php
-!! urxvt*foreground:     rgb:a0/a0/a0
-!! urxvt*background:     rgb:1b/1d/1e
-!! !black
-!! urxvt*color0:         rgb:1b/1d/1e
-!! urxvt*color8:         rgb:50/53/54
-!! !red
-!! urxvt*color1:         rgb:f9/26/72
-!! urxvt*color9:         rgb:ff/59/95
-!! !green
-!! urxvt*color2:         rgb:82/b4/14
-!! urxvt*color10:        rgb:b6/e3/54
-!! !brown/yellow
-!! urxvt*color3:         rgb:fd/97/1f
-!! urxvt*color11:        rgb:fe/ed/6c
-!! !blue
-!! urxvt*color4:         rgb:56/c2/d6
-!! urxvt*color12:        rgb:8c/ed/ff
-!! !magenta
-!! urxvt*color5:         rgb:8c/54/fe
-!! urxvt*color13:        rgb:9e/6f/fe
-!! !cyan
-!! urxvt*color6:         rgb:46/54/57
-!! urxvt*color14:        rgb:89/9c/a1
-!! !white
-!! urxvt*color7:         rgb:cc/cc/c6
-!! urxvt*color15:        rgb:f8/f8/f2
 
 
-!! drop in Solarized colorscheme for Xresources/Xdefaults
-
-!!SOLARIZED HEX     16/8 TERMCOL  XTERM/HEX   L*A*B      RGB         HSB
-!!--------- ------- ---- -------  ----------- ---------- ----------- -----------
-!!base03    #002b36  8/4 brblack  234 #1c1c1c 15 -12 -12   0  43  54 193 100  21
-!!base02    #073642  0/4 black    235 #262626 20 -12 -12   7  54  66 192  90  26
-!!base01    #586e75 10/7 brgreen  240 #585858 45 -07 -07  88 110 117 194  25  46
-!!base00    #657b83 11/7 bryellow 241 #626262 50 -07 -07 101 123 131 195  23  51
-!!base0     #839496 12/6 brblue   244 #808080 60 -06 -03 131 148 150 186  13  59
-!!base1     #93a1a1 14/4 brcyan   245 #8a8a8a 65 -05 -02 147 161 161 180   9  63
-!!base2     #eee8d5  7/7 white    254 #e4e4e4 92 -00  10 238 232 213  44  11  93
-!!base3     #fdf6e3 15/7 brwhite  230 #ffffd7 97  00  10 253 246 227  44  10  99
-!!yellow    #b58900  3/3 yellow   136 #af8700 60  10  65 181 137   0  45 100  71
-!!orange    #cb4b16  9/3 brred    166 #d75f00 50  50  55 203  75  22  18  89  80
-!!red       #dc322f  1/1 red      160 #d70000 50  65  45 220  50  47   1  79  86
-!!magenta   #d33682  5/5 magenta  125 #af005f 50  65 -05 211  54 130 331  74  83
-!!violet    #6c71c4 13/5 brmagenta 61 #5f5faf 50  15 -45 108 113 196 237  45  77
-!!blue      #268bd2  4/4 blue      33 #0087ff 55 -10 -45  38 139 210 205  82  82
-!!cyan      #2aa198  6/6 cyan      37 #00afaf 60 -35 -05  42 161 152 175  74  63
-!!green     #859900  2/2 green     64 #5f8700 60 -20  65 133 153   0  68 100  60
-
-!! #define S_base03        #002b36
-!! #define S_base02        #073642
-!! #define S_base01        #586e75
-!! #define S_base00        #657b83
-!! #define S_base0         #839496
-!! #define S_base1         #93a1a1
-!! #define S_base2         #eee8d5
-!! #define S_base3         #fdf6e3
-!! #define S_yellow        #b58900
-!! #define S_orange        #cb4b16
-!! #define S_red           #dc322f
-!! #define S_magenta       #d33682
-!! #define S_violet        #6c71c4
-!! #define S_blue          #268bd2
-!! #define S_cyan          #2aa198
-!! #define S_green         #859900
-!! 
-!! urxvt*background:            S_base03
-!! urxvt*foreground:            S_base00
-!! !! urxvt*fading:                40
-!! !! urxvt*fadeColor:             S_base03
-!! urxvt*cursorColor:           S_base1
-!! urxvt*pointerColorBackground:S_base01
-!! urxvt*pointerColorForeground:S_base1
-!! 
-!! !! black dark/light
-!! urxvt*color0:                S_base02
-!! urxvt*color8:                S_base03
-!! 
-!! !! red dark/light
-!! urxvt*color1:                S_red
-!! urxvt*color9:                S_orange
-!! 
-!! !! green dark/light
-!! urxvt*color2:                S_green
-!! urxvt*color10:               S_base01
-!! 
-!! !! yellow dark/light
-!! urxvt*color3:                S_yellow
-!! urxvt*color11:               S_base00
-!! 
-!! !! blue dark/light
-!! urxvt*color4:                S_blue
-!! urxvt*color12:               S_base0
-!! 
-!! !! magenta dark/light
-!! urxvt*color5:                S_magenta
-!! urxvt*color13:               S_violet
-!! 
-!! !! cyan dark/light
-!! urxvt*color6:                S_cyan
-!! urxvt*color14:               S_base1
-!! 
-!! !! white dark/light
-!! urxvt*color7:                S_base2
-!! urxvt*color15:               S_base3
-
-
-*foreground: #D7D0C7
-*background: #151515
+urxvt*foreground: #D7D0C7
+urxvt*background: #151515
 
 !black
 ! *color0:     #AF875F
 ! *color8:     #AF875F
-*color0:     #101010
-*color8:     #404040
+urxvt*color0:     #101010
+urxvt*color8:     #404040
 !red
-*color1:     #E84F4F
-*color9:     #D23D3D
+urxvt*color1:     #E84F4F
+urxvt*color9:     #D23D3D
 !green
-*color2:     #B8D68C
-*color10:    #A0CF5D
+urxvt*color2:     #B8D68C
+urxvt*color10:    #A0CF5D
 !yellow
-*color3:     #E1AA5D
-*color11:    #F39D21
+urxvt*color3:     #E1AA5D
+urxvt*color11:    #F39D21
 !blue
-*color4:     #7DC1CF
-*color12:    #4E9FB1
+urxvt*color4:     #7DC1CF
+urxvt*color12:    #4E9FB1
 !magenta
-*color5:     #9B64FB
-*color13:    #8542FF
+urxvt*color5:     #9B64FB
+urxvt*color13:    #8542FF
 !cyan
-*color6:     #6D878D
-*color14:    #42717B
+urxvt*color6:     #6D878D
+urxvt*color14:    #42717B
 !white
-*color7:     #dddddd
-*color15:    #dddddd
+urxvt*color7:     #dddddd
+urxvt*color15:    #dddddd
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff

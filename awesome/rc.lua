@@ -94,10 +94,6 @@ awful.layout.set(vain.layout.termfair, tags[1][3])
 awful.tag.setnmaster(2, tags[1][3])
 awful.tag.setncol(1, tags[1][3])
 
-awful.layout.set(vain.layout.browse, tags[1][1])
-awful.tag.setmwfact(0.7, tags[1][1])
-awful.tag.setncol(2, tags[1][1])
-
 
 -- Create a laucher widget and a main menu
 myawesomemenu = {
