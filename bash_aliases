@@ -1,4 +1,4 @@
-#!/bin/bash
+
 alias svim="sudo gvim"
 
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"' 
@@ -25,6 +25,10 @@ alias 'g'='gvim --remote-tab-silent'
 alias man='man -P less'
 
 alias texerr='pdflatex -interaction nonstopmode *.tex | grep -i error'
+
+latexmks() {
+	latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
+}
 
 
 alias sysc-env='export SYSTEMC=$HOME/.local'

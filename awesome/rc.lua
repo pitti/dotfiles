@@ -10,17 +10,14 @@ require("naughty")
 require("vicious")
 
 require("menubar")
+
+require("vain")
+
 menubar.cache_entries = true
-menubar.app_folders = { "/usr/share/applications/" }
-menubar.show_categories = true   -- Change to false if you want only programs to appear in the menu
--- menubar.set_icon_theme("theme name")
+menubar.app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
+menubar.show_categories = false
 
--- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
 beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
-
-
--- You can use your own command to set your wallpaper
 
 
 -- This is used later as the default terminal and editor to run.
@@ -29,11 +26,10 @@ terminal = "urxvtc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
+vain.widgets.terminal = terminal
+
+
 -- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
 modkey = "Mod4"
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
@@ -46,48 +42,43 @@ layouts =
     awful.layout.suit.tile.top,        -- 5
     awful.layout.suit.fair,            -- 6
     awful.layout.suit.fair.horizontal, -- 7
-    awful.layout.suit.spiral,          -- 8
-    awful.layout.suit.spiral.dwindle,  -- 9
-    awful.layout.suit.max,             -- 10
-    awful.layout.suit.max.fullscreen,  -- 11
-    awful.layout.suit.magnifier        -- 12
 }
--- }}}
 
--- {{{ Tags
 -- Define a tag table which hold all screen tags.
 tags = {}
 
+
+-- Spawn rules for browser and mail
 mailtag = 2
-webtag = 1
+webtag  = 1
 
 -- TODO: Read this from file
 if screen.count() > 1 then
-screentags =  {
-	{
-		names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"}, -- Screen 1 tags
-		layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1} -- layouts screen 1
-	},
-	{
-		names = {"1:im", "2", "3", "4", "5", "6", "7", "8", "9"}, -- Screen 2 tags
-		layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
-	}
-}
+  screentags =  {
+    {
+      names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"},
+      layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1}
+    },
+    {
+      names = {"1:im", "2", "3", "4", "5", "6", "7", "8", "9"},
+      layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
+    }
+  }
 
-imtag = 1
-skypetag = 2
+  imtag = 1
+  skypetag = 2
 
 else
 
-screentags =  {
-	{
-		names = {"web", "mail", "3", "4", "5", "6", "im", "fs", "music"}, -- Screen 1 tags
-		layouts = { 1, 1, 1, 1, 1, 1, 2, 2, 1} -- layouts screen 1
-	}
-}
+  screentags =  {
+    {
+      names = {"web", "mail", "3", "4", "5", "6", "im", "fs", "music"},
+      layouts = { 1, 1, 1, 1, 1, 1, 2, 2, 1}
+    }
+  }
 
-imtag = 7
-skypetag = 7
+  imtag = 7
+  skypetag = 7
 
 end
 
@@ -99,10 +90,15 @@ for s = 1, screen.count() do
 	tags[s] = awful.tag(screentags[s].names, s, screentags[s].layouts)
 end
 
--- }}}
+awful.layout.set(vain.layout.termfair, tags[1][3])
+awful.tag.setnmaster(2, tags[1][3])
+awful.tag.setncol(1, tags[1][3])
+
+awful.layout.set(vain.layout.browse, tags[1][1])
+awful.tag.setmwfact(0.7, tags[1][1])
+awful.tag.setncol(2, tags[1][1])
 
 
--- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
@@ -111,57 +107,53 @@ myawesomemenu = {
    { "quit", awesome.quit }
 }
 
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
+mymainmenu = awful.menu({ 
+                          items = { 
+                            { "awesome", myawesomemenu, beautiful.awesome_icon },
+                            { "open terminal", terminal } 
+                          }
                         })
 
 mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
                                      menu = mymainmenu })
--- }}}
 
+local spacer    = widget({ type = "textbox", name = "spacer" })
+local separator = widget({ type = "textbox", name = "separator" })
 
-local spacer         = widget({ type = "textbox", name = "spacer" })
-local separator      = widget({ type = "textbox", name = "separator" })
 spacer.text    = " "
 separator.text = " <span foreground='" .. beautiful.border_normal .. "'>•</span> "
 
--- {{{ CPU usage and temperature
+-- CPU usage and temperature
 cpuicon = widget({ type = "imagebox" })
 cpuicon.image = image(beautiful.widget_cpu)
 
--- Initialize widgets
 cpugraph  = awful.widget.graph()
 
--- Graph properties
 cpugraph:set_width(40):set_height(wibox_height)
 cpugraph:set_background_color(beautiful.bg_widget)
 cpugraph:set_color(beautiful.fg_widget)
 
--- Register widgets
 vicious.register(cpugraph,  vicious.widgets.cpu,      "$1")
+vicious.register(tzswidget, vicious.widgets.thermal, " $1°C", 19, 
+                 { "coretemp.0", "core", "temp2_input" } );
 
--- {{{ Memory usage
+-- Memory usage
 memicon = widget({ type = "imagebox" })
 memicon.image = image(beautiful.widget_mem)
 
--- Initialize widget
 membar = awful.widget.progressbar()
 
--- Pogressbar properties
 membar:set_vertical(true):set_ticks(true)
 membar:set_height(wibox_height):set_width(8):set_ticks_size(2)
 membar:set_background_color(beautiful.bg_widget)
 membar:set_color(beautiful.fg_widget)
 
--- Register widget
 vicious.register(membar, vicious.widgets.mem, "$1", 13)
 
 
--- Battery usage widget
+-- Battery usage 
 baticon = widget({ type = "imagebox" })
 baticon.image = image(beautiful.widget_bat)
-
 
 batwidget = awful.widget.progressbar()
 batwidget:set_vertical(true):set_ticks(true)
@@ -173,57 +165,23 @@ batwidget:set_gradient_colors({ beautiful.fg_widget,
 
 vicious.register(batwidget, vicious.widgets.bat, "$2", 61, "BAT1")
 
-
-
--- {{{ Network usage
+-- Network usage
 dnicon = widget({ type = "imagebox" })
 upicon = widget({ type = "imagebox" })
 dnicon.image = image(beautiful.widget_net)
 upicon.image = image(beautiful.widget_netup)
 
--- Initialize widget
 netwidget = widget({ type = "textbox" })
 
--- Register widget
 vicious.register(netwidget, vicious.widgets.net, '<span color="'
   .. beautiful.fg_netdn_widget ..'">${lan0 down_kb}</span> <span color="'
   .. beautiful.fg_netup_widget ..'">${lan0 up_kb}</span>', 3)
 
 
--- }}}
---
--- {{{ CPU load
--- Initialize widget
--- cpuwidget = widget({ type = "textbox" })
--- --
--- -- Register widget
--- vicious.register(cpuwidget, vicious.widgets.cpu, 
---     function (widget, args)
---       return string.format("cpu: %03d", args[1]) .. "%"
---     end)
--- -- }}}
--- -- Memory
--- -- Initialize widget
--- memwidget = widget({ type = "textbox" })
--- -- Register widget
--- vicious.register(memwidget, vicious.widgets.mem, "mem: $1% ($2MB/$3MB)", 13)
--- 
--- 
--- netwidget = widget({ type = "textbox" })
---  -- Register widget
--- vicious.register(netwidget, vicious.widgets.net,
---  'net: <span color="#9aacc3">${eth0 down_kb} kb/s</span> | <span color="#bb77a4">${eth0 up_kb} kb/s</span>', 3)
--- 
--- 
--- 
-
-
--- {{{ Wibox
--- Create a textclock widget
+-- Clock
 mytextclock = awful.widget.textclock({ align = "right" })
 
--- 
--- Create a systray
+-- Systray
 mysystray = widget({ type = "systray" })
 
 -- Create a wibox for each screen and add it
@@ -547,8 +505,6 @@ awful.rules.rules = {
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
 client.add_signal("manage", function (c, startup)
-    -- Add a titlebar
-    -- awful.titlebar.add(c, { modkey = modkey })
 
     -- Enable sloppy focus
     c:add_signal("mouse::enter", function(c)
@@ -576,13 +532,4 @@ client.add_signal("unfocus", function(c) c.border_color = beautiful.border_norma
 -- }}}
 --
 --
--- do
---   local cmds = 
---   { 
---     "kupfer"
---   }
--- 
---   for _,i in pairs(cmds) do
---     awful.util.spawn(i)
---   end
--- end
+-- vim: set et :
