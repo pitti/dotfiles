@@ -82,7 +82,7 @@ alternative_order text/plain text/enriched text/html            # save html for 
 
 bind editor <space> noop
 
-macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" "Catchup all new messages"
+macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*<untag-pattern>*<enter>" "Catchup all new messages"
 macro index .c "<change-folder>^<enter>" "Cleanup current folder"
 
 
@@ -123,8 +123,12 @@ source ~/.mutt/colors                    # Load in my aliases.
 
 source ~/.mutt/account-uni                         # source uni as default
 
-mailboxes +GMail/INBOX +Uni/INBOX 
+mailboxes +GMail/INBOX +Uni/INBOX +GMail/awesome +GMail/awesome-devel     \
+          +GMail/arch-general +GMail/arch-dev-public +GMail/kernelnewbies \
+          +GMail/sysc-help +GMail/sysc-forum
 
+
+source /usr/share/doc/mutt/samples/gpg.rc
 
 auto_view text/html
 
