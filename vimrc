@@ -86,7 +86,7 @@ set gcr=a:blinkon0
 set nofen
 
 " Indent automatically
-set smartindent
+" set smartindent
 " set cindent
 
 " Indent depth (number of spaces for indenting)
