@@ -34,6 +34,9 @@ source $gitdir/bash_aliases
 [ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
 source $gitdir/bash_functions
 
+
+unset gitdir
+
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
 
