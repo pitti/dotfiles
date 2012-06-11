@@ -374,9 +374,9 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
 
---    awful.key( { }, "XF86AudioPrev",        function () awful.util.spawn("banshee --previous", false)end),
---    awful.key( { }, "XF86AudioNext", function () awful.util.spawn("banshee --next", false) end),
---    awful.key( { }, "XF86AudioPlay", function () awful.util.spawn("banshee --toggle-playing", false) end),
+   awful.key( { }, "XF86AudioPrev", function () awful.util.spawn("cmus-remote -r", false) end),
+   awful.key( { }, "XF86AudioNext", function () awful.util.spawn("cmus-remote -n", false) end),
+   awful.key( { }, "XF86AudioPlay", function () awful.util.spawn("cmus-remote -u", false) end),
 
    awful.key( { }, "XF86PowerOff", function () awful.util.spawn("sudo pm-suspend", false) end),
 
@@ -384,8 +384,8 @@ globalkeys = awful.util.table.join(
 
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
-   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
-   awful.key( { modkey }, "space", function () menubar.show() end)
+   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)
+   -- awful.key( { modkey }, "space", function () menubar.show() end)
 
 )
 

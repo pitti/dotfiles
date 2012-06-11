@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="mh"
+export ZSH_THEME="gentoo"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -25,12 +25,17 @@ plugins=(git compleat)
 
 source $ZSH/oh-my-zsh.sh
 
+unsetopt correct_all
+
 gitdir=$PWD/.rcfiles
 
 
 source $gitdir/bash_aliases
 [ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
 source $gitdir/bash_functions
+
+
+unset gitdir
 
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
@@ -40,7 +45,7 @@ zstyle ":completion:*:commands" rehash 1
 autoload zkbd
 zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 [[ ! -f $zkbdfile ]] && zkbdfile=~/.zkbd/default
-source $zkbdfile
+[[ -f $zkbdfile ]] && source $zkbdfile
 
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
@@ -69,4 +74,4 @@ export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
-export PATH=/home/klmann/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
