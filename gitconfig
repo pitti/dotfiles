@@ -6,7 +6,7 @@
 [core]
 	page = less -FRX
 	editor = vim
-	excludesfile = /home/klmann/.gitignore
+	excludesfile = ~/.gitignore
 
 [color]
 	ui = auto
