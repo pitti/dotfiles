@@ -62,11 +62,9 @@
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
 
-[url "git+ssh://duemmer.informatik.uni-oldenburg.de/user/proj/misc/pgfekfa/gitroot"]
-	insteadOf = pg:
-
 [url "git+ssh://duemmer.informatik.uni-oldenburg.de/~/"]
 	insteadOf = arbi:
+
 [gui]
 	fontdiff = -family Terminus -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	spellingdictionary = none
