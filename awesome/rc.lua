@@ -403,8 +403,8 @@ globalkeys = awful.util.table.join(
 
    awful.key( { }, "XF86AudioMute",        function () awful.util.spawn("dvol -t", false)end),
    awful.key( { }, "XF86AudioRaiseVolume", function () awful.util.spawn("dvol -i 5", false) end),
-   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end),
-   awful.key( { modkey }, "space", function () menubar.show() end)
+   awful.key( { }, "XF86AudioLowerVolume", function () awful.util.spawn("dvol -d 5", false) end)
+   -- awful.key( { modkey }, "space", function () menubar.show() end)
 
 )
 
