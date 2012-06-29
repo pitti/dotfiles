@@ -45,8 +45,8 @@
 	lc = "!git reflog show | grep '}: commit' | nl | sort -nr | nl | sort -nr | \
 	cut --fields=1,3 | sed s/commit://g | sed -e 's/HEAD*@{[0-9]*}://g'"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	ff = merge --ff-only
-	ff = merge --ff-only
+	merge-ff = "!git-merge-ff"
+	new-root = "!git-new-root"
 	pullfrom = "!f() { reponame=$(basename $(git rev-parse --show-toplevel)); \
 		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
 
