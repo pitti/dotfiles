@@ -420,6 +420,9 @@ let g:Tex_CompileRule_pdf = 'pdflatex --synctex=1 -interaction=nonstopmode $*'
 set t_Co=256
 
 
+" .sh files should use bash syntax highlighting
+let g:is_bash=1
+
 set background=dark
 colorscheme jellybeans
 
