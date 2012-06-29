@@ -7,7 +7,7 @@ set print_command = "/usr/bin/muttprint %s -p pdfprinter"
 set mail_check = 10 # how often to check for new mail (s)
 set timeout    = 5
 
-set move     # Move messages from INBOX to mbox when read
+set nomove     # Don't move messages from INBOX to mbox when read
 
 set envelope_from
 
