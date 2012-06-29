@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Notify instant with terminal bell and OSD, if available.
+# Usage: <cmd-that-takes-long> ; notify
+# If the command finishes, 
+
+
 # Issue bell
 echo -e "\a"
 
