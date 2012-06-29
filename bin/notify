@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Issue bell
+echo -e "\a"
+
+
+# notify via OSD
+[ -x $(which notify-send) ] && notify-send "Process finished" "Finished execution of your command." --icon=dialog-information
