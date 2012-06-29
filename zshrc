@@ -29,6 +29,8 @@ unsetopt correct_all
 
 gitdir=$PWD/.rcfiles
 
+setopt extendedglob
+
 
 source $gitdir/bash_aliases
 [ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
