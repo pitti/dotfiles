@@ -109,9 +109,17 @@ macro index B   "<limit>~b "                "search message bodies"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
 macro index,pager <F1>   "<change-folder>=Inbox<enter>"
+macro index,pager <F2>   "<change-folder>=aramis<enter>"
+macro index,pager <F4>   "<change-folder>=sent<enter>"
 
 
-macro index T "<save-message>=todo<enter>"              # move message to todo-list
+macro index <F5> "<save-message>=todo<enter>"              # move message to todo-list
+
+
+macro index,pager A "<save-message>=archive<enter>" # 
+macro index,pager S "<save-message>=aramis<enter>" # 
+
+save-hook '~s ARAMiS' '=aramis'
 
 
 source ~/.mutt/aliases                    # Load in my aliases.
@@ -119,7 +127,7 @@ source ~/.mutt/colors                    # Load in my aliases.
 
 source ~/.mutt/account-offis               # source offis as default
 
-mailboxes =Inbox
+mailboxes =Inbox =aramis
 
 set query_command = "lbdbq '%s'"
 
