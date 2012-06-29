@@ -423,3 +423,5 @@ set t_Co=256
 set background=dark
 colorscheme jellybeans
 
+
+au BufRead /tmp/mutt-* set tw=72 spell
