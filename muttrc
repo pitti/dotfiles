@@ -133,6 +133,9 @@ set query_command = "lbdbq '%s'"
 
 source /usr/share/doc/mutt/examples/gpg.rc
 
+set crypt_replysign
+set crypt_verify_sig=yes
+
 auto_view text/html
 
 
