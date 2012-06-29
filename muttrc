@@ -125,8 +125,6 @@ save-hook '~s ARAMiS' '=aramis'
 source ~/.mutt/aliases                    # Load in my aliases.
 source ~/.mutt/colors                    # Load in my aliases.
 
-source ~/.mutt/account-offis               # source offis as default
-
 mailboxes =Inbox =aramis
 
 set query_command = "lbdbq '%s'"
@@ -142,4 +140,5 @@ set index_format = "%4C %Z %{%b %d} %-15.15n (%4l) %s"
 auto_view text/html
 auto_view text/calendar
 
+source ~/.mutt/account-offis               # source offis as default
 
