@@ -140,5 +140,6 @@ set crypt_verify_sig=yes
 set index_format = "%4C %Z %{%b %d} %-15.15n (%4l) %s"
 
 auto_view text/html
+auto_view text/calendar
 
 
