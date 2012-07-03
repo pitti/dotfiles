@@ -29,7 +29,11 @@ set shellslash
 set modelines=1
 let mapleader = ","
 set textwidth=78
-set colorcolumn=+1 " Highlight column after textwidth
+
+
+if exists('+colorcolumn')
+	set colorcolumn=+1 " Highlight column after textwidth
+endif
 syntax on
 
 set number
