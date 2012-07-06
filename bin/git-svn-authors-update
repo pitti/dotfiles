@@ -1,0 +1,32 @@
+#!/bin/bash
+
+folder="$(git rev-parse --show-toplevel)"
+file="svn-authors"
+remote="${1:-"origin"}"
+branch="${2:-"project-svn/authors"}"
+
+usage() {
+cat  1>&2 <<EOF
+Fetches the remote '$remote' and copies the file svn-authors of branch
+'$branch' to .git/svn-authors.
+
+Usage: $(basename $0) [remote] [branch]
+
+The default values are shown in the description above.
+EOF
+}
+
+if [ "$1" == "-h" ]; then
+	remote="origin"
+	usage;
+	exit 1
+fi
+
+git fetch $remote
+
+git diff --exit-code $remote/$branch:$file $folder/.git/$file \
+  && echo "No new authors were added."
+
+git show $remote/$branch:$file > $folder/.git/$file
+
+
