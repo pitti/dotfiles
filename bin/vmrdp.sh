@@ -13,5 +13,6 @@ exec xfreerdp -0 -a 24  -x l \
            --plugin drdynvc \
              --data audin:alsa tsmf:audio:alsa -- \
            --plugin rdpdr   \
-             --data disk:home:/home/$USER printer:PDF -- \
+             --data disk:home:/home/$USER printer:PDF \
+                    disk:tmp:/tmp -- \
            $MACHINE.ddns.lcl
