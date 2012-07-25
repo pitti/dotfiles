@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ -n "$(cmus-remote -Q | grep "status playing")" ]; then
+	cmus-remote -u
+fi
 
 gnome-screensaver-command -l
+
 
