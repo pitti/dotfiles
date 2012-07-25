@@ -152,3 +152,4 @@ color body	brightmagenta	black	"^\\[---.*"
 color body	green			black	"^#v[-+]""]"
 
 
+macro index,pager <F12>  "<forward-message>klmann+7c87cd@rmilk.com<enter><enter>"
