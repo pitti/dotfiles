@@ -2,15 +2,15 @@
 
 # colors: white black green magenta blue cyan yellow red default colorx
 
-color normal		white	color233
-color error		color124	color233
-color tilde		white	color233
-color message		yellow		color233
-color markers		yellow		color233
-color attachment	color221	color233
-color search		color48		color240	# how to hilite search patterns in the pager
-color status		color42		color237
-color indicator		color220	color88
+color  normal      white     color233
+color  error       color124  color233
+color  tilde       white     color233
+color  message     yellow    color233
+color  markers     yellow    color233
+color  attachment  color221  color233
+color  search      color48   color240  # how to hilite search patterns in the pager
+color  status      color42   color237
+color  indicator   color220  color88
 
 # Index
 color tree		color124	color233			# arrow in threads
