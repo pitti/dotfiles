@@ -142,3 +142,13 @@ auto_view text/calendar
 
 source ~/.mutt/account-offis               # source offis as default
 
+
+set display_filter='t-prot -aelmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'
+
+macro generic \e0 ":unset display_filter\n" "Turn TOFU protection off"
+macro generic \e1 ":set display_filter='t-prot -aclmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'\n" "Turn TOFU protection on"
+
+color body	brightmagenta	black	"^\\[---.*"
+color body	green			black	"^#v[-+]""]"
+
+
