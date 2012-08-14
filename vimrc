@@ -264,6 +264,9 @@ vnoremap <silent> # :<C-U>
   \gV:call setreg('"', old_reg, old_regtype)<CR>
 
 
+" search/replace selected text when in visual mode by pressing C-r
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
 " Fold highlight color
 " hi Folded ctermbg=black ctermfg=cyan
 
