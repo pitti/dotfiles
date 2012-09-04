@@ -32,12 +32,18 @@ extract () {
 # switches to the <date> of yesterday, and so on. This also works for +1 etc.
 
 # Change the default directory scheme by modifying the next line
-export TD="$HOME/temp/`date +'%Y-%m-%d'`"
+DEFAULT_PERSISTENT_TEMPDIR=${DEFAULT_PERSISTENT_TEMPDIR:-"$HOME/temp"}
+
+export DEFAULT_PERSISTENT_TEMPDIR 
+
+# Remember date to avoid pointing to different directories when the session
+# lasts through midnight ;)
+export TEMP_DATE_TODAY="$(date +'%Y-%m-%d')"
 
 td(){
-	td=$TD
+	td=$DEFAULT_PERSISTENT_TEMPDIR/$TEMP_DATE_TODAY
 	if [ ! -z "$1" ]; then
-		td="$HOME/temp/`date -d "$1 days" +'%Y-%m-%d'`";
+		td="$DEFAULT_PERSISTENT_TEMPDIR/`date -d "$TEMP_DATE_TODAY $1 days" +'%Y-%m-%d'`";
 	fi
 	mkdir -p $td; cd $td
 	unset td
