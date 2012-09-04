@@ -4,9 +4,11 @@ MACHINE=`basename "$0" | cut -s -f2- -d-`
 WINUSER=philippi
 RESOLUTION=1276x1000
 
-exec xfreerdp -0 -a 24  -x l \
+exec xfreerdp -0 -a 32  -x l \
            --sec rdp \
            -g $RESOLUTION \
+           --gdi hw \
+           -k 0x00010407 \
            -d TRANSPORTATION -u $WINUSER \
            --plugin rdpsnd \
            --plugin cliprdr \
