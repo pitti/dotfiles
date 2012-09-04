@@ -1,65 +1,38 @@
-# vim: filetype=muttrc
+color   normal      color15         color233
+color   error       brightcolor15   color196
+color   indicator   black           color39
+color   status      brightcolor39   color233
 
-# colors: white black green magenta blue cyan yellow red default colorx
+color   hdrdefault  color245        color233
+color   header      brightcolor214  color233 "^(Subject): "
+color   signature   color243        color233
 
-color  normal      white     color233
-color  error       color124  color233
-color  tilde       white     color233
-color  message     yellow    color233
-color  markers     yellow    color233
-color  attachment  color221  color233
-color  search      color48   color240  # how to hilite search patterns in the pager
-color  status      color42   color237
-color  indicator   color220  color88
+color   body        color137        color233 [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color   body        color137        color233 ((https?|ftp)://|www)+[\-\.\;@,/%~_:?&=\#a-zA-Z0-9+]+
 
-# Index
-color tree		color124	color233			# arrow in threads
-color index		color184	color233	"~N~p"		# message to myself (new)
-color index		color130	color233	"~p"		# message to myself
-color index		color137	color233	"~Q"		# messages replied to
-color index		color70		color233	"~P" 		# message from myself
-color index		color220	color233	~N		# new
-color index		color208	color233	~U		# unread
-color index		color142	color233	~O		# old
-color index		color91		color233	~T		# tagged
-color index		color238	color233	"~D(!~p|~p)"	# deleted
-color index		color196	color233	~F		# flagged
-color index		color250	color233	"~A!~N!~T!~p!~Q!~F!~D!~P"	# the rest
-color index		color220	color233	"~A~N!~T!~p!~Q!~F!~D"		# the rest
-color index		color238	color233	~=		# duplicate messages
+color   quoted      color243        color233
+color   quoted1     color211        color233
+color   quoted2     color222        color233
+color   quoted3     color214        color233
+color   quoted4     color154        color233
 
+color   tilde       color39         color233
+color   tree        color211        color233
+color   attachment  brightcolor211  color233
 
-color header		color74		color233	"^From"
-color header		color96		color233	"^Date"
-color header		color166	color233	"^(Subject)"
-color header		color244	color233	"^(To|Reply-To|Cc|Bcc):"
-color header		color245	color233	"^(X-Original-To):"
-color header		color96		color233	"^(User-Agent|X-Editor|X-Mailer):"
-color header 		cyan		color233	"^Organization:"
+color   index       color154        color233 ~N
 
-# Body
-color quoted 		color24		color233
-color quoted1		color28		color233
-color quoted2		color94		color233
-color quoted3		color88		color233
-color signature		color238	color233
-color bold		green		color233
-color underline		color208	color233
-color normal		color250	color233
-color body		color39		color233	"(finger|ftp|http|news|telnet)://[^ >]*"
-color body		color39		color233	"<URL:[^ ]*>"
-color body		cyan		color233	"www\\.[-.a-z0-9]+\\.[a-z][a-z][a-z]?([-_./~a-z0-9]+)?"
-color body		green		color233	"[[:alnum:]][-+.#_[:alnum:]]*@[-+.[:alnum:]]*[[:alnum:]]"
-color body		brightred	color233	"mailto: *[^ ]+\(\\?subject=[^ ]+\)?"
-color body		color178	color233	"[;:][-o][)/(|]"
-color body		color178	color233	"[;:][)(|]"
-color body		color178	color233	"[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
-color body		color178	color233	"[ ][*][^*]*[*][ ]?"
-color body		color178	color233	"[ ]?[*][^*]*[*][ ]"
-color body		brightred	color233	"(BAD signature)"
-color body		green		color233	"(Good signature)"
-color body		color208	color233	"(heipei|hackvalue|Jojo|Gilger|Johannes)"
+color   index       color243        color233 ~P
+color   index       brightcolor221  color233 ~F
+color   index       brightcolor39   color233 ~T
+color   index       color196        color233 ~D
 
-color hdrdefault	color238	color233
-color body		color128	color233	'[-.+\w]+@[-.\w]+[^.]' # e-mail addresses
-color underline		brightgreen	color233
+# Colorize inline diffs, really helpful for LKML or other mailing lists where
+# mails frequently include patches.
+color   body        brightcolor15   color233 '^diff .*'
+color   body        brightcolor15   color233 '^[Ii]{1}ndex .*'
+color   body        brightcolor15   color233 '^=+$'
+color   body        brightcolor15   color233 '^(---|\+\+\+) .*'
+color   body        brightcolor15   color233 '^@@ .*'
+color   body        color121        color233 '^\+([^\+].*)?$'
+color   body        color211        color233 '^-([^-].*)?$'
