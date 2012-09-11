@@ -417,6 +417,14 @@ let vala_no_tab_space_error = 1
 " inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 let g:clang_complete_copen = 1
+let g:clang_close_preview  = 1
+let g:clang_complete_auto  = 0 " no auto complete, always issue C-X C-U
+let g:clang_hl_errors = 0
+" let g:clang_use_library = 0
+
+let g:clang_snippets = 1
+let g:clang_snippets_engine = 'clang_complete'
+
 
 let g:Tex_ViewRule_pdf = 'evince_dbus.py'
 let g:Tex_DefaultTargetFormat = 'pdf'
