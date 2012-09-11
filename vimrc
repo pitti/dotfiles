@@ -297,8 +297,8 @@ let g:Tex_SmartQuoteClose = "\"'"
 function! s:insert_gates()
 	let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g") . "_INCLUDED_"
 	execute "normal! i#ifndef " . gatename
-	execute "normal! o#define " . gatename . " "
-	execute "normal! Go#endif /* " . gatename . " */"
+	execute "normal! o#define " . gatename
+	execute "normal! Go#endif // " . gatename . ""
 	normal! k
 endfunction
 autocmd BufNewFile *.{h,hpp} call <SID>insert_gates()
