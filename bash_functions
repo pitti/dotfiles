@@ -31,12 +31,19 @@ extract () {
 # 'td' creates or switches to the directory '~/temp/<date>', 'td -1' creates or
 # switches to the <date> of yesterday, and so on. This also works for +1 etc.
 
+# Change the default directory scheme by modifying the next line
+DEFAULT_PTEMPDIR=${DEFAULT_PTEMPDIR:-"$HOME/temp"}
+
+export DEFAULT_PTEMPDIR
+
+# Remember date to avoid pointing to different directories when the session
+# lasts through midnight ;)
+export TEMP_DATE_TODAY="$(date +'%Y-%m-%d')"
 
 td(){
-	# Change the default directory scheme by modifying the next line
-	td="$HOME/temp/`date +'%Y-%m-%d'`"
+	td=$DEFAULT_PTEMPDIR/$TEMP_DATE_TODAY
 	if [ ! -z "$1" ]; then
-		td="$HOME/temp/`date -d "$1 days" +'%Y-%m-%d'`";
+		td="$DEFAULT_PTEMPDIR/$(date -d "$TEMP_DATE_TODAY $1 days" +'%Y-%m-%d')";
 	fi
 	mkdir -p $td; cd $td
 	unset td
