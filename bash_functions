@@ -31,11 +31,10 @@ extract () {
 # 'td' creates or switches to the directory '~/temp/<date>', 'td -1' creates or
 # switches to the <date> of yesterday, and so on. This also works for +1 etc.
 
-# Change the default directory scheme by modifying the next line
-export TD="$HOME/temp/`date +'%Y-%m-%d'`"
 
 td(){
-	td=$TD
+	# Change the default directory scheme by modifying the next line
+	td="$HOME/temp/`date +'%Y-%m-%d'`"
 	if [ ! -z "$1" ]; then
 		td="$HOME/temp/`date -d "$1 days" +'%Y-%m-%d'`";
 	fi
