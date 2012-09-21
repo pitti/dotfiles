@@ -30,5 +30,6 @@ latexmks() {
 	latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
 }
 
+alias myps='ps f -w -U $(id -n -u)'
 
 alias sysc-env='export SYSTEMC=$HOME/.local'
