@@ -23,6 +23,7 @@ beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
 -- This is used later as the default terminal and editor to run.
 wibox_height = 12
 terminal = "urxvtc"
+tcterminal = terminal .. " -e ssh tc"
 editor = os.getenv("EDITOR") or "vim"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -328,7 +329,8 @@ globalkeys = awful.util.table.join(
         end),
 
     -- Standard program
-    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+    awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal)   end),
+    awful.key({ modkey, "Shift"   }, "Return", function () awful.util.spawn(tcterminal) end),
     awful.key({ modkey, "Control" }, "r", awesome.restart),
     awful.key({ modkey, "Shift"   }, "q", awesome.quit),
 
