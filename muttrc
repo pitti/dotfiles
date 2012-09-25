@@ -127,7 +127,7 @@ save-hook '~s ARAMiS' '=aramis'
 source ~/.mutt/aliases                    # Load in my aliases.
 source ~/.mutt/colors                    # Load in my aliases.
 
-mailboxes =Inbox =aramis
+mailboxes =Inbox =aramis =cfp
 
 set query_command = "lbdbq '%s'"
 
