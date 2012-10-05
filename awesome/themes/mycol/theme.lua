@@ -18,9 +18,14 @@ theme.wallpaper_cmd = { }
 theme.font      = "Terminus 9"
 
 -- {{{ Colors
-theme.fg_normal = "#DDDDDD"
-theme.fg_focus  = "#DAA520" -- brown / yellow
-theme.fg_urgent = "#E12672" -- red
+theme.fg_normal         = "#ecedee"
+--theme.fg_focus        = "#3ca4d8"
+theme.fg_focus          = "#6b8ba3"
+theme.fg_urgent         = "#927d9e"
+
+-- theme.fg_normal = "#DDDDDD"
+-- theme.fg_focus  = "#DAA520" -- brown / yellow
+-- theme.fg_urgent = "#E12672" -- red
 theme.bg_normal = "#000000" -- dark
 theme.bg_focus  = "#121212" -- grey
 theme.bg_urgent = theme.bg_normal
