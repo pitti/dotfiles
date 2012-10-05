@@ -11,4 +11,4 @@ cond_mount() {
 
 
 cond_mount wilkinson:work $HOME/work
-cond_mount wilkinson:/opt/site/legacy/hs-ehs/sw /opt/sw
+cond_mount wilkinson:/opt/site /opt/site
