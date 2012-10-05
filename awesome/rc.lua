@@ -21,7 +21,7 @@ beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
 
 
 -- This is used later as the default terminal and editor to run.
-wibox_height = 12
+wibox_height = 16
 terminal = "urxvtc"
 tcterminal = terminal .. " -e ssh tc"
 editor = os.getenv("EDITOR") or "vim"
