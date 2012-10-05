@@ -44,8 +44,8 @@ theme.fg_widget        = theme.fg_focus -- "#AECF96"
 theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#FF5656"
 theme.fg_off_widget    = "#494B4F"
-theme.fg_netup_widget  = "#83E22E"
-theme.fg_netdn_widget  = theme.fg_urgent
+theme.fg_netup_widget  = "#4e4e4e"
+theme.fg_netdn_widget  = "#7a7a7a"
 theme.bg_widget        = theme.bg_normal
 theme.border_widget    = theme.bg_normal
 -- }}}
