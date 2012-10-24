@@ -28,10 +28,11 @@ while ! nc -w 1 -z $MACHINE.ddns.lcl 3389 ; do
 done
 ) | zenity --progress --text="$text" --pulsate --no-cancel --auto-close
 
-exec xfreerdp -0 -a 32  -x l \
+exec xfreerdp -0 -a 32  -x l -D \
            --sec rdp \
            -g $RESOLUTION \
            --gdi hw \
+           --no-fastpath \
            -k 0x00010407 \
            -d TRANSPORTATION -u $WINUSER \
            --plugin rdpsnd \
