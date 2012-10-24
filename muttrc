@@ -137,7 +137,7 @@ set crypt_replysign
 set crypt_verify_sig=yes
 
 
-set index_format = "%4C %Z %{%b %d} %-15.15n (%4l) %s"
+set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
 
 auto_view text/html
 auto_view text/calendar
