@@ -1,8 +1,19 @@
-#/!bin/sh
+#!/bin/bash
+
 
 MACHINE=$(basename "$0" | cut -s -f2- -d-)
 WINUSER=philippi
-RESOLUTION=1276x1000
+
+screen_number=1
+
+res=$(xrandr  | grep \* | cut -d' ' -f4 | awk "NR == $screen_number { print }")
+
+rwidth=$(echo $res | cut -d'x' -f1)
+rheight=$(echo $res | cut -d'x' -f2)
+
+RESOLUTION="${rwidth}x$(($rheight-16))"
+
+# Find resolution of display
 
 
 # check VM RDP port
