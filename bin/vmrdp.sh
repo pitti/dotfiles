@@ -16,12 +16,17 @@ RESOLUTION="${rwidth}x$(($rheight-16))"
 # Find resolution of display
 
 
+
+text="Waiting for host $MACHINE.ddns.lcl to open port 3389."
+
 # check VM RDP port
+(
 wait=1
-while ! nc -w 1 -z $MACHINE.ddns.lcl 3389; do
-	echo "Waiting for host $MACHINE.ddns.lcl to open port 3389."
+echo $text
+while ! nc -w 1 -z $MACHINE.ddns.lcl 3389 ; do
 	sleep $wait
 done
+) | zenity --progress --text="$text" --pulsate --no-cancel --auto-close
 
 exec xfreerdp -0 -a 32  -x l \
            --sec rdp \
