@@ -50,7 +50,6 @@ tags = {}
 
 
 -- Spawn rules for browser and mail
-mailtag = 2
 webtag  = 1
 vmtag = 7
 
@@ -58,11 +57,11 @@ vmtag = 7
 if screen.count() > 1 then
   screentags =  {
     {
-      names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"},
-      layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1}
+      names = {"1:web", "2", "3", "4", "5", "6", "7:vm", "8", "9"},
+      layouts = { 1, 1, 1, 1, 1, 1, 1, 1, 1}
     },
     {
-      names = {"1:im", "2", "3", "4", "5", "6", "7:vm", "8", "9"},
+      names = {"1:im", "2", "3:fs", "4", "5", "6", "7", "8:music", "9:mail"},
       layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
     }
   }
