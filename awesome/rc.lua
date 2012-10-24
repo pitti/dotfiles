@@ -478,8 +478,7 @@ awful.rules.rules = {
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
-    { rule = { class = "xfreerdp" },    properties = { tag = tags[screen.count()][vmtag]}},
-    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
+    { rule = { class = "xfreerdp" },    properties = { tag = tags[1][vmtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
     -- Fullscreen Flash Video
     { rule = { class = "Exe"}, properties = {floating = true} },
