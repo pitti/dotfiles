@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt correct_all
 
-gitdir=$PWD/.rcfiles
+gitdir=$HOME/.rcfiles
 
 setopt extendedglob
 
