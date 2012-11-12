@@ -67,6 +67,10 @@ zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 bindkey "\e." insert-last-word
 
 # Customize to your needs...
+#
+setopt HIST_IGNORE_SPACE
+
+bindkey -s "\e[24~" "^q (urxvtc &)\n"
 
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
