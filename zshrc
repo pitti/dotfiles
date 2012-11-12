@@ -27,7 +27,7 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt correct_all
 
-gitdir=$PWD/.rcfiles
+gitdir=$HOME/.rcfiles
 
 setopt extendedglob
 
@@ -67,6 +67,10 @@ zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 bindkey "\e." insert-last-word
 
 # Customize to your needs...
+#
+setopt HIST_IGNORE_SPACE
+
+bindkey -s "\e[24~" "^q (urxvtc &)\n"
 
 
 export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking

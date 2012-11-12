@@ -48,11 +48,13 @@
 	new-root = "!git-new-root"
 	pullfrom = "!f() { reponame=$(basename $(git rev-parse --show-toplevel)); \
 		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
-	svn-authors-update = "!git-svn-authors-update"
+	svn-authors-pull = "!git-svn-authors-pull"
+	svn-authors-push = "!git-svn-authors-push"
 	sup = svn fetch   --use-log-author
 	srb = svn rebase  --local --use-log-author
 	sci = svn dcommit --add-author-from --use-log-author
 	mst = merge --squash -s subtree --no-commit
+	ff = merge --ff-only
 
 [push]
 	default = tracking

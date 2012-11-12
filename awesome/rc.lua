@@ -21,7 +21,7 @@ beautiful.init( awful.util.getdir("config") .. "/themes/mycol/theme.lua" )
 
 
 -- This is used later as the default terminal and editor to run.
-wibox_height = 12
+wibox_height = 16
 terminal = "urxvtc"
 tcterminal = terminal .. " -e ssh tc"
 editor = os.getenv("EDITOR") or "vim"
@@ -50,18 +50,18 @@ tags = {}
 
 
 -- Spawn rules for browser and mail
-mailtag = 2
 webtag  = 1
+vmtag = 7
 
 -- TODO: Read this from file
 if screen.count() > 1 then
   screentags =  {
     {
-      names = {"1:web", "2:mail", "3", "4", "5", "6", "7", "8:fs", "9:music"},
-      layouts = { 1, 1, 1, 1, 1, 1, 1, 2, 1}
+      names = {"1:web", "2", "3", "4", "5", "6", "7:vm", "8", "9"},
+      layouts = { 1, 1, 1, 1, 1, 1, 1, 1, 1}
     },
     {
-      names = {"1:im", "2", "3", "4", "5", "6", "7", "8", "9"},
+      names = {"1:im", "2", "3:fs", "4", "5", "6", "7", "8:music", "9:mail"},
       layouts = { 2, 1, 1, 1, 1, 1, 1, 1, 1}
     }
   }
@@ -73,14 +73,15 @@ else
 
   screentags =  {
     {
-      names = {"web", "mail", "3", "4", "5", "6", "im", "fs", "music"},
+      names = {"1:web", "2:mail", "3", "4", "5", "6:vm", "7:im", "8:fs",
+               "9:music"},
       layouts = { 1, 1, 1, 1, 1, 1, 2, 2, 1}
     }
   }
 
   imtag = 7
   skypetag = 7
-
+  vmtag = 6
 end
 
 for s = 1, screen.count() do
@@ -477,7 +478,7 @@ awful.rules.rules = {
     --   properties = { tag = tags[1][2] } },
     { rule = { class = "Pidgin" },      properties = { tag = tags[screen.count()][imtag]}},
     { rule = { class = "Skype" },       properties = { tag = tags[screen.count()][imtag]}},
-    { rule = { class = "Thunderbird" }, properties = { tag = tags[1][mailtag]}},
+    { rule = { class = "xfreerdp" },    properties = { tag = tags[1][vmtag]}},
     { rule = { class = "Chromium" },    properties = { tag = tags[1][webtag]}},
     -- Fullscreen Flash Video
     { rule = { class = "Exe"}, properties = {floating = true} },

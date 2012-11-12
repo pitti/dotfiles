@@ -18,9 +18,14 @@ theme.wallpaper_cmd = { }
 theme.font      = "Terminus 9"
 
 -- {{{ Colors
-theme.fg_normal = "#DDDDDD"
-theme.fg_focus  = "#DAA520" -- brown / yellow
-theme.fg_urgent = "#E12672" -- red
+theme.fg_normal         = "#ecedee"
+--theme.fg_focus        = "#3ca4d8"
+theme.fg_focus          = "#6b8ba3"
+theme.fg_urgent         = "#927d9e"
+
+-- theme.fg_normal = "#DDDDDD"
+-- theme.fg_focus  = "#DAA520" -- brown / yellow
+-- theme.fg_urgent = "#E12672" -- red
 theme.bg_normal = "#000000" -- dark
 theme.bg_focus  = "#121212" -- grey
 theme.bg_urgent = theme.bg_normal
@@ -44,8 +49,8 @@ theme.fg_widget        = theme.fg_focus -- "#AECF96"
 theme.fg_center_widget = "#88A175"
 theme.fg_end_widget    = "#FF5656"
 theme.fg_off_widget    = "#494B4F"
-theme.fg_netup_widget  = "#83E22E"
-theme.fg_netdn_widget  = theme.fg_urgent
+theme.fg_netup_widget  = "#4e4e4e"
+theme.fg_netdn_widget  = "#7a7a7a"
 theme.bg_widget        = theme.bg_normal
 theme.border_widget    = theme.bg_normal
 -- }}}

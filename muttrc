@@ -58,6 +58,8 @@ set noconfirmappend                       # Just append, don't hassle me.
 set hidden_host                           # Hide host details.
 
 
+set wrap = 78
+
 # Header stuff
 
 ignore *
@@ -110,6 +112,7 @@ macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
 macro index,pager <F1>   "<change-folder>=Inbox<enter>"
 macro index,pager <F2>   "<change-folder>=aramis<enter>"
+macro index,pager <F3>   "<change-folder>=clang<enter>"
 macro index,pager <F4>   "<change-folder>=sent<enter>"
 
 
@@ -121,11 +124,11 @@ macro index,pager S "<save-message>=aramis<enter>" #
 
 save-hook '~s ARAMiS' '=aramis'
 
+macro attach s "<save-entry><bol>/tmp/<eol><enter>"
+
 
 source ~/.mutt/aliases                    # Load in my aliases.
 source ~/.mutt/colors                    # Load in my aliases.
-
-mailboxes =Inbox =aramis
 
 set query_command = "lbdbq '%s'"
 
@@ -135,12 +138,17 @@ set crypt_replysign
 set crypt_verify_sig=yes
 
 
-set index_format = "%4C %Z %{%b %d} %-15.15n (%4l) %s"
+set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
 
 auto_view text/html
 auto_view text/calendar
 
 source ~/.mutt/account-offis               # source offis as default
+
+mailboxes =Inbox
+mailboxes =aramis
+mailboxes =cfp
+mailboxes =clang
 
 
 set display_filter='t-prot -aelmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'
@@ -153,3 +161,8 @@ color body	green			black	"^#v[-+]""]"
 
 
 macro index,pager <F12>  "<forward-message>klmann+7c87cd@rmilk.com<enter><enter>"
+
+# WM_URGENT when new mail arrives
+set beep_new = yes
+set check_new = yes
+set timeout = 600
