@@ -10,5 +10,5 @@ cond_mount() {
 }
 
 
-cond_mount wilkinson:work $HOME/work
+cond_mount wilkinson:/home/philippi /opt/net/tc
 cond_mount wilkinson:/opt/site /opt/site
