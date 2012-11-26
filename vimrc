@@ -277,10 +277,7 @@ hi StatusLine cterm=bold,reverse
 set tags=tags;/
 
 " special tags place(s)
-" set tags +=~/.vim/tags/cpp
-" set tags +=~/.vim/tags/linux
-set tags +=~/.vim/tags/qt4-gui
-set tags +=~/.vim/tags/qt
+
 set tags +=/usr/src/linux/tags
 set tags +=/home/klmann/ml410/linux-2.6-xlnx/tags
 
@@ -451,3 +448,7 @@ autocmd Syntax cpp call EnhanceCppSyntax()
 
 
 au BufRead /tmp/mutt-* set tw=72 spell
+
+augroup filetype
+	au! BufRead,BufNewFile *.ll     set filetype=llvm
+augroup END
