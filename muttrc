@@ -69,7 +69,7 @@ hdr_order Date From To Cc
 
 # For better looks
 set markers=no # don't put '+' at the beginning of wrapped lines
-set pager_index_lines= 5 # how large is the index window?
+set pager_index_lines= 9 # how large is the index window?
 
 set pager_stop  # dont go to next message automatically
 
