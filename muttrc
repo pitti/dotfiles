@@ -137,10 +137,27 @@ set crypt_replysign
 set crypt_verify_sig=yes
 
 
-set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
+set index_format = "%2N %4C %Z %{%b %d} %-25.25n (%3l) %s"
+
 
 macro pager <F10> ":set wrap = 78<enter>" "Enable wrapping"
 macro pager <F11> ":set wrap = 0<enter>" "Disable wrapping"
+
+# Scoring rules
+
+score ~A 2
+score ~p +5
+
+# color index green black "~n 10-20"
+# color index yellow black "~n 21-100"
+# color index cyan black "~n 7-9"
+# color index brightred   black "~F"
+# color index blue black ~D
+# color index white red "~N ~d>3d"
+# color index color8 black " ~d>7d"
+
+
+
 folder-hook . 'set record="^"' # save sent messages to current folder
 
 
