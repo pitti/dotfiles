@@ -57,9 +57,6 @@ set noconfirmappend                       # Just append, don't hassle me.
 
 set hidden_host                           # Hide host details.
 
-
-set wrap = 78
-
 # Header stuff
 
 ignore *
