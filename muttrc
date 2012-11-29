@@ -87,6 +87,8 @@ macro index .c "<change-folder>^<enter>" "Cleanup current folder"
 
 set tilde
 
+set pager_stop # don't change to next mail when scrolling at the end of a mail
+
 # bindings
 bind pager i           exit
 bind pager /           search
