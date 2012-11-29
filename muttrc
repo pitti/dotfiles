@@ -138,6 +138,9 @@ set crypt_verify_sig=yes
 
 
 set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
+
+macro pager <F10> ":set wrap = 78<enter>" "Enable wrapping"
+macro pager <F11> ":set wrap = 0<enter>" "Disable wrapping"
 folder-hook . 'set record="^"' # save sent messages to current folder
 
 
