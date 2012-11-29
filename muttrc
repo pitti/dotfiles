@@ -139,6 +139,9 @@ set crypt_verify_sig=yes
 
 
 set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
+folder-hook . 'set record="^"' # save sent messages to current folder
+
+
 
 auto_view text/html
 auto_view text/calendar
