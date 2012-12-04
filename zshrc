@@ -26,6 +26,7 @@ plugins=(git compleat)
 source $ZSH/oh-my-zsh.sh
 
 unsetopt correct_all
+unsetopt MULTIBYTE
 
 gitdir=$HOME/.rcfiles
 
@@ -42,7 +43,6 @@ unset gitdir
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
 zstyle ':completion:*' special-dirs true
-
 
 # key bindings
 autoload zkbd
@@ -62,6 +62,13 @@ zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 [[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
 [[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+
+
+
+
+bindkey "\eOd" backward-word
+bindkey "\eOc" forward-word
 
 # Use "Alt-." for last word of the previous command
 bindkey "\e." insert-last-word
