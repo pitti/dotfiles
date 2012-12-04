@@ -1,32 +1,30 @@
-color   normal      color15         default
-color   error       brightcolor15   color196
-color   indicator   black           color39
-color   status      brightcolor39   default
+color  normal     color15        default
+color  error      brightcolor15  color196
+color  indicator  default        color242
+color  status     color241       color235
 
-color   hdrdefault  yellow          default
-color   header      green           default "^(Subject): "
-color   header      green           default "^(From): "
-color   signature   color243        default
+color  hdrdefault  yellow    default
+color  header      color154  default  "^(Subject):"
+color  header      color154  default  "^(From):"
+color  signature   color243  default
 
-color   body        color137        default [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
-color   body        color137        default ((https?|ftp)://|www)+[\-\.\;@,/%~_:?&=\#a-zA-Z0-9+]+
+color  body  color137  default  [\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+
+color  body  color137  default  ((https?|ftp)://|www)+[\-\.\;@,/%~_:?&=\#a-zA-Z0-9+]+
 
-color   quoted      color243        default
-color   quoted1     color211        default
-color   quoted2     color222        default
-color   quoted3     color214        default
-color   quoted4     color154        default
+color  quoted      color243        default
+color  quoted1     color211        default
+color  quoted2     color222        default
+color  quoted3     color214        default
+color  quoted4     color154        default
+color  tilde       color39         default
+color  tree        color196        default
+color  attachment  brightcolor211  default
 
-color   tilde       color39         default
-color   tree        color211        default
-color   attachment  brightcolor211  default
-
-color   index       color154        default ~N
-
-color   index       color243        default ~P
-color   index       brightcolor221  default ~F
-color   index       brightcolor39   default ~T
-color   index       color196        default ~D
+color  index  color154        default  ~N
+color  index  color243        default  ~P
+color  index  brightcolor221  default  ~F
+color  index  brightcolor39   default  ~T
+color  index  color196        default  ~D
 
 # Colorize inline diffs, really helpful for LKML or other mailing lists where
 # mails frequently include patches.
