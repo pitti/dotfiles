@@ -9,6 +9,7 @@ set timeout    = 5
 
 set nomove     # Don't move messages from INBOX to mbox when read
 
+set use_from
 set envelope_from
 
 set sig_dashes="no"
@@ -57,22 +58,19 @@ set noconfirmappend                       # Just append, don't hassle me.
 
 set hidden_host                           # Hide host details.
 
-
-set wrap = 78
-
 # Header stuff
 
 ignore *
 unignore from: date subject to cc
 unignore x-mailing-list: posted-to:
-unignore x-mailer:
+# unignore x-mailer:
 
 hdr_order Date From To Cc
 
 
 # For better looks
 set markers=no # don't put '+' at the beginning of wrapped lines
-set pager_index_lines= 5 # how large is the index window?
+set pager_index_lines= 9 # how large is the index window?
 
 set pager_stop  # dont go to next message automatically
 
@@ -87,6 +85,8 @@ macro index .c "<change-folder>^<enter>" "Cleanup current folder"
 
 set tilde
 
+set pager_stop # don't change to next mail when scrolling at the end of a mail
+
 # bindings
 bind pager i           exit
 bind pager /           search
@@ -98,10 +98,10 @@ bind pager gg          top
 bind pager G           bottom
 bind index gg          first-entry
 bind index G           last-entry
-bind pager K           previous-undeleted
-bind pager J           next-undeleted
-bind index K           previous-unread
-bind index J           next-unread
+# bind pager K           previous-undeleted
+# bind pager J           next-undeleted
+# bind index K           previous-unread
+# bind index J           next-unread
 bind index,pager R     group-reply
 bind index,pager <space> next-unread
 
@@ -138,7 +138,30 @@ set crypt_replysign
 set crypt_verify_sig=yes
 
 
-set index_format = "%4C %N %Z %{%b %d} %-25.25n (%3l) %s"
+set index_format = "%2N %4C %Z %{%b %d} %-25.25n (%3l) %s"
+
+
+macro pager <F10> ":set wrap = 78<enter>" "Enable wrapping"
+macro pager <F11> ":set wrap = 0<enter>" "Disable wrapping"
+
+# Scoring rules
+
+score ~A 2
+score ~p +5
+
+# color index green black "~n 10-20"
+# color index yellow black "~n 21-100"
+# color index cyan black "~n 7-9"
+# color index brightred   black "~F"
+# color index blue black ~D
+# color index white red "~N ~d>3d"
+# color index color8 black " ~d>7d"
+
+
+
+folder-hook . 'set record="^"' # save sent messages to current folder
+
+
 
 auto_view text/html
 auto_view text/calendar
