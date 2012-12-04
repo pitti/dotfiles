@@ -9,6 +9,7 @@ set timeout    = 5
 
 set nomove     # Don't move messages from INBOX to mbox when read
 
+set use_from
 set envelope_from
 
 set sig_dashes="no"
