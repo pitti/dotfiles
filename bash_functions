@@ -50,7 +50,7 @@ td(){
 }
 
 # grep recursively from $PWD using 'gr'
-gr() {
+grr() {
 	if [ -z "$*" ]; then
 		echo "Usage: gr <expr> to search for <expr> in files recursively"
 	else
