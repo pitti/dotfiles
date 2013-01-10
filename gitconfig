@@ -55,6 +55,7 @@
 	sci = svn dcommit --add-author-from --use-log-author
 	mst = merge --squash -s subtree --no-commit
 	ff = merge --ff-only
+	upsvn ="!git sup && git merge-ff svn/trunk git-svn"
 
 [push]
 	default = tracking
