@@ -120,6 +120,7 @@ macro index <F5> "<save-message>=todo<enter>"              # move message to tod
 
 
 macro index,pager A "<save-message>=archive<enter>" # 
+macro index,pager d "<save-message>=trash<enter>" # 
 macro index,pager S "<save-message>=aramis<enter>" # 
 
 save-hook '~s ARAMiS' '=aramis'
