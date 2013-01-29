@@ -1,6 +1,6 @@
 color  normal     color15        default
 color  error      brightcolor15  color196
-color  indicator  default        color242
+color  indicator  color15        color242
 color  status     color241       color235
 
 color  hdrdefault  yellow    default
