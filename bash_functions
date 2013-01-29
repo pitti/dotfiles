@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # handy function for extracting various archive types
 
@@ -77,4 +77,9 @@ __maybe_git_ps1()
 			fi
 			;;
 	esac
+}
+
+
+latexmks () {
+	latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
 }
