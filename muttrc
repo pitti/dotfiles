@@ -110,7 +110,7 @@ macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
 macro index B   "<limit>~b "                "search message bodies"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
-macro index,pager <F1>   "<change-folder>=Inbox<enter>"
+macro index,pager <F1>   "<change-folder>=INBOX<enter>"
 macro index,pager <F2>   "<change-folder>=aramis<enter>"
 macro index,pager <F3>   "<change-folder>=clang<enter>"
 macro index,pager <F4>   "<change-folder>=sent<enter>"
@@ -166,12 +166,7 @@ folder-hook . 'set record="^"' # save sent messages to current folder
 auto_view text/html
 auto_view text/calendar
 
-source ~/.mutt/account-offis               # source offis as default
-
-mailboxes =Inbox
-mailboxes =aramis
-mailboxes =cfp
-mailboxes =clang
+source ~/.mutt/account-tc               # source offis as default
 
 
 set display_filter='t-prot -aelmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'
