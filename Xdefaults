@@ -1,4 +1,3 @@
-Xft.dpi: 96
 urxvt*scrollBar: off
 
 urxvt*saveLines: 10000
@@ -13,7 +12,22 @@ urxvt.urlLauncher:      /usr/bin/chromium
 urxvt.matcher.button:   1
 
 ! urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
-urxvt*font: xft:Terminus-10:dpi=81
+! urxvt*font: xft:PT Mono:size=10
+
+!-- Xft settings -- !
+! Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+urxvt*font: xft:PT Mono:size=8
+urxvt*boldFont: xft:PT Mono:size=8
+URxvt.letterSpace: -1
+
+
+! -- Fonts -- !
+! URxvt.font:xft:droid sans mono slashed:medium:pixelsize=11
+! URxvt.boldFont:xft:droid sans mono slashed:medium:pixelsize=11
 
 !!colors ripped from rezza: http://metawire.org/~rezza/index.php
 
@@ -49,33 +63,7 @@ urxvt*font: xft:Terminus-10:dpi=81
 ! urxvt*color15:    #dddddd
 
 
-! Jellybeans Terminal Colours
-urxvt*background: #151515
-urxvt*foreground: #888888
-! black
-urxvt*color0: #292929
-urxvt*color8: #525252
-! red
-urxvt*color1: #cf6a4c
-urxvt*color9: #ff9d80
-! green
-urxvt*color2: #99ad6a
-urxvt*color10: #c3e6ad
-! yellow
-urxvt*color3: #fad07a
-urxvt*color11: #ffefbf
-! blue
-urxvt*color4: #8197bf
-urxvt*color12: #accaff
-! magenta
-urxvt*color5: #8787af
-urxvt*color13: #c4c4ff
-! cyan
-urxvt*color6: #668799
-urxvt*color14: #80bfaf
-! white
-urxvt*color7: #888888
-urxvt*color15: #e8e8d3
+# include "/home/philippi/.rcfiles/Xdefaults-molokai"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
