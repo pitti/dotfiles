@@ -149,7 +149,7 @@ set crypt_replysign
 set crypt_verify_sig=yes
 
 
-set index_format = "%2N %4C %Z %{%b %d} %-25.25n (%3l) %s"
+set index_format = "%4C %Z %{%b %d} %-22.22n %s"
 
 
 macro pager <F10> ":set wrap = 78<enter>" "Enable wrapping"
