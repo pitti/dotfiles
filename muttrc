@@ -106,6 +106,16 @@ bind index,pager R     group-reply
 bind index,pager <space> next-unread
 
 
+bind index,pager \CP sidebar-prev
+bind index,pager \CN sidebar-next
+bind index,pager \CO sidebar-open
+
+macro index,pager <F8> ":toggle sidebar_visible<enter>"
+
+color sidebar_new brightblue black# b toggles sidebar visibility
+
+
+
 macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
 macro index B   "<limit>~b "                "search message bodies"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
