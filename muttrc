@@ -106,13 +106,13 @@ bind index,pager R     group-reply
 bind index,pager <space> next-unread
 
 
-bind index,pager \CP sidebar-prev
-bind index,pager \CN sidebar-next
-bind index,pager \CO sidebar-open
-
-macro index,pager <F8> ":toggle sidebar_visible<enter>"
-
-color sidebar_new brightblue black# b toggles sidebar visibility
+# bind index,pager \CP sidebar-prev
+# bind index,pager \CN sidebar-next
+# bind index,pager \CO sidebar-open
+# 
+# macro index,pager <F8> ":toggle sidebar_visible<enter>"
+# 
+# color sidebar_new brightblue black# b toggles sidebar visibility
 
 
 macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>~T<enter>" "mark all messages as read"
