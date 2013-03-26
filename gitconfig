@@ -34,7 +34,7 @@
 [alias]
 	ci = commit
 	pa = push --all
-	s = status -sb
+	s = status -sb --ignore-submodules=dirty
 	prune-all = !git remote | xargs -n 1 git remote prune
 	gl = log --oneline --decorate --stat --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
