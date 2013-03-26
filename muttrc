@@ -178,6 +178,10 @@ auto_view text/calendar
 source ~/.mutt/account-tc               # source offis as default
 
 
+macro index,pager ,u "<shell-escape>mairix\n" "update mairix index"
+macro index,pager ,l "<shell-escape>mairix-search " "search via mairix"
+
+
 set display_filter='t-prot -aelmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'
 
 macro generic \e0 ":unset display_filter\n" "Turn TOFU protection off"
