@@ -62,7 +62,7 @@ set hidden_host                           # Hide host details.
 
 ignore *
 unignore from: date subject to cc
-unignore x-mailing-list: posted-to:
+unignore x-mailing-list: posted-to: x-source-folder:
 # unignore x-mailer:
 
 hdr_order Date From To Cc
