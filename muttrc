@@ -118,7 +118,7 @@ bind index,pager <space> next-unread
 macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>~T<enter>" "mark all messages as read"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
-macro index,pager <F1>   "<change-folder>=INBOX<enter>"
+macro index,pager <F1>   "<change-folder>!<enter>"
 macro index,pager <F2>   "<change-folder>=aramis<enter>"
 macro index,pager <F3>   "<change-folder>=clang<enter>"
 macro index,pager <F4>   "<change-folder>=sent<enter>"
@@ -127,9 +127,9 @@ macro index,pager <F4>   "<change-folder>=sent<enter>"
 macro index <F5> "<save-message>=todo<enter>"              # move message to todo-list
 
 
-macro index,pager A "<save-message>=archive<enter>" # 
-macro index,pager d "<save-message>=trash<enter>" # 
-macro index,pager S "<save-message>=aramis<enter>" # 
+macro index,pager A "<save-message>><enter>" # 
+macro index,pager d "<save-message>=.trash<enter>" # 
+macro index,pager S "<save-message>=.aramis<enter>" # 
 
 save-hook '~s ARAMiS' '=aramis'
 
