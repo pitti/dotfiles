@@ -26,6 +26,6 @@ alias man='man -P less'
 
 alias texerr='pdflatex -interaction nonstopmode *.tex | grep -i error'
 
-alias myps='ps f -w -U $(id -n -u)'
-
 alias sysc-env='export SYSTEMC=$HOME/.local'
+
+alias myps='ps -fjH -u `whoami`'
