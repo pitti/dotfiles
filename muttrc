@@ -115,9 +115,7 @@ macro index,pager <F8> ":toggle sidebar_visible<enter>"
 color sidebar_new brightblue black# b toggles sidebar visibility
 
 
-
-macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
-macro index B   "<limit>~b "                "search message bodies"
+macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>~T<enter>" "mark all messages as read"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
 macro index,pager <F1>   "<change-folder>=INBOX<enter>"
