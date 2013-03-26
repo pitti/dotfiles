@@ -16,7 +16,7 @@ set sig_dashes="no"
 set fast_reply   # go to reply message without prompting for To:
 set sendmail_wait = -1 # dont't wait for mail to be sent
 
-set sendmail = /usr/bin/msmtp
+# set sendmail = /usr/bin/msmtp
 
 set askcc
 
