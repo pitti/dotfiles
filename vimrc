@@ -52,23 +52,6 @@ set nojoinspaces " Put a space between two joined lines ending with ., ? or !
 set title        " Show file name in window title
 set autoread     " Read changes automatically when file changes on disk
 
-" GUI-specific options
-" ------------------------------------
-if has("gui_running")
-	" Save when losing focus
-	au FocusLost * :w
-
-	" No blinking cursor
-	set gcr=a:blinkon0
-
-	" a  selected text in visual mode equals to X11 select-clipboard
-	" g  mark inactive menu items grey
-	" i  use a vim icon for the window
-	" t  tearoff menu items
-	" m  enable menu bar
-	set guioptions=agitm
-endif
-
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
 " Enable the representation of special chars
@@ -115,14 +98,11 @@ set tabstop=2     " How many spaces does a tab cover?
 set softtabstop=2 " Number of spaces a tab covers while editing
 
 
-
-" tags options
+" Tags options
 " ------------------------------------
 
 " search for `tags` file from $PWD up to /
 set tags=tags;/
-
-
 
 
 " Spell options
@@ -139,7 +119,6 @@ let g:myLangList = [ "nospell", "de_de", "en_us" ]
 " Plugin-specific settings
 " ------------------------------------
 
-
 " Taglist options
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select         = 1
@@ -148,32 +127,13 @@ let Tlist_Display_Tag_Scope       = 1
 let Tlist_Inc_Winwidth            = 1
 let Tlist_Use_Right_Window        = 1
 
-
-" vim-latexsuite options
-let g:tex_flavor              = 'latex'
-let g:Tex_DefaultTargetFormat = 'pdf'
-let g:Tex_ViewRule_pdf        = 'evince'
-let g:tex_indent_items        = 1
-
-" Use german quote style in TeX sources
-let g:Tex_SmartQuoteOpen  = '"`'
-let g:Tex_SmartQuoteClose = "\"'"
-
 " Command-T options
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTMaxHeight          = 50
 
 
-" clang_complete options
-let g:clang_complete_copen = 1
-let g:clang_close_preview  = 1
-let g:clang_complete_auto  = 1
-let g:clang_hl_errors      = 0
-
-
 " Key mappings
 " ------------------------------------
-
 
 " Get rid of annoying mappings
 map <F1> <Nop>
@@ -192,7 +152,6 @@ set pastetoggle=<F8>
 " Misc mappings
 nnoremap <F2> :call <SID>MySpellLang()<CR>
 nnoremap <F3> :set cursorline!<CR>
-nnoremap <F4> :call <SID>ToggleLongLineMatch()<CR>
 
 " Unset search highlight with <c-L>
 noremap <silent> <c-l> :silent nohl<cr>
@@ -210,10 +169,6 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
 
-nmap <silent> <Leader>of :FSHere<cr>
-
-nnoremap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
 
 " Mappings for text handling
 vnoremap Q gq
@@ -225,17 +180,6 @@ nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 " Auto commands
 " ------------------------------------
-
-augroup enhance_syntax
-	" Add highlighting for function definition in C++
-	autocmd Syntax cpp call <SID>AddFunctionHighlight()
-augroup END
-
-augroup filetype
-	autocmd! BufRead,BufNewFile *.ll set filetype=llvm
-	autocmd! BufNewFile *.{h,hpp} call <SID>insert_gates()
-	autocmd! BufEnter   *.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
-augroup END
 
 augroup resize
 	" Resize splits when the whole window is resized
@@ -258,12 +202,6 @@ function! s:MySpellLang()
 endfunction
 
 
-function! s:AddFunctionHighlight()
-	syn match cppFuncDef "::\~\?\zs\h\w*\ze([^)]*\()\s*\(const\)\?\)\?$"
-	hi def link cppFuncDef Special
-endfunction
-
-
 function! s:StripTrailingWhitespaces()
 	" Save last search and cursor position
 	let _s=@/
@@ -273,29 +211,6 @@ function! s:StripTrailingWhitespaces()
 	" Restore search and cursor position
 	let @/=_s
 	call cursor(l, c)
-endfunction
-
-
-" insert header gates
-function! s:insert_gates()
-	let suffix = "_INCLUDED_"
-	let gname = substitute(toupper(expand("%:t")), "\\.", "_", "g") . suffix
-	execute "normal! i#ifndef " . gname
-	execute "normal! o#define " . gname
-	execute "normal! Go#endif // " . gname
-	normal! k
-endfunction
-
-
-function! s:ToggleLongLineMatch()
-	if exists('w:long_line_match')
-		call matchdelete(w:long_line_match)
-		unlet w:long_line_match
-	elseif &textwidth > 0
-		let w:long_line_match = matchadd('ErrorMsg', '\%>'.&tw.'v.\+', -1)
-	else
-		let w:long_line_match = matchadd('ErrorMsg', '\%>80v.\+', -1)
-	endif
 endfunction
 
 " vim: set tabstop=2 :
