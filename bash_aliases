@@ -29,3 +29,6 @@ alias texerr='pdflatex -interaction nonstopmode *.tex | grep -i error'
 alias sysc-env='export SYSTEMC=$HOME/.local'
 
 alias myps='ps -fjH -u `whoami`'
+
+
+alias gka='gitk --all'
