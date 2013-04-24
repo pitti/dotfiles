@@ -26,6 +26,10 @@ uncolor index "~(~N)"
 uncolor index "~N"
   color index brightyellow default "~N"
 
+uncolor index "~O"
+  color index brightyellow default "~O"
+
+
 # tagged
 uncolor index "~T"
   color index brightgreen default "~T"
