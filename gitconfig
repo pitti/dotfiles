@@ -39,12 +39,13 @@
 	gl = log --oneline --decorate --stat --graph
 	lc = log ORIG_HEAD.. --stat --no-merges
 	dc = diff --cached
+	co = checkout
 	graphviz = "!f() { echo 'digraph git {' ; git-log --pretty='format: %h -> { \
 		%p }'\"$@\" | sed 's/[0-9a-f][0-9a-f]*/\"&\"/g' ; echo '}'; }; f"
 	lc = "!git reflog show | grep '}: commit' | nl | sort -nr | nl | sort -nr | \
 	cut --fields=1,3 | sed s/commit://g | sed -e 's/HEAD*@{[0-9]*}://g'"
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	merge-ff = "!git-merge-ff"
+	mergeff = "!git-merge-ff"
 	new-root = "!git-new-root"
 	pullfrom = "!f() { reponame=$(basename $(git rev-parse --show-toplevel)); \
 		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
@@ -66,7 +67,10 @@
 #[status]
 #	showUntrackedFiles = no
 
-	
+
+[url "https://vprojects.offis.de/redmine/git/"]
+	insteadOf = vproj:
+
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
 
