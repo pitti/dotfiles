@@ -63,7 +63,7 @@ URxvt.letterSpace: -1
 ! urxvt*color15:    #dddddd
 
 
-# include "/home/philippi/.rcfiles/Xdefaults-molokai"
+# include "/home/philippi/.rcfiles/Xdefaults-solarized"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
