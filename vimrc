@@ -55,6 +55,8 @@ set autoread     " Read changes automatically when file changes on disk
 
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
+let mapleader = "´"
+
 " Enable the representation of special chars
 set listchars=tab:»\ ,eol:¬,trail:·
 set list
@@ -170,7 +172,7 @@ nnoremap <silent> <C-w><C-t> :tabnew .<CR>
 " Plugin or function invocations
 nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
-nnoremap <silent> <C-F5> :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
 
 " Mappings for text handling
@@ -215,5 +217,10 @@ function! s:StripTrailingWhitespaces()
 	let @/=_s
 	call cursor(l, c)
 endfunction
+
+
+if filereadable("~/.vimrc.local")
+	source ~/.vimrc.local
+endif
 
 " vim: set tabstop=2 :
