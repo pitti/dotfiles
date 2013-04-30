@@ -22,7 +22,6 @@ Bundle 'Align'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-visual-star-search.git'
-Bundle 'altercation/vim-colors-solarized'
 
 
 " Enable syntax and ft plugins after vundle invocation
@@ -61,11 +60,9 @@ let mapleader = "´"
 set listchars=tab:»\ ,eol:¬,trail:·
 set list
 
-" let g:solarized_termcolors=256
-" set t_Co=256 " Use 256 colors.
-
+set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme solarized
+colorscheme jellybeans
 
 
 " Check for existance in case we use an older version of vim
