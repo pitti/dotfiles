@@ -26,10 +26,18 @@ uncolor index "~(~N)"
 uncolor index "~N"
   color index brightyellow default "~N"
 
+<<<<<<< HEAD
 # old messages themselves
 uncolor index "~O"
   color index brightyellow default "~O"
 
+||||||| merged common ancestors
+=======
+uncolor index "~O"
+  color index brightyellow default "~O"
+
+
+>>>>>>> 0406da5c23df7c582a4e78301fd397c1979f21f6
 # tagged
 uncolor index "~T"
   color index brightgreen default "~T"

@@ -119,9 +119,8 @@ macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>~
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
 macro index,pager <F1>   "<change-folder>!<enter>"
-macro index,pager <F2>   "<change-folder>=aramis<enter>"
-macro index,pager <F3>   "<change-folder>=clang<enter>"
-macro index,pager <F4>   "<change-folder>=sent<enter>"
+macro index,pager <F2>   "<change-folder>=.aramis<enter>"
+macro index,pager <F4>   "<change-folder>=.sent<enter>"
 
 
 macro index <F5> "<save-message>=todo<enter>"              # move message to todo-list
