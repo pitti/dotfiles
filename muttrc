@@ -4,8 +4,8 @@ set realname      = "Philipp Ittershagen"
 
 set print_command = "/usr/bin/muttprint %s -p pdfprinter"
 
-set mail_check = 10 # how often to check for new mail (s)
-set timeout    = 5
+set mail_check = 5 # how often to check for new mail (s)
+set timeout    = 1
 
 set nomove     # Don't move messages from INBOX to mbox when read
 
@@ -137,7 +137,7 @@ macro attach s "<save-entry><bol>/tmp/<eol><enter>"
 
 
 source ~/.mutt/aliases                    # Load in my aliases.
-source ~/.mutt/colors-new                    # Load in my aliases.
+source ~/.mutt/colors                     # Load in my aliases.
 
 set query_command = "lbdbq '%s'"
 
