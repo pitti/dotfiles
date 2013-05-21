@@ -22,6 +22,7 @@ Bundle 'Align'
 Bundle 'Rip-Rip/clang_complete'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-visual-star-search.git'
+Bundle 'tpope/vim-surround.git'
 
 
 " Enable syntax and ft plugins after vundle invocation
@@ -185,7 +186,7 @@ nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 augroup resize
 	" Resize splits when the whole window is resized
-	au VimResized * exe "normal! \<c-w>="
+	au! VimResized * exe "normal! \<c-w>="
 augroup END
 
 
