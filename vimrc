@@ -69,6 +69,7 @@ colorscheme jellybeans
 " Check for existance in case we use an older version of vim
 if exists('+colorcolumn')
 	set colorcolumn=+1 " Highlight column after textwidth
+	hi ColorColumn ctermbg=black guibg=black
 endif
 
 " Customize menu for file name expansion (:edit and friends)
