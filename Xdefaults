@@ -16,12 +16,13 @@ urxvt.matcher.button:   1
 
 !-- Xft settings -- !
 ! Xft.dpi:        96
-Xft.antialias:  true
-Xft.rgba:       rgb
-Xft.hinting:    true
-Xft.hintstyle:  hintslight
-urxvt*font: xft:PT Mono:size=8
-urxvt*boldFont: xft:PT Mono:size=8
+! Xft.antialias:  true
+! Xft.rgba:       rgb
+! Xft.hinting:    true
+! Xft.hintstyle:  hintslight
+urxvt*font: xft:Droid Sans Mono Slashed:size=9
+! urxvt*boldFont: xft:Droid Sans Mono Slashed:size=8:style=bold
+! urxvt*boldFont: xft:PT Mono:size=12
 URxvt.letterSpace: -1
 
 
@@ -63,7 +64,7 @@ URxvt.letterSpace: -1
 ! urxvt*color15:    #dddddd
 
 
-# include "/home/philippi/.rcfiles/Xdefaults-molokai"
+# include ".rcfiles/Xdefaults-molokai"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
