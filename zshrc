@@ -91,5 +91,3 @@ export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
 
 export PATH=~/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
 
-export TEXMFHOME=$HOME/.local/share/texmf
-
