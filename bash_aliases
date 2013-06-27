@@ -8,7 +8,7 @@ alias la='ls -A'
 alias l='ls -lh'
 
 # only load irssi if it does not run in a screen yet
-alias irssi='if pgrep -U `id -u` irssi; then screen -x irssi;else screen -S irssi irssi;fi'
+# alias irssi='if pgrep -U `id -u` irssi; then screen -x irssi;else screen -S irssi irssi;fi'
 alias spac="sudo pacmatic"
 
 alias '..'='cd ..'
