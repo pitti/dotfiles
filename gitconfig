@@ -74,9 +74,15 @@
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
 
+[url "git+ssh://git@github.com/"]
+	insteadOf = gh:
+
 [url "git+ssh://duemmer.informatik.uni-oldenburg.de/~/"]
 	insteadOf = arbi:
 
 [gui]
 	fontdiff = -family Terminus -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	spellingdictionary = none
+
+[credential]
+	helper = /home/philippi/.local/bin/git-credential-gnome-keyring
