@@ -28,7 +28,6 @@ let g:clang_complete_copen = 1
 let g:clang_close_preview  = 1
 let g:clang_complete_auto  = 1
 let g:clang_hl_errors      = 0
-let g:clang_library_path = "/opt/site/devtools/linux-3-x86_64-debian-6/clang/clang+llvm-3.2/lib"
 
 nmap <silent> <Leader>of :FSHere<cr>
 nnoremap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
