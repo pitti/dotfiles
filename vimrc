@@ -23,6 +23,7 @@ Bundle 'Rip-Rip/clang_complete'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
+Bundle 'msanders/snipmate.vim.git'
 
 
 " Enable syntax and ft plugins after vundle invocation
