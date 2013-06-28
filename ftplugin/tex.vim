@@ -1,5 +1,5 @@
 :call IMAP('II', '\lstinline{<++>}<++>', 'tex')
-
+:call IMAP('IC', '\code{<++>}<++>', 'tex')
 
 " vim-latexsuite options
 let g:tex_flavor              = 'latex'
