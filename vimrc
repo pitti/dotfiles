@@ -56,7 +56,7 @@ set autoread     " Read changes automatically when file changes on disk
 
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
-let mapleader = "´"
+let mapleader = ","
 
 " Enable the representation of special chars
 set listchars=tab:»\ ,eol:¬,trail:·
@@ -70,6 +70,7 @@ colorscheme jellybeans
 " Check for existance in case we use an older version of vim
 if exists('+colorcolumn')
 	set colorcolumn=+1 " Highlight column after textwidth
+	hi ColorColumn ctermbg=black guibg=black
 endif
 
 " Customize menu for file name expansion (:edit and friends)
@@ -196,12 +197,13 @@ augroup END
 
 let g:myLang = 0
 function! s:MySpellLang()
-	" Loop through languages
 	let g:myLang = g:myLang + 1
 	if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
-	if g:myLang == 0 | set nospell | endif
-	if g:myLang == 1 | setlocal spell spelllang=de_de | endif
-	if g:myLang == 2 | setlocal spell spelllang=en_us | endif
+	if g:myLang == 0
+		set nospell
+	else
+		execute "set spell spelllang=".g:myLangList[g:myLang]
+	endif
 	echo "language:" g:myLangList[g:myLang]
 endfunction
 
