@@ -9,6 +9,8 @@ set timeout    = 1
 
 set nomove     # Don't move messages from INBOX to mbox when read
 
+set text_flowed = yes
+
 set use_from
 set envelope_from
 
@@ -132,7 +134,7 @@ macro index,pager S "<save-message>=.aramis<enter>" #
 
 save-hook '~s ARAMiS' '=aramis'
 
-macro attach s "<save-entry><bol>/tmp/<eol><enter>"
+macro attach s "<save-entry><bol>/home/philippi/mail-attachements/<eol><enter>"
 
 
 source ~/.mutt/aliases                    # Load in my aliases.
@@ -168,6 +170,7 @@ score ~p +5
 
 
 folder-hook . 'set record="^"' # save sent messages to current folder
+folder-hook . push '<delete-pattern>~=<enter>$' # delete duplicates
 
 
 
@@ -196,3 +199,11 @@ color body	green			black	"^#v[-+]""]"
 set beep_new = yes
 set check_new = yes
 set timeout = 600
+
+set pgp_sign_as = 62F55F3D
+set pgp_autosign = yes
+set pgp_replyencrypt = yes
+
+set rfc2047_parameters
+
+
