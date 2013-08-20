@@ -168,6 +168,7 @@ score ~p +5
 
 
 folder-hook . 'set record="^"' # save sent messages to current folder
+folder-hook . push '<delete-pattern>~=<enter>$' # delete duplicates
 
 
 
