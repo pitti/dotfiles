@@ -134,7 +134,7 @@ macro index,pager S "<save-message>=.aramis<enter>" #
 
 save-hook '~s ARAMiS' '=aramis'
 
-macro attach s "<save-entry><bol>/tmp/<eol><enter>"
+macro attach s "<save-entry><bol>/home/philippi/mail-attachements/<eol><enter>"
 
 
 source ~/.mutt/aliases                    # Load in my aliases.
