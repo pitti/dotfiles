@@ -197,3 +197,11 @@ color body	green			black	"^#v[-+]""]"
 set beep_new = yes
 set check_new = yes
 set timeout = 600
+
+set pgp_sign_as = 62F55F3D
+set pgp_autosign = yes
+set pgp_replyencrypt = yes
+
+set rfc2047_parameters
+
+
