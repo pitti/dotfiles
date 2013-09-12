@@ -1,7 +1,5 @@
 " My vimrc
 
-set nocompatible
-
 " Vundle plugin to handle vim plugins as modules.
 
 filetype off
