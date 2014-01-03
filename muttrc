@@ -4,10 +4,12 @@ set realname      = "Philipp Ittershagen"
 
 set print_command = "/usr/bin/muttprint %s -p pdfprinter"
 
-set mail_check = 10 # how often to check for new mail (s)
-set timeout    = 5
+set mail_check = 5 # how often to check for new mail (s)
+set timeout    = 1
 
 set nomove     # Don't move messages from INBOX to mbox when read
+
+set text_flowed = yes
 
 set use_from
 set envelope_from
@@ -16,7 +18,7 @@ set sig_dashes="no"
 set fast_reply   # go to reply message without prompting for To:
 set sendmail_wait = -1 # dont't wait for mail to be sent
 
-set sendmail = /usr/bin/msmtp
+# set sendmail = /usr/bin/msmtp
 
 set askcc
 
@@ -62,7 +64,7 @@ set hidden_host                           # Hide host details.
 
 ignore *
 unignore from: date subject to cc
-unignore x-mailing-list: posted-to:
+unignore x-mailing-list: posted-to: x-source-folder:
 # unignore x-mailer:
 
 hdr_order Date From To Cc
@@ -115,31 +117,28 @@ macro index,pager <F8> ":toggle sidebar_visible<enter>"
 color sidebar_new brightblue black# b toggles sidebar visibility
 
 
-
-macro index \Cr "<tag-prefix><clear-flag>N" "mark tagged messages as read"
-macro index B   "<limit>~b "                "search message bodies"
+macro index \Cr "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>~T<enter>" "mark all messages as read"
 macro index I   "<change-folder>!<enter>"   "go to Inbox"
 
-macro index,pager <F1>   "<change-folder>=INBOX<enter>"
-macro index,pager <F2>   "<change-folder>=aramis<enter>"
-macro index,pager <F3>   "<change-folder>=clang<enter>"
-macro index,pager <F4>   "<change-folder>=sent<enter>"
+macro index,pager <F1>   "<change-folder>!<enter>"
+macro index,pager <F2>   "<change-folder>=.aramis<enter>"
+macro index,pager <F4>   "<change-folder>=.sent<enter>"
 
 
 macro index <F5> "<save-message>=todo<enter>"              # move message to todo-list
 
 
-macro index,pager A "<save-message>=archive<enter>" # 
-macro index,pager d "<save-message>=trash<enter>" # 
-macro index,pager S "<save-message>=aramis<enter>" # 
+macro index,pager A "<save-message>><enter>" # 
+macro index,pager d "<save-message>=.trash<enter>" # 
+macro index,pager S "<save-message>=.aramis<enter>" # 
 
 save-hook '~s ARAMiS' '=aramis'
 
-macro attach s "<save-entry><bol>/tmp/<eol><enter>"
+macro attach s "<save-entry><bol>/home/philippi/mail-attachements/<eol><enter>"
 
 
 source ~/.mutt/aliases                    # Load in my aliases.
-source ~/.mutt/colors                    # Load in my aliases.
+source ~/.mutt/colors                     # Load in my aliases.
 
 set query_command = "lbdbq '%s'"
 
@@ -171,6 +170,7 @@ score ~p +5
 
 
 folder-hook . 'set record="^"' # save sent messages to current folder
+folder-hook . push '<delete-pattern>~=<enter>$' # delete duplicates
 
 
 
@@ -178,6 +178,10 @@ auto_view text/html
 auto_view text/calendar
 
 source ~/.mutt/account-tc               # source offis as default
+
+
+macro index,pager ,u "<shell-escape>mairix\n" "update mairix index"
+macro index,pager ,l "<shell-escape>mairix-search " "search via mairix"
 
 
 set display_filter='t-prot -aelmtS -c --bigq -Mmutt --spass -L$HOME/.mutt/mlfooters -A$HOME/.mutt/adfooters'
@@ -189,9 +193,17 @@ color body	brightmagenta	black	"^\\[---.*"
 color body	green			black	"^#v[-+]""]"
 
 
-macro index,pager <F12>  "<forward-message>klmann+7c87cd@rmilk.com<enter><enter>"
+# macro index,pager <F12>  "<forward-message>klmann+7c87cd@rmilk.com<enter><enter>"
 
 # WM_URGENT when new mail arrives
 set beep_new = yes
 set check_new = yes
 set timeout = 600
+
+set pgp_sign_as = 62F55F3D
+set pgp_autosign = yes
+set pgp_replyencrypt = yes
+
+set rfc2047_parameters
+
+

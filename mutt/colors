@@ -21,6 +21,7 @@ color  tree        color196        default
 color  attachment  brightcolor211  default
 
 color  index  color154        default  ~N
+color  index  color154        default  ~O
 color  index  color243        default  ~P
 color  index  brightcolor221  default  ~F
 color  index  brightcolor39   default  ~T

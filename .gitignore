@@ -2,6 +2,7 @@ bash_aliases_private
 mutt/account-*
 mutt/aliases
 mutt/cache/
+mutt/certificates
 awesome/debian
 awesome/icons-bw
 awesome/icons-old
