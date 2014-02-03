@@ -20,7 +20,7 @@ urxvt.matcher.button:   1
 ! Xft.rgba:       rgb
 ! Xft.hinting:    true
 ! Xft.hintstyle:  hintslight
-urxvt*font: xft:Droid Sans Mono Slashed:size=9
+urxvt*font: xft:Droid Sans Mono Slashed:size=8
 ! urxvt*boldFont: xft:Droid Sans Mono Slashed:size=8:style=bold
 ! urxvt*boldFont: xft:PT Mono:size=12
 URxvt.letterSpace: -1
