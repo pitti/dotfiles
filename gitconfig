@@ -77,7 +77,7 @@
 [url "git+ssh://klmann@shgn.de/srv/scm/"]
 	insteadOf = psrv:
 
-[url "git+ssh://git@github.com/"]
+[url "git@github.com:"]
 	insteadOf = gh:
 
 [url "git+ssh://duemmer.informatik.uni-oldenburg.de/~/"]
