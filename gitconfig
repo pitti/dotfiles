@@ -57,7 +57,7 @@
 	mst = merge --squash -s subtree --no-commit
 	ff = merge --ff-only
 	upsvn ="!git sup && git merge-ff svn/trunk git-svn"
-	up = remote update
+	up = fetch --all -n
   rename-remote-branch = "!f() { git push ${1} refs/remotes/${1}/${2}:refs/heads/${3} && \
                           git push ${1} :${2} ; } ; f"
 
