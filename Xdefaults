@@ -64,7 +64,7 @@ URxvt.letterSpace: -1
 ! urxvt*color15:    #dddddd
 
 
-# include ".rcfiles/Xdefaults-molokai"
+# include ".rcfiles/Xdefaults-loli"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
