@@ -4,11 +4,10 @@ urxvt*saveLines: 10000
 urxvt*metaSendsEscape: true
 urxvt*termName: rxvt-256color
 urxvt*urgentOnBell: True
-urxvt*iconFile: /usr/share/icons/Faenza/apps/scalable/terminal.svg
 
 ! Clickable URLs
 urxvt.perl-ext-common:  default,matcher
-urxvt.urlLauncher:      /usr/bin/chromium
+urxvt.urlLauncher:      xdg-open
 urxvt.matcher.button:   1
 
 ! urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
@@ -21,6 +20,7 @@ urxvt.matcher.button:   1
 ! Xft.hinting:    true
 ! Xft.hintstyle:  hintslight
 urxvt*font: xft:Droid Sans Mono Slashed:size=8
+! urxvt*cursorBlink: true
 ! urxvt*boldFont: xft:Droid Sans Mono Slashed:size=8:style=bold
 ! urxvt*boldFont: xft:PT Mono:size=12
 URxvt.letterSpace: -1
@@ -64,7 +64,7 @@ URxvt.letterSpace: -1
 ! urxvt*color15:    #dddddd
 
 
-# include ".rcfiles/Xdefaults-loli"
+# include ".rcfiles/Xdefaults-default"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
