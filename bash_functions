@@ -49,7 +49,7 @@ td(){
 	unset td
 }
 
-# grep recursively from $PWD using 'gr'
+# grep recursively from $PWD using 'grr'
 grr() {
 	if [ -z "$*" ]; then
 		echo "Usage: gr <expr> to search for <expr> in files recursively"
@@ -57,28 +57,6 @@ grr() {
 		grep -C 2 --color -RTn $* .
 	fi
 }
-
-__maybe_git_ps1()
-{
-	# __git_ps1 is part of bash's Git completion system
-	local BRANCH="$(__git_ps1 '%s' )"
-	case "$BRANCH" in
-		master)
-			: # silent
-			;;
-		'')
-			: # not a git repo? -> silent
-			;;
-		*)
-			if [ -n "$1" ]; then
-				printf "$1" "$BRANCH"
-			else
-				printf " (%s)" "$BRANCH"
-			fi
-			;;
-	esac
-}
-
 
 latexmks () {
 	latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
