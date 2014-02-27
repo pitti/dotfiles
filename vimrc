@@ -198,6 +198,13 @@ augroup resize
 	au! VimResized * exe "normal! \<c-w>="
 augroup END
 
+augroup filetype
+  au! BufRead,BufNewFile *.ll  set filetype=llvm
+  au! BufRead,BufNewFile *.td  set filetype=tablegen
+  au! BufRead,BufNewFile *.oct set filetype=octave
+augroup END
+
+
 
 " Functions
 " ------------------------------------
