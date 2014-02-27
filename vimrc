@@ -27,10 +27,24 @@ Bundle 'airblade/vim-gitgutter.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sjl/badwolf'
 
+" Text settings
+" ------------------------------------
+
+set textwidth=72
+set encoding=utf8
+
+set expandtab     " Expand tabs to spaces
+set shiftwidth=2  " Indent depth (number of spaces for indenting)
+set tabstop=2     " How many spaces does a tab cover?
+set softtabstop=2 " Number of spaces a tab covers while editing
+
+
+
 
 " Enable syntax and ft plugins after vundle invocation
 syntax on
 filetype plugin indent on
+
 
 
 " Look and feel settings
@@ -40,9 +54,10 @@ set backspace=2  " backspace everything
 set hidden       " Allow hidden buffers
 set history=50   " Keep 50 lines of command line history
 set hlsearch     " Highlight search terms
-set smartcase    " Case-insensitvice search unless upper-case letters
+set ignorecase   " Case-insensitive search default
+set smartcase    " Case-sensitive search when using upper-case letters
 set laststatus=2 " Always show status line
-set linebreak    " Break linesa between words, not chars
+set linebreak    " Break lines between words, not chars
 set incsearch    " Search while typing
 set ruler        " Show the cursor position all the time
 set scrolloff=2  " Keep 2 lines above and beyond the cursor while scrolling
@@ -55,6 +70,8 @@ set nofen        " Disable folding
 set nojoinspaces " Put a space between two joined lines ending with ., ? or !
 set title        " Show file name in window title
 set autoread     " Read changes automatically when file changes on disk
+set modeline
+set modelines=1
 
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
@@ -91,18 +108,6 @@ set shellslash " use forward slashes when expanding file names
 " status line
 " [buffer num] absolute filename  [modified] [RO] [ftype] line,col, percentage
 set statusline=%<[%n]\ %F\ %m%r%y%=%-14.(%l,%c%V%)\ %P
-
-
-" Text settings
-" ------------------------------------
-
-set textwidth=72
-set encoding=utf8
-
-set noexpandtab   " Do not expand tabs to spaces
-set shiftwidth=2  " Indent depth (number of spaces for indenting)
-set tabstop=2     " How many spaces does a tab cover?
-set softtabstop=2 " Number of spaces a tab covers while editing
 
 
 " Tags options
