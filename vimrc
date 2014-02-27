@@ -238,4 +238,8 @@ if filereadable("~/.vimrc.local")
 	source ~/.vimrc.local
 endif
 
+
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
+
 " vim: set tabstop=2 :
