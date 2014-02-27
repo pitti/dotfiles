@@ -124,7 +124,7 @@ set spelllang=de_de " Spellcheck settings (default german)
 set sps=best,10     " Show only ten suggestions when spell checking a word
 
 " Active languages for spell checking
-let g:myLangList = [ "nospell", "de_de", "en_us" ]
+let g:myLangList = [ "nospell", "de_de", "en_gb" , "en_us" ]
 
 
 
