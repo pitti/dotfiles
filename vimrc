@@ -17,11 +17,15 @@ Bundle 'kogakure/vim-sparkup'
 Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'Align'
-Bundle 'Rip-Rip/clang_complete'
+" Bundle 'Schmallon/clang_complete'
 Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
-Bundle 'msanders/snipmate.vim.git'
+" Bundle 'msanders/snipmate.vim.git'
+Bundle 'oinksoft/proj.vim'
+Bundle 'airblade/vim-gitgutter.git'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'sjl/badwolf'
 
 
 " Enable syntax and ft plugins after vundle invocation
