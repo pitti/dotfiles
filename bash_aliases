@@ -32,3 +32,5 @@ alias myps='ps -fjH -u `whoami`'
 
 
 alias gka='gitk --all'
+
+alias ag='ag -C 2 --color-match="1;33" --color-path="1;31" --color-line-number="32"'
