@@ -135,12 +135,12 @@ let g:myLangList = [ "nospell", "de_de", "en_gb" , "en_us" ]
 " Taglist options
 let Tlist_GainFocus_On_ToggleOpen = 1
 let Tlist_Close_On_Select         = 1
-let Tlist_Compact_Format          = 1
-let Tlist_Display_Tag_Scope       = 1
+let Tlist_Compact_Format          = 0
+let Tlist_Display_Tag_Scope       = 0
 let Tlist_Inc_Winwidth            = 1
 let Tlist_Use_Right_Window        = 1
+let Tlist_WinWidth                = 60
 
-" Command-T options
 let g:CommandTMatchWindowReverse = 1
 let g:CommandTMaxHeight          = 50
 
