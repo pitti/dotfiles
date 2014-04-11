@@ -26,6 +26,7 @@ Bundle 'oinksoft/proj.vim'
 " Bundle 'airblade/vim-gitgutter.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sjl/badwolf'
+Bundle 'jcf/vim-latex'
 
 " Text settings
 " ------------------------------------
