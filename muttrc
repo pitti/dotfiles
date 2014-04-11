@@ -9,7 +9,7 @@ set timeout    = 1
 
 set nomove     # Don't move messages from INBOX to mbox when read
 
-set text_flowed = yes
+# set text_flowed = yes
 
 set use_from
 set envelope_from
