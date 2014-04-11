@@ -9,7 +9,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'FSwitch'
 Bundle 'scrooloose/nerdtree.git'
@@ -141,8 +141,6 @@ let Tlist_Inc_Winwidth            = 1
 let Tlist_Use_Right_Window        = 1
 let Tlist_WinWidth                = 60
 
-let g:CommandTMatchWindowReverse = 1
-let g:CommandTMaxHeight          = 50
 
 
 " Key mappings
