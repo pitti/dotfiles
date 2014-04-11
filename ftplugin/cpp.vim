@@ -34,6 +34,7 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 au! BufNewFile *.h call <SID>insert_gates()
 
+set cinoptions+=(0
 
 " clang_complete options
 let g:clang_complete_copen = 1
