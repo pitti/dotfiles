@@ -23,7 +23,7 @@ Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 " Bundle 'msanders/snipmate.vim.git'
 Bundle 'oinksoft/proj.vim'
-Bundle 'airblade/vim-gitgutter.git'
+" Bundle 'airblade/vim-gitgutter.git'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'sjl/badwolf'
 
