@@ -152,9 +152,6 @@ let g:CommandTMaxHeight          = 50
 map <F1> <Nop>
 map K    <Nop>
 
-" Center screen on search result
-noremap n nzz
-
 " Re-select text when using indent commands in visual mode
 vnoremap < <gv
 vnoremap > >gv
