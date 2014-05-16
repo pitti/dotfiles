@@ -70,3 +70,13 @@ fixenv() {
     fi
   done
 }
+
+gpg-open() {
+  set -x
+  filename="$1"
+  orig_ending="${filename[(ws:.:)2]}"
+  tmpfile="$(mktemp -u --suffix .${orig_ending})"
+  gpg -o ${tmpfile} -d ${filename}
+  xdg-open ${tmpfile}
+  rm -i ${tmpfile}
+}
