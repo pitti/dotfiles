@@ -23,10 +23,13 @@ Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 " Bundle 'msanders/snipmate.vim.git'
 Bundle 'oinksoft/proj.vim'
-" Bundle 'airblade/vim-gitgutter.git'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'sjl/badwolf'
 Bundle 'jcf/vim-latex'
+
+
+if v:version > 703 || (v:version == 703 && has('patch584'))
+  Bundle 'Valloric/YouCompleteMe'
+endif
 
 " Text settings
 " ------------------------------------
