@@ -1,6 +1,8 @@
 :call IMAP('II', '\lstinline{<++>}<++>', 'tex')
 :call IMAP('IC', '\code{<++>}<++>', 'tex')
 
+:call IMAP('EFR', "\\begin{frame}\<CR>\\frametitle{<+title+>}\<CR><++>\<CR>\\end{frame}<++>", 'tex')
+
 " vim-latexsuite options
 let g:tex_flavor              = 'latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
