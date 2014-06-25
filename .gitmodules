@@ -1,9 +1,3 @@
-[submodule "awesome/menubar"]
-	path = awesome/menubar
-	url = https://github.com/alexander-yakushev/menubar.git
 [submodule "awesome/themes/awesome-themes"]
 	path = awesome/themes/awesome-themes
 	url = https://github.com/mikar/awesome-themes.git
-[submodule "awesome/vain-repo"]
-	path = awesome/vain-repo
-	url = https://github.com/vain/awesome-vain
