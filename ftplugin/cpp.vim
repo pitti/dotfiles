@@ -2,12 +2,18 @@
 if exists("b:did_ftplugin")
 	finish
 endif
+
 let b:did_ftplugin = 1
 
+" Adjusted for llvm layout
+augroup myrules
+    au!
+    au BufEnter *.h let b:fwsitchdst = 'cpp,cxx,c'
+    au BufEnter *.h let b:fswitchlocs = 'reg:/include/src/,reg:/include.*/src/,../src,reg:/include/lib/'
 
-let b:fswitchlocs = '.'
-
-
+    au BufEnter *.c,*.cpp let b:fwsitchdst = 'h,hpp'
+    au BufEnter *.c,*.cpp let b:fswitchlocs = 'reg:/src/include/,reg:|src|include/**|,../include,reg:/include/lib/'
+augroup END
 
 " insert header gates
 function! s:insert_gates()
