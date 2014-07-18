@@ -44,6 +44,8 @@ set tabstop=2     " How many spaces does a tab cover?
 set softtabstop=2 " Number of spaces a tab covers while editing
 
 
+" No syntax error checking on tex files
+let g:tex_no_error = 1
 
 
 " Enable syntax and ft plugins after vundle invocation
