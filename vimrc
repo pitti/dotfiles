@@ -189,6 +189,9 @@ nnoremap <Leader>q gqip
 nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 
+" <Ctrl-B> starts CtrlP plugin in the MRU mode
+nnoremap <c-b> :CtrlPMRU<cr>
+
 " Auto commands
 " ------------------------------------
 
