@@ -145,6 +145,9 @@ let Tlist_Use_Right_Window        = 1
 let Tlist_WinWidth                = 60
 
 
+" CtrlP options
+let g:ctrlp_clear_cache_on_exit = 0
+
 
 " Key mappings
 " ------------------------------------
