@@ -193,7 +193,6 @@ nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 
-
 " Mappings for text handling
 vnoremap Q gq
 nnoremap <Leader>q gqip
@@ -249,7 +248,6 @@ function! s:StripTrailingWhitespaces()
 	let @/=_s
 	call cursor(l, c)
 endfunction
-
 
 if filereadable("~/.vimrc.local")
 	source ~/.vimrc.local
