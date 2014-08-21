@@ -85,6 +85,8 @@ set autoread     " Read changes automatically when file changes on disk
 set modeline
 set modelines=1
 
+set smartindent
+
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
 let mapleader = ","
