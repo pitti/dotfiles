@@ -18,14 +18,19 @@ Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'Align'
 " Bundle 'Schmallon/clang_complete'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
 " Bundle 'msanders/snipmate.vim.git'
 Bundle 'oinksoft/proj.vim'
-Bundle 'sjl/badwolf'
 Bundle 'jcf/vim-latex'
+Bundle 'beloglazov/vim-online-thesaurus'
+
+" Colorschemes
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'sjl/badwolf'
+Bundle 'w0ng/vim-hybrid'
+Bundle 'chriskempson/vim-tomorrow-theme'
 
 
 if v:version > 703 || (v:version == 703 && has('patch584'))
