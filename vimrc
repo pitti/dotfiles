@@ -93,9 +93,9 @@ let mapleader = ","
 set listchars=tab:»\ ,eol:¬,trail:·
 set list
 
-set t_Co=256 " Use 256 colors.
+" set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme jellybeans
+colorscheme hybrid
 
 
 " Check for existance in case we use an older version of vim
