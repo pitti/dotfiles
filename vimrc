@@ -198,6 +198,8 @@ nnoremap <silent> <Leader>w :call <SID>StripTrailingWhitespaces()<CR>
 vnoremap Q gq
 nnoremap <Leader>q gqip
 
+nnoremap K :OnlineThesaurusCurrentWord<CR>
+
 " Map C-A to replace all occurences of word below cursor
 nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
