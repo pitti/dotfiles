@@ -1,5 +1,3 @@
-" My vimrc
-
 " Vundle plugin to handle vim plugins as modules.
 
 filetype off
@@ -13,15 +11,12 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'FSwitch'
 Bundle 'scrooloose/nerdtree.git'
-" Bundle 'kogakure/vim-sparkup'
 Bundle 'vim-scripts/VisIncr.git'
 Bundle 'taglist.vim'
 Bundle 'Align'
-" Bundle 'Schmallon/clang_complete'
 Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
-" Bundle 'msanders/snipmate.vim.git'
 Bundle 'oinksoft/proj.vim'
 Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
@@ -64,9 +59,7 @@ filetype plugin indent on
 
 set backspace=2  " backspace everything
 set hidden       " Allow hidden buffers
-set history=50   " Keep 50 lines of command line history
 set hlsearch     " Highlight search terms
-set ignorecase   " Case-insensitive search default
 set smartcase    " Case-sensitive search when using upper-case letters
 set laststatus=2 " Always show status line
 set linebreak    " Break lines between words, not chars
@@ -76,14 +69,10 @@ set scrolloff=2  " Keep 2 lines above and beyond the cursor while scrolling
 set scrolljump=5 " Keep 5 lines when jumping towards top or bottom edges
 set shortmess=aI " Use short file type descriptions and turn off intro text
 set showmode     " Show active mode
-set showmatch    " Briefly jump to matching bracket when inserting one
 set number       " Show line numbers
 set nofen        " Disable folding
-set nojoinspaces " Put a space between two joined lines ending with ., ? or !
 set title        " Show file name in window title
 set autoread     " Read changes automatically when file changes on disk
-set modeline
-set modelines=1
 
 set smartindent
 
@@ -154,9 +143,12 @@ let Tlist_Inc_Winwidth            = 1
 let Tlist_Use_Right_Window        = 1
 let Tlist_WinWidth                = 60
 
-
 " CtrlP options
 let g:ctrlp_clear_cache_on_exit = 0
+
+" YouCompleteMe settings
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
 
 
 " Key mappings
@@ -186,7 +178,6 @@ cmap w!! w !sudo tee % >/dev/null
 " Buffer and tab handling
 nnoremap <silent> <C-c> :bd<CR>
 nnoremap <silent> <C-x> :q<CR>
-nnoremap <silent> <C-w><C-t> :tabnew .<CR>
 
 " Plugin or function invocations
 nnoremap <silent> <F8> :TlistToggle<CR>
@@ -202,7 +193,6 @@ nnoremap K :OnlineThesaurusCurrentWord<CR>
 " Map C-A to replace all occurences of word below cursor
 nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
-
 " <Ctrl-B> starts CtrlP plugin in the MRU mode
 nnoremap <c-b> :CtrlPMRU<cr>
 
@@ -210,8 +200,8 @@ nnoremap <c-b> :CtrlPMRU<cr>
 " ------------------------------------
 
 augroup resize
-	" Resize splits when the whole window is resized
-	au! VimResized * exe "normal! \<c-w>="
+  " Resize splits when the whole window is resized
+  au! VimResized * exe "normal! \<c-w>="
 augroup END
 
 augroup filetype
@@ -227,34 +217,30 @@ augroup END
 
 let g:myLang = 0
 function! s:MySpellLang()
-	let g:myLang = g:myLang + 1
-	if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
-	if g:myLang == 0
-		set nospell
-	else
-		execute "set spell spelllang=".g:myLangList[g:myLang]
-	endif
-	echo "language:" g:myLangList[g:myLang]
+  let g:myLang = g:myLang + 1
+  if g:myLang >= len(g:myLangList) | let g:myLang = 0 | endif
+  if g:myLang == 0
+    set nospell
+  else
+    execute "set spell spelllang=".g:myLangList[g:myLang]
+  endif
+  echo "language:" g:myLangList[g:myLang]
 endfunction
 
 
 function! s:StripTrailingWhitespaces()
-	" Save last search and cursor position
-	let _s=@/
-	let l = line(".")
-	let c = col(".")
-	%s/\s\+$//e
-	" Restore search and cursor position
-	let @/=_s
-	call cursor(l, c)
+  " Save last search and cursor position
+  let _s=@/
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  " Restore search and cursor position
+  let @/=_s
+  call cursor(l, c)
 endfunction
 
 if filereadable("~/.vimrc.local")
-	source ~/.vimrc.local
+  source ~/.vimrc.local
 endif
-
-
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
 
 " vim: set tabstop=2 :
