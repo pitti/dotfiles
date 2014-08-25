@@ -27,7 +27,7 @@ export DESKTOP_SESSION=XFCE
 urxvtd -q -o -f
 compton -b
 
-gtk-redshift -l 53.14:8.21 &
+redshift-gtk -l 53.14:8.21 &
 
 echo "Starting session"
 
