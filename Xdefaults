@@ -10,59 +10,13 @@ urxvt.perl-ext-common:  default,matcher
 urxvt.urlLauncher:      xdg-open
 urxvt.matcher.button:   1
 
-! urxvt*font: -*-proggyclean-medium-r-normal--12-120-75-75-c-0-iso8859-1
-! urxvt*font: xft:PT Mono:size=10
+Xft.rgba:       none
 
-!-- Xft settings -- !
-! Xft.dpi:        96
-! Xft.antialias:  true
-! Xft.rgba:       rgb
-! Xft.hinting:    true
-! Xft.hintstyle:  hintslight
-urxvt*font: xft:Droid Sans Mono Slashed:size=8
-! urxvt*cursorBlink: true
-! urxvt*boldFont: xft:Droid Sans Mono Slashed:size=8:style=bold
-! urxvt*boldFont: xft:PT Mono:size=12
-URxvt.letterSpace: -1
-
-
-! -- Fonts -- !
-! URxvt.font:xft:droid sans mono slashed:medium:pixelsize=11
-! URxvt.boldFont:xft:droid sans mono slashed:medium:pixelsize=11
-
-!!colors ripped from rezza: http://metawire.org/~rezza/index.php
-
-
-! urxvt*foreground: #D7D0C7
-! urxvt*background: #151515
-! 
-! !black
-! ! *color0:     #AF875F
-! ! *color8:     #AF875F
-! urxvt*color0:     #101010
-! urxvt*color8:     #404040
-! !red
-! urxvt*color1:     #E84F4F
-! urxvt*color9:     #D23D3D
-! !green
-! urxvt*color2:     #B8D68C
-! urxvt*color10:    #A0CF5D
-! !yellow
-! urxvt*color3:     #E1AA5D
-! urxvt*color11:    #F39D21
-! !blue
-! urxvt*color4:     #7DC1CF
-! urxvt*color12:    #4E9FB1
-! !magenta
-! urxvt*color5:     #9B64FB
-! urxvt*color13:    #8542FF
-! !cyan
-! urxvt*color6:     #6D878D
-! urxvt*color14:    #42717B
-! !white
-! urxvt*color7:     #dddddd
-! urxvt*color15:    #dddddd
-
+urxvt*font: -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-15
+! urxvt*font: xft:Droid Sans Mono Slashed:size=8
+! urxvt*font: xft:PT Mono:size=8
+! urxvt*font: xft:Consolas:size=8
+! urxvt.letterSpace: -1
 
 # include ".rcfiles/Xdefaults-default"
 
