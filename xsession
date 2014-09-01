@@ -24,7 +24,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Needed for synapse to show the correct .desktop entries.
 export DESKTOP_SESSION=XFCE
 
-urxvtd -q -o -f
 compton -b
 
 redshift-gtk -l 53.14:8.21 &
