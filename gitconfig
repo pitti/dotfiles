@@ -19,8 +19,8 @@
 [color "diff"]
 	meta = cyan
 	frag = magenta
-	old  = yellow
-	new  = blue
+	old  = red
+	new  = green
 
 [color "status"]
 	added     = magenta
@@ -86,7 +86,7 @@
 	insteadOf = arbi:
 
 [gui]
-	fontdiff = -family Terminus -size 9 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"Droid Sans Mono Slashed\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	spellingdictionary = none
 
 [credential]
