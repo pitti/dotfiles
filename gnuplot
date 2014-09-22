@@ -1,6 +1,6 @@
 # Line style for axes
 set style line 80 lt 0
-set style line 80 lt rgb "#808080"
+set style line 80 lt rgb "#000000"
 
 # Line style for grid
 set style line 81 lt 3  # dashed
