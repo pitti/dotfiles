@@ -51,7 +51,7 @@
 		git pull pg:/users/$1/$reponame.git ${@:2}; }; f"
 	svn-authors-pull = "!git-svn-authors-pull"
 	svn-authors-push = "!git-svn-authors-push"
-	sup = svn fetch   --use-log-author
+	sup = svn fetch   --use-log-author -A .git/svn-authors
 	srb = svn rebase  --local --use-log-author
 	sci = svn dcommit --add-author-from --use-log-author
 	mst = merge --squash -s subtree --no-commit
