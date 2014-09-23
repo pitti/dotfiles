@@ -60,6 +60,7 @@ filetype plugin indent on
 set backspace=2  " backspace everything
 set hidden       " Allow hidden buffers
 set hlsearch     " Highlight search terms
+set ignorecase   " Default: ignore case sensitivity
 set smartcase    " Case-sensitive search when using upper-case letters
 set laststatus=2 " Always show status line
 set linebreak    " Break lines between words, not chars
