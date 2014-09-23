@@ -157,6 +157,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
 " Get rid of annoying mappings
 map <F1> <Nop>
 map K    <Nop>
+map Q    <Nop>
 
 " Re-select text when using indent commands in visual mode
 vnoremap < <gv
