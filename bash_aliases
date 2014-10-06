@@ -37,3 +37,5 @@ alias ag='ag -C 2 --color-match="1;33" --color-path="1;31" --color-line-number="
 
 alias gpgd='gpg -d'
 alias gpge='gpg -r pit@shgn.de -e'
+
+alias timestamp='date +%Y%m%d%H%M%S'
