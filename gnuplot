@@ -24,10 +24,10 @@ set style line 2 lt 1
 set style line 3 lt 1
 set style line 4 lt 1
 set style line 5 lt 1
-set style line 1 lt rgb "#A00000" lw 2 pt 7
-set style line 2 lt rgb "#00A000" lw 2 pt 9
-set style line 3 lt rgb "#5060D0" lw 2 pt 5
-set style line 4 lt rgb "#F25900" lw 2 pt 13
+set style line 1 lt rgb "#A00000" lw 1 pt 7
+set style line 2 lt rgb "#00A000" lw 1 pt 9
+set style line 3 lt rgb "#5060D0" lw 1 pt 5
+set style line 4 lt rgb "#F25900" lw 1 pt 13
 set style line 5 lt rgb "#000000" lw 1 pt 7
 
 set style line 6 lt rgb "#A00000" lw 1 pt 7
