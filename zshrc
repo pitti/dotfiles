@@ -30,16 +30,16 @@ unsetopt MULTIBYTE
 
 gitdir=$HOME/.rcfiles
 
-setopt extendedglob
-
-
-source $gitdir/bash_aliases
-[ -f $gitdir/bash_aliases_private ] && source $gitdir/bash_aliases_private
-source $gitdir/bash_functions
+if [ -d $gitdir/zshrc.conf.d ]; then
+  for conf in $gitdir/zshrc.conf.d/* ; do
+    source $conf
+  done
+fi
 
 eval `dircolors $gitdir/dircolors.256dark`
 
 unset gitdir
+
 
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
@@ -65,9 +65,6 @@ zkbdfile=~/.zkbd/$TERM-${DISPLAY:-$VENDOR-$OSTYPE}
 [[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
 
 
-
-
-
 bindkey "\eOd" backward-word
 bindkey "\eOc" forward-word
 
@@ -77,15 +74,3 @@ bindkey "\e." insert-last-word
 # Customize to your needs...
 #
 setopt HIST_IGNORE_SPACE
-
-
-export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
-export LESS_TERMCAP_md=$'\E[01;38;5;74m'  # begin bold
-export LESS_TERMCAP_me=$'\E[0m'           # end mode
-export LESS_TERMCAP_se=$'\E[0m'           # end standout-mode
-export LESS_TERMCAP_so=$'\E[38;5;246m'    # begin standout-mode - info box
-export LESS_TERMCAP_ue=$'\E[0m'           # end underline
-export LESS_TERMCAP_us=$'\E[04;38;5;146m' # begin underline
-
-export PATH="$HOME/.local/bin${PATH:+:${PATH}}" # :/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-
