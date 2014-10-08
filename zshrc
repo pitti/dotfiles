@@ -28,6 +28,8 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 unsetopt MULTIBYTE
 
+setopt extendedglob
+
 gitdir=$HOME/.rcfiles
 
 if [ -d $gitdir/zshrc.conf.d ]; then
