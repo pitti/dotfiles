@@ -42,6 +42,7 @@ eval `dircolors $gitdir/dircolors.256dark`
 
 unset gitdir
 
+bindkey "^R" history-incremental-pattern-search-backward
 
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
