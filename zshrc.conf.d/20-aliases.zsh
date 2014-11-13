@@ -39,3 +39,6 @@ alias gpgd='gpg -d'
 alias gpge='gpg -r pit@shgn.de -e'
 
 alias timestamp='date +%Y%m%d%H%M%S'
+
+
+alias clipboard='xclip -selection clipboard'
