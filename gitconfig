@@ -28,8 +28,8 @@
 	untracked = red
 
 [merge]
-	tool = gvimdiff
-	# conflictstyle = diff3
+	tool = meld
+	conflictstyle = diff3
 
 [alias]
 	ci = commit
