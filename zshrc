@@ -18,10 +18,14 @@ export ZSH_THEME="ys"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
+#
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
+ZSH_HIGHLIGHT_PATTERNS+=('rm -rf *' 'fg=white,bold,bg=red')
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git compleat)
+plugins=(git compleat zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,3 +81,5 @@ bindkey "\e." insert-last-word
 # Customize to your needs...
 #
 setopt HIST_IGNORE_SPACE
+
+export PATH="$HOME/.local/bin${PATH:+:${PATH}}" # :/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
