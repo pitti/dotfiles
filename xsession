@@ -8,10 +8,7 @@ export LC_PAPER="de_DE.UTF-8"
 export OOO_FORCE_DESKTOP=xfce
 export G_FILENAME_ENCODING="UTF-8"
 
-
 export PATH=$HOME/.local/bin:$PATH
-
-export TEXMFCNF=$HOME/.texmf-config/web2c:
 
 # load user's ~/.Xmodmap, if it exists
 [ ! -f ~/.Xmodmap ] || xmodmap ~/.Xmodmap
@@ -22,7 +19,7 @@ wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Needed for synapse to show the correct .desktop entries.
-export DESKTOP_SESSION=XFCE
+export DESKTOP_SESSION=GNOME
 
 # Turn off beep
 xset b off
@@ -37,4 +34,4 @@ xbattbar="$(which xbattbar)"
 
 echo "Starting session"
 
-exec xfce4-session
+exec gnome-session --session=awesome
