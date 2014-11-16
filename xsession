@@ -30,7 +30,7 @@ redshift-gtk -l 53.14:8.21 &
 
 xbattbar="$(which xbattbar)"
 
-[ -x $xbattbar ] && $xbattbar -s ~/.local/bin/batt-stat.sh
+[ -x $xbattbar ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
 
 echo "Starting session"
 
