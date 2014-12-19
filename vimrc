@@ -17,7 +17,6 @@ Bundle 'Align'
 Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
-Bundle 'oinksoft/proj.vim'
 Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
 
