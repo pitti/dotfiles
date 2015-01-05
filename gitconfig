@@ -7,6 +7,7 @@
 	page = less -FRX
 	editor = vim
 	excludesfile = ~/.gitignore
+	autocrlf = false
 
 [color]
 	ui = auto
