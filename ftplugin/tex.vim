@@ -3,6 +3,8 @@
 
 :call IMAP('EFR', "\\begin{frame}\<CR>\\frametitle{<+title+>}\<CR><++>\<CR>\\end{frame}<++>", 'tex')
 
+:call IMAP('SVG', "\\begin{figure}[<+pos+>]\<CR>\\centering\<CR>\\includesvg[latex=<+latex+>,width=\\textwidth]{<+file+>}\<CR>\\caption{<+caption+>}\<CR>\\label{fig:<+label+>}\<CR>\\end{figure}<++>", 'tex')
+
 " vim-latexsuite options
 let g:tex_flavor              = 'latex'
 let g:Tex_DefaultTargetFormat = 'pdf'
@@ -12,3 +14,4 @@ let g:tex_indent_items        = 1
 " Use german quote style in TeX sources
 let g:Tex_SmartQuoteOpen  = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
+
