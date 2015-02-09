@@ -73,6 +73,7 @@ set number       " Show line numbers
 set nofen        " Disable folding
 set title        " Show file name in window title
 set autoread     " Read changes automatically when file changes on disk
+set modeline
 
 set smartindent
 
