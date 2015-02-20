@@ -19,6 +19,7 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
+Bundle 'rking/ag.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
@@ -197,6 +198,10 @@ nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 " <Ctrl-B> starts CtrlP plugin in the MRU mode
 nnoremap <c-b> :CtrlPMRU<cr>
+
+nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
+nnoremap <space>/ :Ag
+
 
 " Auto commands
 " ------------------------------------
