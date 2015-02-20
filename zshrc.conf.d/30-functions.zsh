@@ -80,3 +80,9 @@ gpg-open() {
   xdg-open ${tmpfile}
   rm -i ${tmpfile}
 }
+
+
+# tm <session> starts or reuses a tmux session
+tm() {
+  tmux attach -t "$1" || tmux new-session -s "$1"
+}
