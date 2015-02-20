@@ -85,7 +85,6 @@
 	insteadOf = arbi:
 
 [gui]
-	fontdiff = -family \"Droid Sans Mono Slashed\" -size 9 -weight normal -slant roman -underline 0 -overstrike 0
 	spellingdictionary = none
 
 [credential]
