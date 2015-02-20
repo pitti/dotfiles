@@ -29,7 +29,7 @@ compton -b
 redshift-gtk -l 53.14:8.21 &
 
 wallpaper="$(xdg-user-dir PICTURES)/current"
-awsetbg $wallpaper
+awsetbg $wallpaper &
 
 xbattbar="$(which xbattbar)"
 
