@@ -10,7 +10,7 @@ export HISTSIZE=100000
 
 # The directory of the rcfiles from the repository (in order to locate the
 # aliases file and import it)
-gitdir=$HOME/.rcfiles
+gitdir=$HOME/.dotfiles
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -18,9 +18,6 @@ shopt -s checkwinsize
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
-
-# load prompt from file
-source $gitdir/prompt.sh
 
 if [ "$TERM" != "dumb" ] && [ -x /bin/dircolors ]; then
 	eval "`dircolors -b`"
