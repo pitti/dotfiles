@@ -43,6 +43,7 @@ set shiftwidth=2  " Indent depth (number of spaces for indenting)
 set tabstop=2     " How many spaces does a tab cover?
 set softtabstop=2 " Number of spaces a tab covers while editing
 
+set cpoptions+=$ " Show $ at the end of a change
 
 " No syntax error checking on tex files
 let g:tex_no_error = 1
