@@ -26,5 +26,3 @@ export ZSH_THEME="flazz"
 plugins=(git compleat git-flow vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-eval `dircolors $scriptdir/dircolors.256dark`

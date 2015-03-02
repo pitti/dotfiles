@@ -13,3 +13,4 @@ if [ -d $scriptdir/zshrc.conf.d ]; then
 fi
 
 unset scriptdir
+unset zshscript
