@@ -1,5 +1,8 @@
-urxvt*scrollBar: off
+*utf8: 1
+*locale: true
+*wideChars: true
 
+urxvt*scrollBar: off
 urxvt*saveLines: 10000
 urxvt*metaSendsEscape: true
 urxvt*termName: rxvt-256color
