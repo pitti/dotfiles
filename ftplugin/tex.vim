@@ -15,3 +15,10 @@ let g:tex_indent_items        = 1
 let g:Tex_SmartQuoteOpen  = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
 
+
+" Fix latexsuide ALT key mappings for urxvt by re-binding the escape
+" sequences
+execute "set <A-i>=\ei"
+execute "set <A-c>=\ec"
+execute "set <A-b>=\eb"
+execute "set <A-l>=\el"
