@@ -20,5 +20,3 @@ let g:Tex_SmartQuoteClose = "\"'"
 " sequences
 execute "set <A-i>=\ei"
 execute "set <A-c>=\ec"
-execute "set <A-b>=\eb"
-execute "set <A-l>=\el"
