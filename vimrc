@@ -85,7 +85,7 @@ set list
 
 " set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme hybrid
+colorscheme Tomorrow-Night
 
 
 " Check for existance in case we use an older version of vim
