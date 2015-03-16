@@ -43,8 +43,6 @@ set shiftwidth=2  " Indent depth (number of spaces for indenting)
 set tabstop=2     " How many spaces does a tab cover?
 set softtabstop=2 " Number of spaces a tab covers while editing
 
-set cpoptions+=$ " Show $ at the end of a change
-
 " Enable syntax and ft plugins after vundle invocation
 syntax on
 filetype plugin indent on
