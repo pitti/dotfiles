@@ -196,8 +196,9 @@ nnoremap <C-b> :CtrlPMRU<cr>
 
 " bindings for ag (grep-like search)
 nmap ´ :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <space>/ :Ag
 
+" EOL space on next line desired
+nnoremap <space>/ :Ag 
 
 " Auto commands
 " ------------------------------------
