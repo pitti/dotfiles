@@ -45,10 +45,6 @@ set softtabstop=2 " Number of spaces a tab covers while editing
 
 set cpoptions+=$ " Show $ at the end of a change
 
-" No syntax error checking on tex files
-let g:tex_no_error = 1
-
-
 " Enable syntax and ft plugins after vundle invocation
 syntax on
 filetype plugin indent on
