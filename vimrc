@@ -143,7 +143,7 @@ let Tlist_Use_Right_Window        = 1
 let Tlist_WinWidth                = 60
 
 " CtrlP options
-let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_clear_cache_on_exit = 1
 
 " YouCompleteMe settings
 let g:ycm_confirm_extra_conf = 0
@@ -194,7 +194,7 @@ nnoremap K :OnlineThesaurusCurrentWord<CR>
 nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
 
 " <Ctrl-B> starts CtrlP plugin in the MRU mode
-nnoremap <c-b> :CtrlPMRU<cr>
+nnoremap <C-b> :CtrlPMRU<cr>
 
 " bindings for ag (grep-like search)
 nmap ´ :Ag <c-r>=expand("<cword>")<cr><cr>
