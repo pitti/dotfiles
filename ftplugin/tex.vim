@@ -21,6 +21,12 @@ let g:Tex_SmartQuoteOpen  = '"`'
 let g:Tex_SmartQuoteClose = "\"'"
 
 
+" surround plugin latex addition: 
+" Allow \begin{} and \end{} to change with the special keyword l
+" (lower-case L)
+let g:surround_108 = "\\begin{\1environment: \1}\r\\end{\1\r}.*\r\1}"
+
+
 " Fix latexsuide ALT key mappings for urxvt by re-binding the escape
 " sequences
 execute "set <A-i>=\ei"
