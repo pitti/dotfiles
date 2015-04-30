@@ -1,0 +1,7 @@
+
+let maplocalleader = ',,'
+setlocal wrapmargin=5
+setlocal tabstop=4			" tabstop and shiftwidth must match
+setlocal shiftwidth=4			" values from 2 to 8 work well
+
+set fen

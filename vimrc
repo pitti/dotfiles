@@ -20,6 +20,7 @@ Bundle 'tpope/vim-markdown.git'
 Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'rking/ag.vim'
+Bundle 'vimoutliner/vimoutliner.git'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
