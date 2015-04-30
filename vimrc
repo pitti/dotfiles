@@ -87,7 +87,7 @@ set background=dark
 colorscheme Tomorrow-Night
 
 
-" Check for existance in case we use an older version of vim
+" Check for existence in case we use an older version of vim
 if exists('+colorcolumn')
   set colorcolumn=+1 " Highlight column after textwidth
   hi ColorColumn ctermbg=black guibg=black
