@@ -74,6 +74,9 @@ set title        " Show file name in window title
 set autoread     " Read changes automatically when file changes on disk
 set modeline
 
+set completeopt=menuone " Only open the menu when completing, don't show
+                        " the preview window
+
 set smartindent
 
 set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
