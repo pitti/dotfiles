@@ -149,6 +149,7 @@ let g:ctrlp_clear_cache_on_exit = 1
 " YouCompleteMe settings
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
+let g:ycm_always_populate_location_list = 1
 
 " Location List and Quickfix List mappings
 let g:lt_location_list_toggle_map = '<leader>l'
