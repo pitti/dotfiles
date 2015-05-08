@@ -22,6 +22,7 @@ Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'rking/ag.vim'
 Bundle 'thinca/vim-localrc'
 Bundle 'vimoutliner/vimoutliner.git'
+Bundle 'Valloric/ListToggle'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
@@ -149,6 +150,9 @@ let g:ctrlp_clear_cache_on_exit = 1
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_conf.py'
 
+" Location List and Quickfix List mappings
+let g:lt_location_list_toggle_map = '<leader>l'
+let g:lt_quickfix_list_toggle_map = '<leader>Q'
 
 " Key mappings
 " ------------------------------------
