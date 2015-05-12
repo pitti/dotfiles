@@ -13,6 +13,7 @@ let g:tex_indent_items        = 1
 
 " No syntax error checking on tex files
 let g:tex_no_error = 1
+let g:tex_no_math = 1
 
 
 
