@@ -33,7 +33,7 @@ awsetbg $wallpaper &
 
 xbattbar="$(which xbattbar)"
 
-[ -x $xbattbar ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
+[ -n "$xbattbar" ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
 
 echo "Starting session"
 
