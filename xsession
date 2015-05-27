@@ -35,6 +35,5 @@ xbattbar="$(which xbattbar)"
 
 [ -n "$xbattbar" ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
 
-echo "Starting session"
 
 exec gnome-session --session=awesome
