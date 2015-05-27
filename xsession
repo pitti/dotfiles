@@ -19,7 +19,7 @@ wmname LG3D
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Needed for synapse to show the correct .desktop entries.
-export DESKTOP_SESSION=GNOME
+export DESKTOP_SESSION=LXDE
 
 # Turn off beep
 xset b off
@@ -36,6 +36,11 @@ xbattbar="$(which xbattbar)"
 [ -n "$xbattbar" ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
 
 
-exec gnome-session --session=awesome
 CHROMIUM_FLAGS="--force-device-scale-factor=1"
 export CHROMIUM_FLAGS
+eval $(gnome-keyring-daemon --replace --components=secrets,gpg,pkcs11,ssh)
+export SSH_AUTH_SOCK
+export GNOME_KEYRING_CONTROL
+export GPG_AGENT_INFO
+
+exec lxsession
