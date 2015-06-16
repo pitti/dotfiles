@@ -29,11 +29,14 @@ compton -b
 redshift-gtk -l 53.14:8.21 &
 
 wallpaper="$(xdg-user-dir PICTURES)/current"
-awsetbg $wallpaper
+if [ -f $wallpaper ]; then
+  awsetbg $wallpaper
+fi
 
 xbattbar="$(which xbattbar)"
-
-[ -x $xbattbar ] && $xbattbar -s ~/.local/bin/batt-stat.sh &
+if [ -x $xbattbar ] ; then
+  $xbattbar -c &
+fi
 
 echo "Starting session"
 
