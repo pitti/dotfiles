@@ -20,6 +20,8 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Needed for synapse to show the correct .desktop entries.
 export DESKTOP_SESSION=LXDE
+# Also needed for xdg-open to get the correct browser
+export DESKTOP_SESSION=generic
 
 # Turn off beep
 xset b off
