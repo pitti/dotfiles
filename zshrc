@@ -4,7 +4,7 @@
 # Figure out the directory of this zshrc by following the ~/.zshrc
 # symlink
 zshscript=$(readlink -f ~/.zshrc)
-scriptdir="${zshscript:A:h}"
+scriptdir="${zshscript:h}"
 
 if [ -d $scriptdir/zshrc.conf.d ]; then
   for conf in $scriptdir/zshrc.conf.d/* ; do
@@ -13,3 +13,4 @@ if [ -d $scriptdir/zshrc.conf.d ]; then
 fi
 
 unset scriptdir
+unset zshscript
