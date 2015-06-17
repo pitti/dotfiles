@@ -1,43 +1,22 @@
-#!/bin/bash
+#!/bin/zsh
 
-export LANG="en_US.UTF-8"
-export LC_ALL="en_US.UTF-8"
-export LC_CTYPE="de_DE.UTF-8"
-export LC_PAPER="de_DE.UTF-8"
+# where are we
+xsessionscript=$(readlink -f ~/.xsession)
+scriptdir="${xsessionscript:A:h}"
 
-export OOO_FORCE_DESKTOP=xfce
-export G_FILENAME_ENCODING="UTF-8"
+# load computer-specific stuff
+custom_script="$scriptdir/xsession.$(uname -n).zsh"
+[ -f "$custom_script" ] && source $custom_script
 
-export PATH=$HOME/.local/bin:$PATH
+# load snippets
+confdir=$scriptdir/xsession.d
 
-# load user's ~/.Xmodmap, if it exists
-[ ! -f ~/.Xmodmap ] || xmodmap ~/.Xmodmap
-
-# Trick java-based applications to correctly redraw when using a
-# non-reparenting window manager such as awesome-wm
-wmname LG3D
-export _JAVA_AWT_WM_NONREPARENTING=1
-
-# Needed for synapse to show the correct .desktop entries.
-export DESKTOP_SESSION=GNOME
-
-# Turn off beep
-xset b off
-
-compton -b
-
-redshift-gtk -l 53.14:8.21 &
-
-wallpaper="$(xdg-user-dir PICTURES)/current"
-if [ -f $wallpaper ]; then
-  awsetbg $wallpaper
+if [ -d $confdir ]; then
+  for conf in $confdir/* ; do
+    source $conf
+  done
 fi
 
-xbattbar="$(which xbattbar)"
-if [ -x $xbattbar ] ; then
-  $xbattbar -c &
-fi
+unset scriptdir
 
-echo "Starting session"
-
-exec gnome-session --session=awesome
+exec ${session_binary:-lxsession}

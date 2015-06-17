@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="ys"
+export ZSH_THEME="mh"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -23,8 +23,6 @@ export ZSH_THEME="ys"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git compleat)
+plugins=(git compleat git-flow vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-
-eval `dircolors $scriptdir/dircolors.256dark`

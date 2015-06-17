@@ -1,5 +1,8 @@
-urxvt*scrollBar: off
+*utf8: 1
+*locale: true
+*wideChars: true
 
+urxvt*scrollBar: off
 urxvt*saveLines: 10000
 urxvt*metaSendsEscape: true
 urxvt*termName: rxvt-256color
@@ -12,11 +15,12 @@ urxvt.matcher.button:   1
 
 Xft.rgba:       none
 
-urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
+! urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
 ! urxvt*font: xft:Droid Sans Mono Slashed:size=8
+urxvt*font: xft:Source Code Pro:size=10
 ! urxvt*font: xft:PT Mono:size=10
 ! urxvt*font: xft:Consolas:size=8
-! urxvt.letterSpace: -1
+urxvt.letterSpace: -1
 
 # include ".dotfiles/Xdefaults-default"
 
