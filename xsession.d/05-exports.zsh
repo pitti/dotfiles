@@ -6,8 +6,6 @@ export LC_PAPER="de_DE.UTF-8"
 
 export G_FILENAME_ENCODING="UTF-8"
 
-export PATH=$HOME/.local/bin:$PATH
-
 # Trick java-based applications to correctly redraw when using a
 # non-reparenting window manager such as awesome-wm
 wmname LG3D

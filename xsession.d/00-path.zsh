@@ -1,0 +1,1 @@
+../zshrc.conf.d/00-path.zsh

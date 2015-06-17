@@ -1,6 +1,7 @@
 
 # Needed for synapse to show the correct .desktop entries.
-export DESKTOP_SESSION=LXDE
+# But also needed for xdg-open to get the correct browser
+export DESKTOP_SESSION=generic
 
 export OOO_FORCE_DESKTOP=GNOME
 
