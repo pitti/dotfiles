@@ -5,7 +5,7 @@ export LC_ALL="en_US.UTF-8"
 export LC_CTYPE="de_DE.UTF-8"
 export LC_PAPER="de_DE.UTF-8"
 
-export OOO_FORCE_DESKTOP=xfce
+export OOO_FORCE_DESKTOP=GNOME
 export G_FILENAME_ENCODING="UTF-8"
 
 export PATH=$HOME/.local/bin:$PATH
@@ -31,7 +31,7 @@ compton -b
 redshift-gtk -l 53.14:8.21 &
 
 wallpaper="$(xdg-user-dir PICTURES)/current"
-awsetbg $wallpaper
+awsetbg $wallpaper &
 
 xbattbar="$(which xbattbar)"
 
