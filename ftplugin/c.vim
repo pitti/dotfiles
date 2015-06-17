@@ -47,6 +47,7 @@ let g:clang_hl_errors      = 0
 
 
 map <C-I> :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<cr>
+imap <C-I> <c-o>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<cr>
 
 nmap <silent> <Leader>of :FSHere<cr>
 nnoremap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
