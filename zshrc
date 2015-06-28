@@ -1,4 +1,4 @@
-
+#!/usr/bin/env zsh
 # zshrc split into multiple files
 
 # Figure out the directory of this zshrc by following the ~/.zshrc
