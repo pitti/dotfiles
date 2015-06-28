@@ -13,6 +13,9 @@ urxvt.perl-ext-common:  default,matcher
 urxvt.urlLauncher:      xdg-open
 urxvt.matcher.button:   1
 
+! Force 96 DPI since the NVIDIA driver will calculate a higher DPI value
+! when used in dual-screen setups.
+Xft.dpi:       96
 Xft.rgba:       none
 
 ! urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
