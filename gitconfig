@@ -1,6 +1,6 @@
 [user]
 	name = Philipp Ittershagen
-	email = pit@shgn.de
+	email = Philipp.Ittershagen@offis.de
 
 
 [core]
@@ -72,6 +72,7 @@
 
 [url "https://vprojects.offis.de/redmine/git/"]
 	insteadOf = vproj:
+	insteadOf = vprojects:
 
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
