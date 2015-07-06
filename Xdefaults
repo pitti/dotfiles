@@ -22,7 +22,7 @@ urxvt*font: xft:Source Code Pro:size=10
 ! urxvt*font: xft:Consolas:size=8
 urxvt.letterSpace: -1
 
-# include ".rcfiles/Xdefaults-default"
+# include ".rcfiles/base16-tomorrow.dark.256.xresources"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
