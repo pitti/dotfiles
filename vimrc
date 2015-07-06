@@ -29,6 +29,7 @@ Bundle 'nanotech/jellybeans.vim'
 Bundle 'sjl/badwolf'
 Bundle 'w0ng/vim-hybrid'
 Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'chriskempson/base16-vim'
 
 
 if v:version > 703 || (v:version == 703 && has('patch584'))
