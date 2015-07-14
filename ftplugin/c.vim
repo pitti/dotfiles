@@ -5,13 +5,6 @@ endif
 
 let b:did_ftplugin = 1
 
-" Adjusted for llvm layout
-augroup myrules
-    au!
-    au BufEnter *.h let b:fwsitchdst = 'cpp,cxx,c'
-    au BufEnter *.c,*.cpp let b:fwsitchdst = 'h,hpp'
-augroup END
-
 " insert header gates
 function! s:insert_gates()
 	let suffix = "_INCLUDED_"
@@ -50,8 +43,6 @@ map <C-I> :pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<cr>
 imap <C-I> <c-o>:pyf /usr/share/vim/addons/syntax/clang-format-3.6.py<cr>
 
 nmap <silent> <Leader>of :FSHere<cr>
-nnoremap <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
 
 set fo+=ro
 
