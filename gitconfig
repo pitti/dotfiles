@@ -77,7 +77,7 @@
 [url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
 	insteadOf = vscm:
 
-[url "git+ssh://klmann@shgn.de/srv/scm/"]
+[url "git+ssh://klmann@shgn.de/srv/scm/users/klmann/"]
 	insteadOf = shgn:
 	insteadOf = psrv:
 
