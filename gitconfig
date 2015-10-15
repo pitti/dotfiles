@@ -29,7 +29,7 @@
 	untracked = red
 
 [merge]
-	tool = meld
+	tool = vimdiff
 	conflictstyle = diff3
 
 [alias]
