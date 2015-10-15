@@ -1,5 +1,8 @@
-urxvt*scrollBar: off
+*utf8: 1
+*locale: true
+*wideChars: true
 
+urxvt*scrollBar: off
 urxvt*saveLines: 10000
 urxvt*metaSendsEscape: true
 urxvt*termName: rxvt-256color
@@ -10,15 +13,19 @@ urxvt.perl-ext-common:  default,matcher
 urxvt.urlLauncher:      xdg-open
 urxvt.matcher.button:   1
 
+! Force 96 DPI since the NVIDIA driver will calculate a higher DPI value
+! when used in dual-screen setups.
+Xft.dpi:       96
 Xft.rgba:       none
 
-urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
+! urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
 ! urxvt*font: xft:Droid Sans Mono Slashed:size=8
+urxvt*font: xft:Source Code Pro:size=10
 ! urxvt*font: xft:PT Mono:size=10
 ! urxvt*font: xft:Consolas:size=8
-! urxvt.letterSpace: -1
+urxvt.letterSpace: -1
 
-# include ".rcfiles/Xdefaults-default"
+# include ".dotfiles/Xdefaults-default"
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff

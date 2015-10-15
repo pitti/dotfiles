@@ -1,13 +1,14 @@
+[include]
+	path = ~/.gitconfig-priv
+
 [user]
 	name = Philipp Ittershagen
 	email = Philipp.Ittershagen@offis.de
-
 
 [core]
 	page = less -FRX
 	editor = vim
 	excludesfile = ~/.gitignore
-	autocrlf = false
 
 [color]
 	ui = auto
@@ -31,6 +32,9 @@
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
+
+[credential]
+	helper = git-credential-gnome-keyring
 
 [alias]
 	ci = commit
@@ -57,7 +61,6 @@
 	ff = merge --ff-only
 	upsvn ="!git sup && git merge-ff svn/trunk git-svn"
 	up = fetch --all -n
-  clone-vscm = "!git-clone-vscm"
   rename-remote-branch = "!f() { git push ${1} refs/remotes/${1}/${2}:refs/heads/${3} && \
                           git push ${1} :${2} ; } ; f"
 
@@ -66,9 +69,6 @@
 
 [branch]
 	autosetupmerge = true
-#[status]
-#	showUntrackedFiles = no
-
 
 [url "https://vprojects.offis.de/redmine/git/"]
 	insteadOf = vproj:
@@ -88,7 +88,8 @@
 
 [gui]
 	spellingdictionary = none
+	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 
-[credential]
-	helper = /home/philippi/.local/bin/git-credential-gnome-keyring
+[url "git@github.com:"]
+	insteadOf = gh:
 
