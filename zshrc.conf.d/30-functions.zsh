@@ -1,5 +1,21 @@
 #!/bin/zsh
 
+timestamp() {
+  case $1 in 
+    -f|--full) date +%Y%m%d%H%M%S ;;
+    -h|--help) cat <<EOF
+
+Print out a timestamp of the current date. Useful for prefixing dates to
+files.
+
+Options:
+  -f, --full Print date and time
+EOF
+;;
+    *) date +%Y%m%d ;;
+esac
+}
+
 # handy function for extracting various archive types
 extract () {
   hash dtrx 2>/dev/null && { dtrx -v $@ ; return }
