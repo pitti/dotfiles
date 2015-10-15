@@ -70,10 +70,24 @@
 [branch]
 	autosetupmerge = true
 
-[gui]
-	spellingdictionary = none
-	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[url "https://vprojects.offis.de/redmine/git/"]
+	insteadOf = vproj:
+	insteadOf = vprojects:
+
+[url "git+ssh://vscm.offis.de/var/lib/gitroot/"]
+	insteadOf = vscm:
+
+[url "git+ssh://klmann@shgn.de/srv/scm/users/klmann/"]
+	insteadOf = shgn:
+	insteadOf = psrv:
 
 [url "git@github.com:"]
 	insteadOf = gh:
+
+[url "git+ssh://duemmer.informatik.uni-oldenburg.de/~/"]
+	insteadOf = arbi:
+
+[gui]
+	spellingdictionary = none
+	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
 

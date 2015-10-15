@@ -25,7 +25,8 @@ urxvt*font: xft:Source Code Pro:size=10
 ! urxvt*font: xft:Consolas:size=8
 urxvt.letterSpace: -1
 
-# include ".dotfiles/Xdefaults-default"
+# include ".dotfiles/base16-tomorrow.dark.256.xresources"
+>>>>>>> shgn/work/jessy
 
 URxvt*borderColor:        #151515
 URxvt*colorBD:            #ffffff
