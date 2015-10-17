@@ -19,10 +19,4 @@ export ZSH_THEME="blaenk"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # export DISABLE_AUTO_TITLE="true"
-#
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git compleat git-flow vi-mode)
-
-source $ZSH/oh-my-zsh.sh

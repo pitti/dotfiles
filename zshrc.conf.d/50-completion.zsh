@@ -1,4 +1,7 @@
 
+autoload -U compinit
+
+compinit
 
 # Rehash on every completed command.
 zstyle ":completion:*:commands" rehash 1
