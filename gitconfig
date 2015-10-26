@@ -1,9 +1,9 @@
-[include]
-	path = ~/.gitconfig-priv
-
 [user]
 	name = Philipp Ittershagen
 	email = pit@shgn.de
+
+[include]
+	path = ~/.gitconfig-priv
 
 [core]
 	page = less -FRX
