@@ -20,7 +20,7 @@ Xft.rgba:       none
 
 ! urxvt*font: -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-15
 ! urxvt*font: xft:Droid Sans Mono Slashed:size=8
-urxvt*font: xft:Source Code Pro:size=10
+urxvt*font: xft:Source Code Pro:size=10,xft:DejaVu Sans Mono:size=10
 ! urxvt*font: xft:PT Mono:size=10
 ! urxvt*font: xft:Consolas:size=8
 urxvt.letterSpace: -1
