@@ -3,7 +3,6 @@ setopt prompt_subst
 function p_envs {
   local envs
   [[ -n $SSH_CLIENT ]]  && envs+="R"
-
   [[ -n $envs ]] && echo " %F{green}[%f$envs%F{green}]%f"
 }
 
@@ -24,11 +23,6 @@ function p_colored_path {
   local slash="%F{cyan}/%f"
   echo "${${PWD/#$HOME/~}//\//$slash}"
 }
-
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%*"
-ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='
 %F{blue}λ%f $(p_colored_path)$(p_envs)$(p_vcs)
