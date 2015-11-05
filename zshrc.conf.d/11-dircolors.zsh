@@ -1,3 +1,4 @@
-if [[ $HOST != "knuth" ]]; then
-  eval $(dircolors $scriptdir/dircolors.256dark)
-fi
+autoload -U colors && colors
+export LSCOLORS="Gxfxcxdxbxegedabagacad"
+
+alias ls='ls --color=tty'

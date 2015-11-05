@@ -1,11 +1,19 @@
+unsetopt menu_complete   # do not autoselect the first completion entry
+unsetopt flowcontrol
+setopt auto_menu         # show completion menu on succesive tab press
+setopt complete_in_word
+setopt always_to_end
 
 
-# Rehash on every completed command.
-zstyle ":completion:*:commands" rehash 1
+autoload -U compinit
 
-# complete .. to ../
-zstyle ':completion:*' special-dirs true
+compinit
+
+zmodload -i zsh/complist
 
 
-# Complete for files after equal sign (FOO=/..)
-setopt magic_equal_subst
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+# Use caching so that commands like apt and dpkg complete are useable
+zstyle ':completion::complete:*' use-cache 1
+zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR

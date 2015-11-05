@@ -3,7 +3,7 @@ unsetopt correct_all
 unsetopt MULTIBYTE
 
 setopt extendedglob
-
+setopt auto_cd
 setopt HIST_IGNORE_SPACE
 
 # key timeout for things like VI mode
