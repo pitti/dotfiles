@@ -23,6 +23,7 @@ Bundle 'rking/ag.vim'
 Bundle 'thinca/vim-localrc'
 Bundle 'vimoutliner/vimoutliner.git'
 Bundle 'Valloric/ListToggle'
+Bundle 'rust-lang/rust.vim'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
