@@ -20,7 +20,7 @@ augroup END
 " insert header gates
 function! s:insert_gates()
 	let suffix = "_INCLUDED_"
-	let gname = substitute(toupper(expand("%:t")), "\\.", "_", "g") . suffix
+	let gname = substitute(toupper(expand("@%")), "\\.", "_", "g") . suffix
 	execute "normal! i#ifndef " . gname
 	execute "normal! o#define " . gname
 	execute "normal! Go#endif // " . gname
