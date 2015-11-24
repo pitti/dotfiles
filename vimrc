@@ -7,10 +7,14 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
-Bundle 'kien/ctrlp.vim'
+
+" Bundle 'kien/ctrlp.vim'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/neomru.vim'
+
 Bundle 'Raimondi/delimitMate'
 Bundle 'FSwitch'
-" Bundle 'scrooloose/nerdtree.git'
 Bundle 'vim-scripts/VisIncr.git'
 Bundle 'Align'
 Bundle 'nelstrom/vim-visual-star-search.git'
@@ -134,9 +138,35 @@ let g:myLangList = [ "nospell", "de_de", "en_gb" , "en_us" ]
 " Plugin-specific settings
 " ------------------------------------
 
+" Unite plugin
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
 
-" CtrlP options
-let g:ctrlp_clear_cache_on_exit = 1
+" Start insert.
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1
+\ })
+
+ " Like ctrlp.vim settings.
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 1,
+\   'winheight': 10,
+\   'direction': 'botright',
+\ })
+
+" Ctrl-b offers bookmark and buffer list
+nnoremap <silent> <C-b> :<C-u>Unite
+      \ -buffer-name=recent bookmark buffer<CR>
+
+" Ctrl-p offers recursive file list
+nnoremap <silent> <C-p> :<C-u>Unite 
+      \ -buffer-name=files file_rec/async<CR>
+
+" <leader>p offers recursive file list relative to current buffer dir
+nnoremap <silent> <leader>p :<C-u>UniteWithBufferDir
+  \ -buffer-name=files buffer bookmark file_rec/async<CR>
+
+
+
 
 " YouCompleteMe settings
 let g:ycm_confirm_extra_conf = 0
@@ -189,9 +219,6 @@ nnoremap K :OnlineThesaurusCurrentWord<CR>
 
 " Map C-A to replace all occurences of word below cursor
 nmap <C-A> :%s/\<<c-r>=expand("<cword>")<cr>\>/
-
-" <Ctrl-B> starts CtrlP plugin in the MRU mode
-nnoremap <C-b> :CtrlPMRU<cr>
 
 " bindings for ag (grep-like search)
 nmap ´ :Ag <c-r>=expand("<cword>")<cr><cr>
