@@ -5,18 +5,6 @@ endif
 
 let b:did_ftplugin = 1
 
-if v:version > 703 || (v:version == 703 && has('patch584'))
-  Bundle 'Valloric/YouCompleteMe'
-endif
-
-
-" Adjusted for llvm layout
-augroup myrules
-    au!
-    au BufEnter *.h let b:fwsitchdst = 'cpp,cxx,c'
-    au BufEnter *.c,*.cpp let b:fwsitchdst = 'h,hpp'
-augroup END
-
 " insert header gates
 function! s:insert_gates()
 	let suffix = "_INCLUDED_"
