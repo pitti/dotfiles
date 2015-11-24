@@ -25,11 +25,11 @@ Bundle 'Valloric/ListToggle'
 Bundle 'rust-lang/rust.vim'
 
 " Colorschemes
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'sjl/badwolf'
+" Bundle 'nanotech/jellybeans.vim'
+" Bundle 'sjl/badwolf'
 Bundle 'w0ng/vim-hybrid'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'chriskempson/base16-vim'
+" Bundle 'chriskempson/vim-tomorrow-theme'
+" Bundle 'chriskempson/base16-vim'
 
 
 " Text settings
