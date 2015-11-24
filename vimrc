@@ -18,7 +18,6 @@ Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'tpope/vim-unimpaired.git'
-Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'rking/ag.vim'
 Bundle 'thinca/vim-localrc'
@@ -33,10 +32,6 @@ Bundle 'w0ng/vim-hybrid'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'chriskempson/base16-vim'
 
-
-if v:version > 703 || (v:version == 703 && has('patch584'))
-  Bundle 'Valloric/YouCompleteMe'
-endif
 
 " Text settings
 " ------------------------------------

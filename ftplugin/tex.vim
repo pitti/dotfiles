@@ -1,3 +1,6 @@
+
+Bundle 'jcf/vim-latex'
+
 :call IMAP('II', '\lstinline{<++>}<++>', 'tex')
 :call IMAP('IC', '\code{<++>}<++>', 'tex')
 
