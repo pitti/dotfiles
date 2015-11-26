@@ -33,6 +33,7 @@ Bundle 'rust-lang/rust.vim'
 " Bundle 'nanotech/jellybeans.vim'
 " Bundle 'sjl/badwolf'
 Bundle 'w0ng/vim-hybrid'
+Bundle 'fxn/vim-monochrome.git'
 " Bundle 'chriskempson/vim-tomorrow-theme'
 " Bundle 'chriskempson/base16-vim'
 
@@ -95,7 +96,7 @@ set list
 
 " set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme hybrid
+colorscheme monochrome
 
 
 " Check for existence in case we use an older version of vim
