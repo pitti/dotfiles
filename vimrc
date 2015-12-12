@@ -161,7 +161,7 @@ call unite#custom#profile('default', 'context', {
 
 " Ctrl-b offers bookmark and buffer list
 nnoremap <silent> <C-b> :<C-u>Unite
-      \ -buffer-name=recent bookmark buffer<CR>
+      \ -buffer-name=recent file_mru buffer<CR>
 
 " Ctrl-p offers recursive file list
 nnoremap <silent> <C-p> :<C-u>Unite 
