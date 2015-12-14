@@ -10,3 +10,6 @@ typeset -U ld_library_path
 ld_library_path=(~/.local/lib /usr/local/lib)
 
 export LD_LIBRARY_PATH
+
+## Add 'ag' search tool
+path=(/opt/site/devtools/x86_64-linux-gnu/ag/bin $path)
