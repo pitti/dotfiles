@@ -172,6 +172,14 @@ nnoremap <silent> <leader>p :<C-u>UniteWithBufferDir
   \ -buffer-name=files buffer bookmark file_rec/async<CR>
 
 
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction
+
 
 
 " YouCompleteMe settings
