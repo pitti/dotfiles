@@ -58,6 +58,10 @@ syntax on
 filetype plugin indent on
 
 
+" Search path for things like 'gf': Put every path starting from . and
+" upwards to / in the search path.
+set path=.;/
+
 
 " Look and feel settings
 " ------------------------------------
