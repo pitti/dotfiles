@@ -104,6 +104,8 @@ set list
 set background=dark
 colorscheme hybrid
 
+runtime ftplugin/man.vim
+
 
 " Check for existence in case we use an older version of vim
 if exists('+colorcolumn')
