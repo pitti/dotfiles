@@ -28,7 +28,8 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 
-au! BufNewFile *.h call <SID>insert_gates()
+" au! BufNewFile *.h call <SID>insert_gates()
+au! BufNewFile *.h call HeaderguardAdd()<CR>
 
 set cinoptions+=(0
 

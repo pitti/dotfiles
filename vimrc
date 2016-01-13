@@ -29,6 +29,8 @@ Bundle 'vimoutliner/vimoutliner.git'
 Bundle 'Valloric/ListToggle'
 Bundle 'rust-lang/rust.vim'
 
+Bundle 'drmikehenry/vim-headerguard'
+
 " Colorschemes
 " Bundle 'nanotech/jellybeans.vim'
 " Bundle 'sjl/badwolf'
