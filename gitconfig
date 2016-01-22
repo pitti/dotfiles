@@ -89,4 +89,4 @@
 
 [gui]
 	spellingdictionary = none
-	fontdiff = -family \"Source Code Pro\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
