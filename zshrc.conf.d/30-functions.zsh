@@ -102,6 +102,11 @@ gpg-open() {
 
 
 # tm <session> starts or reuses a tmux session
+# tm list the available sessions
 tm() {
-  tmux attach -t "$1" || tmux new-session -s "$1"
+  if [[  $1 == "" ]] ; then
+    tmux list-sessions
+  else
+    tmux attach -t "$1" || tmux new-session -s "$1"
+  fi
 }
