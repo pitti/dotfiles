@@ -77,7 +77,12 @@ latexmks () {
 }
 
 fixenv() {
-  for key in DISPLAY SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+  for key in DISPLAY        \
+             SSH_AUTH_SOCK  \
+             SSH_CONNECTION \
+             SSH_CLIENT     \
+             DBUS_SESSION_BUS_ADDRESS
+  do
     if (tmux show-environment | grep "^${key}" > /dev/null); then
       value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
       export ${key}="${value}"
