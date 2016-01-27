@@ -30,7 +30,7 @@
 	untracked = red
 
 [merge]
-	tool = meld
+	tool = gvimdiff3
 	conflictstyle = diff3
 
 [credential]
