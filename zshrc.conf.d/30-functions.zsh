@@ -73,7 +73,7 @@ grr() {
 }
 
 latexmks () {
-  latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
+  latexmk -shell-escape -pdf $@
 }
 
 fixenv() {
