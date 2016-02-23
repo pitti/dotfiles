@@ -34,10 +34,10 @@ Bundle 'drmikehenry/vim-headerguard'
 " Colorschemes
 " Bundle 'nanotech/jellybeans.vim'
 " Bundle 'sjl/badwolf'
-Bundle 'w0ng/vim-hybrid'
+" Bundle 'w0ng/vim-hybrid'
 " Bundle 'fxn/vim-monochrome.git'
 " Bundle 'chriskempson/vim-tomorrow-theme'
-" Bundle 'chriskempson/base16-vim'
+Bundle 'chriskempson/base16-vim'
 
 
 if v:version > 703 || (v:version == 703 && has('patch584'))
@@ -102,7 +102,7 @@ set list
 
 " set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme hybrid
+colorscheme base16-default
 
 runtime ftplugin/man.vim
 
