@@ -34,7 +34,7 @@
 	conflictstyle = diff3
 
 [credential]
-	helper = git-credential-gnome-keyring
+	helper = gnome-keyring
 
 [alias]
 	ci = commit
