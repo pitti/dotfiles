@@ -80,5 +80,6 @@ fi
 # Tell me that it's sudo asking for the pw
 SUDO_PROMPT="[sudo] password:"
 
+alias vim="vim --noplugin"
 
 export EDITOR="vim"
