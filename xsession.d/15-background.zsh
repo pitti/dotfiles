@@ -1,3 +1,3 @@
 
 wallpaper="$(xdg-user-dir PICTURES)/current"
-awsetbg $wallpaper &
+feh --bg-fill $wallpaper &
