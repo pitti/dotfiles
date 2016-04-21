@@ -3,11 +3,8 @@
 
 filetype off
 
-" Where to put backup files
-set backupdir=~/.cache/vim,.
-
 " Where to put swap files
-set dir=~/.cache/vim,.
+set dir=~/.cache/vim//,.
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
