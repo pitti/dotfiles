@@ -73,11 +73,16 @@ grr() {
 }
 
 latexmks () {
-  latexmk -e '$latex=q/pdflatex %O -shell-escape %S/' "$@"
+  latexmk -shell-escape -pdf $@
 }
 
 fixenv() {
-  for key in DISPLAY SSH_AUTH_SOCK SSH_CONNECTION SSH_CLIENT; do
+  for key in DISPLAY        \
+             SSH_AUTH_SOCK  \
+             SSH_CONNECTION \
+             SSH_CLIENT     \
+             DBUS_SESSION_BUS_ADDRESS
+  do
     if (tmux show-environment | grep "^${key}" > /dev/null); then
       value=`tmux show-environment | grep "^${key}" | sed -e "s/^[A-Z_]*=//"`
       export ${key}="${value}"
@@ -97,6 +102,11 @@ gpg-open() {
 
 
 # tm <session> starts or reuses a tmux session
+# tm list the available sessions
 tm() {
-  tmux attach -t "$1" || tmux new-session -s "$1"
+  if [[  $1 == "" ]] ; then
+    tmux list-sessions
+  else
+    tmux attach -t "$1" || tmux new-session -s "$1"
+  fi
 }

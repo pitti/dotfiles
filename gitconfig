@@ -34,7 +34,7 @@
 	conflictstyle = diff3
 
 [credential]
-	helper = git-credential-gnome-keyring
+	helper = gnome-keyring
 
 [alias]
 	ci = commit
@@ -63,6 +63,7 @@
 	up = fetch --all -n
   rename-remote-branch = "!f() { git push ${1} refs/remotes/${1}/${2}:refs/heads/${3} && \
                           git push ${1} :${2} ; } ; f"
+	wdiff = diff --word-diff
 
 [push]
 	default = tracking
