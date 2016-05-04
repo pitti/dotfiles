@@ -25,6 +25,7 @@ Bundle 'nelstrom/vim-visual-star-search.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-markdown.git'
 Bundle 'tpope/vim-unimpaired.git'
+Bundle 'tpope/vim-sensible.git'
 Bundle 'jcf/vim-latex'
 Bundle 'beloglazov/vim-online-thesaurus'
 Bundle 'rking/ag.vim'
@@ -60,10 +61,6 @@ set shiftwidth=2  " Indent depth (number of spaces for indenting)
 set tabstop=2     " How many spaces does a tab cover?
 set softtabstop=2 " Number of spaces a tab covers while editing
 
-" Enable syntax and ft plugins after vundle invocation
-syntax on
-filetype plugin indent on
-
 
 " Search path for things like 'gf': Put every path starting from . and
 " upwards to / in the search path.
@@ -73,31 +70,19 @@ set path=.;/
 " Look and feel settings
 " ------------------------------------
 
-set backspace=2  " backspace everything
 set hidden       " Allow hidden buffers
 set hlsearch     " Highlight search terms
 set ignorecase   " Default: ignore case sensitivity
 set smartcase    " Case-sensitive search when using upper-case letters
-set laststatus=2 " Always show status line
-set linebreak    " Break lines between words, not chars
-set incsearch    " Search while typing
-set ruler        " Show the cursor position all the time
-set scrolloff=2  " Keep 2 lines above and beyond the cursor while scrolling
-set scrolljump=5 " Keep 5 lines when jumping towards top or bottom edges
 set shortmess=aI " Use short file type descriptions and turn off intro text
 set showmode     " Show active mode
 set number       " Show line numbers
 set nofen        " Disable folding
 set title        " Show file name in window title
-set autoread     " Read changes automatically when file changes on disk
 set modeline
 
 set completeopt=menuone " Only open the menu when completing, don't show
                         " the preview window
-
-set smartindent
-
-set viminfo='20,<50 " Globally remember last 20 marks and 50 register lines
 
 let mapleader = ","
 
@@ -223,8 +208,6 @@ set pastetoggle=<F8>
 nnoremap <F2> :call <SID>MySpellLang()<CR>
 nnoremap <F3> :set cursorline!<CR>
 
-" Unset search highlight with <c-L>
-noremap <silent> <c-l> :silent nohl<cr>
 
 " Use :w!! when editing a file and forgot to sudo
 cmap w!! w !sudo tee % >/dev/null
