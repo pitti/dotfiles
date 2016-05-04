@@ -37,6 +37,7 @@ Bundle 'drmikehenry/vim-headerguard'
 
 " Colorschemes
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'morhetz/gruvbox'
 " Bundle 'sjl/badwolf'
 " Bundle 'w0ng/vim-hybrid'
 " Bundle 'fxn/vim-monochrome.git'
@@ -106,7 +107,7 @@ set list
 
 " set t_Co=256 " Use 256 colors.
 set background=dark
-colorscheme jellybeans
+colorscheme gruvbox
 
 runtime ftplugin/man.vim
 
