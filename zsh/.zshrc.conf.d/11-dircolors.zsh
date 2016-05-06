@@ -3,4 +3,9 @@
 autoload -U colors && colors
 export LSCOLORS="Gxfxcxdxbxegedabagacad"
 
-alias ls='ls --color=tty'
+if [[ $OSTYPE =~ freebsd* ]]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color=tty'
+fi
+
