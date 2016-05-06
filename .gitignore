@@ -6,3 +6,11 @@ mutt/certificates
 awesome/debian
 awesome/icons-bw
 awesome/icons-old
+
+/vim/spell/
+/vim/doc/tags
+/vim/bundle/
+/vim/tags/
+*.pyc
+.netrwhist
+/vim/view/
