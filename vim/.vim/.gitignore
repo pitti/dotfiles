@@ -1,0 +1,8 @@
+bundle/
+spell/
+doc/tags
+bundle/
+tags/
+*.pyc
+.netrwhist
+view/
