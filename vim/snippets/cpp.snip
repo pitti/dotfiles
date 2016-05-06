@@ -1,0 +1,11 @@
+snippet     class
+abbr        class {}
+    class ${1:`expand("%:t:r")`} {
+    public:
+        $1 (${2:arguments});
+        virtual ~$1 ();
+
+    private:
+        ${3:/* data */}
+    };
+
