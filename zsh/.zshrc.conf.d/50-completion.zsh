@@ -12,8 +12,6 @@ compinit
 zmodload -i zsh/complist
 
 
-zstyle ':completion:*' special-dirs true
-
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # Use caching so that commands like apt and dpkg complete are useable
