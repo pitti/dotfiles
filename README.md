@@ -5,22 +5,15 @@ Clone
 Clone the repository using:
 
     cd ~
-    git clone git://github.com/pitti/dotfiles.git .rcfiles
-
-Get submodules
-==============
-
-    git submodule init
-    git submodule update
+    git clone git://github.com/pitti/dotfiles.git .dotfiles
 
 
 Install symlinks
 ================
 
-Use the following script to create symlinks of these config files:
+The contents are managed using `stow`. To activate the config for
+all packages, just type:
 
 
-    cd ~
-    for link in bashrc conkyrc gitconfig muttrc screenrc Xdefaults zshrc; do
-      ln -s .rcfiles/$link .$link
-    done
+    cd ~/.dotfiles
+    stow ack bash git gnuplot mutt tmux xresources xsession zsh
